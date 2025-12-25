@@ -1,34 +1,70 @@
-document.getElementById("uploadForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
+// Enable the button when a file is selected
+document.getElementById("pdf-input").addEventListener("change", () => {
+    const fileInput = document.getElementById("pdf-input");
+    const button = document.getElementById("process-btn");
 
-    const fileInput = document.getElementById("pdfFile");
+    if (fileInput.files.length > 0) {
+        button.disabled = false;
+    } else {
+        button.disabled = true;
+    }
+});
+
+
+// Handle the "Reconstruct layout" button click
+document.getElementById("process-btn").addEventListener("click", async () => {
+    const fileInput = document.getElementById("pdf-input");
+    const logBox = document.getElementById("log");
+    const viewer = document.getElementById("page-viewer");
+    const output = document.getElementById("output");
+
     if (!fileInput.files.length) {
         alert("Please upload a PDF first.");
         return;
     }
 
+    logBox.textContent = "Uploading PDF and processing…";
+
     const formData = new FormData();
     formData.append("file", fileInput.files[0]);
 
-    const response = await fetch("https://YOUR-RENDER-URL/extract", {
-        method: "POST",
-        body: formData
-    });
+    try {
+        const response = await fetch("https://article-assist-backend.onrender.com/extract", {
+            method: "POST",
+            body: formData
+        });
 
-    const data = await response.json();
-    renderPages(data.pages);
+        const data = await response.json();
+
+        if (data.error) {
+            logBox.textContent = "Error: " + data.error;
+            return;
+        }
+
+        logBox.textContent = "Rendering pages…";
+
+        // Clear old content
+        viewer.innerHTML = "";
+        output.innerHTML = "";
+
+        renderPages(data.pages, viewer);
+
+        logBox.textContent = "Done.";
+
+    } catch (err) {
+        logBox.textContent = "Error contacting backend.";
+        console.error(err);
+    }
 });
 
 
-function renderPages(pages) {
-    const container = document.getElementById("output");
-    container.innerHTML = "";
-
+// Render pages + overlay text
+function renderPages(pages, viewer) {
     pages.forEach((page) => {
         const pageWrapper = document.createElement("div");
         pageWrapper.className = "page-wrapper";
 
-        // Create image element
+        // Page image
         const img = document.createElement("img");
         img.src = page.image_url;
         img.className = "page-image";
@@ -42,19 +78,17 @@ function renderPages(pages) {
             const scaleY = img.clientHeight / page.height;
 
             page.words.forEach((word) => {
-                if (word.skip) return; // skip words inside multi-word phrases
+                if (word.skip) return;
 
                 const span = document.createElement("span");
                 span.className = "word";
                 span.textContent = word.term || word.text;
 
-                // Tooltip for definitions
                 if (word.definition) {
                     span.classList.add("has-definition");
                     span.title = word.definition;
                 }
 
-                // Positioning
                 span.style.left = (word.x * scaleX) + "px";
                 span.style.top = (word.y * scaleY) + "px";
                 span.style.fontSize = (word.height * scaleY) + "px";
@@ -65,6 +99,6 @@ function renderPages(pages) {
 
         pageWrapper.appendChild(img);
         pageWrapper.appendChild(overlay);
-        container.appendChild(pageWrapper);
+        viewer.appendChild(pageWrapper);
     });
 }
