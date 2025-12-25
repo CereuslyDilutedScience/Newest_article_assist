@@ -1,11 +1,20 @@
 from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
+from flask_cors import CORS
 import os
 
 app = Flask(__name__)
 
+# Allow frontend → backend communication
+CORS(app)
+
+# Allow up to 50 MB uploads
+app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
+
+# Upload folder
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
 
 @app.route("/extract", methods=["POST"])
 def extract():
@@ -34,5 +43,7 @@ def extract():
 
     return jsonify(dummy_response)
 
+
 if __name__ == "__main__":
+    # Required for Render
     app.run(host="0.0.0.0", port=5000)
