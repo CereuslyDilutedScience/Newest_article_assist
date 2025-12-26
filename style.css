@@ -1,6 +1,6 @@
-/* ------------------------------
+/* ----------------------------------------------------
    GLOBAL PAGE STYLING
---------------------------------*/
+---------------------------------------------------- */
 
 body {
     font-family: "Inter", Arial, sans-serif;
@@ -18,9 +18,9 @@ h1, h2, h3 {
     margin-top: 20px;
 }
 
-/* ------------------------------
+/* ----------------------------------------------------
    UPLOAD FORM
---------------------------------*/
+---------------------------------------------------- */
 
 #uploadForm {
     width: 100%;
@@ -53,9 +53,9 @@ h1, h2, h3 {
     background: #3d5be0;
 }
 
-/* ------------------------------
-   PAGE DISPLAY AREA
---------------------------------*/
+/* ----------------------------------------------------
+   OUTPUT AREA
+---------------------------------------------------- */
 
 #output {
     width: 100%;
@@ -63,7 +63,11 @@ h1, h2, h3 {
     margin: 40px auto;
 }
 
-/* Wrapper for each PDF page */
+/* ----------------------------------------------------
+   PAGE WRAPPER
+   (Image + overlay live inside this)
+---------------------------------------------------- */
+
 .page-wrapper {
     position: relative;
     margin-bottom: 50px;
@@ -73,37 +77,47 @@ h1, h2, h3 {
     box-shadow: 0 4px 14px rgba(0,0,0,0.1);
 }
 
-/* The rendered PDF page image */
+/* ----------------------------------------------------
+   PDF PAGE IMAGE
+---------------------------------------------------- */
+
 .page-image {
     width: 100%;
+    height: auto;
     display: block;
+    user-select: none;
+    pointer-events: none;
 }
 
-/* Overlay container for positioned text */
+/* ----------------------------------------------------
+   TEXT OVERLAY
+   (Perfect alignment with the image)
+---------------------------------------------------- */
+
 .text-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    pointer-events: none; /* allows clicking through unless needed */
-    width: 100%;
+    width: 100%;   /* JS will sync height */
     height: 100%;
+    pointer-events: none;
 }
 
-/* ------------------------------
-   WORD OVERLAY STYLING
---------------------------------*/
+/* ----------------------------------------------------
+   WORD OVERLAYS
+---------------------------------------------------- */
 
 .word {
     position: absolute;
     white-space: nowrap;
     background: rgba(255, 255, 255, 0.0);
-    pointer-events: auto; /* allow hover */
     padding: 1px 2px;
     border-radius: 3px;
+    pointer-events: auto;
     transition: background 0.15s ease;
 }
 
-/* Words with definitions */
+/* Highlighted terms */
 .has-definition {
     background: rgba(255, 255, 0, 0.25);
     border-bottom: 1px dashed #c7a600;
@@ -114,17 +128,9 @@ h1, h2, h3 {
     background: rgba(255, 255, 0, 0.45);
 }
 
-/* ------------------------------
-   TOOLTIP (native browser)
---------------------------------*/
-
-.word[title] {
-    /* Browsers handle tooltips automatically */
-}
-
-/* ------------------------------
+/* ----------------------------------------------------
    RESPONSIVE BEHAVIOR
---------------------------------*/
+---------------------------------------------------- */
 
 @media (max-width: 600px) {
     #uploadForm {
