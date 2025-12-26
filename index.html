@@ -13,6 +13,14 @@
 <form id="uploadForm">
     <input type="file" id="pdfFile" accept="application/pdf">
     <button type="submit">Reconstruct layout</button>
+
+    <!-- Progress bar -->
+    <div id="progressContainer">
+        <div id="progressBar"></div>
+    </div>
+
+    <!-- Status / log -->
+    <pre id="logBox">Waiting for PDF upload…</pre>
 </form>
 
 <div id="output"></div>
