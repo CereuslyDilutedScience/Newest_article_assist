@@ -1,15 +1,26 @@
 import requests
 import re
 
+# Simple in-memory cache for ontology lookups
+TERM_CACHE = {}
+
 # -----------------------------
 # OLS4 LOOKUP
 # -----------------------------
-
 def lookup_term_ols4(term):
     """
     Query the OLS4 API for a scientific term.
+    Uses in-memory caching to avoid repeated lookups.
     Returns a dict with label, definition, iri OR None if not found.
     """
+
+    # Normalize term for caching
+    key = term.strip().lower()
+
+    # Return cached result if available
+    if key in TERM_CACHE:
+        return TERM_CACHE[key]
+
     url = "https://www.ebi.ac.uk/ols4/api/search"
     params = {
         "q": term,
@@ -25,16 +36,21 @@ def lookup_term_ols4(term):
 
         docs = data.get("response", {}).get("docs", [])
         if not docs:
+            TERM_CACHE[key] = None
             return None
 
         doc = docs[0]
-        return {
+        result = {
             "label": doc.get("label"),
             "definition": (doc.get("description") or [""])[0],
             "iri": doc.get("iri")
         }
 
+        TERM_CACHE[key] = result
+        return result
+
     except Exception:
+        TERM_CACHE[key] = None
         return None
 
 
