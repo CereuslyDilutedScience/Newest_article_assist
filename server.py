@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
 import os
@@ -22,6 +22,14 @@ UPLOAD_FOLDER = "uploads"
 STATIC_PAGE_FOLDER = "static/pages"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(STATIC_PAGE_FOLDER, exist_ok=True)
+
+# Base URL of your Cloud Run service
+CLOUD_RUN_BASE = "https://comprehendase-252233072700.us-east4.run.app"
+
+# Serve rendered page images
+@app.route("/static/pages/<path:filename>")
+def serve_page_image(filename):
+    return send_from_directory(STATIC_PAGE_FOLDER, filename)
 
 
 @app.route("/extract", methods=["POST", "OPTIONS"])
@@ -75,7 +83,8 @@ def extract():
             for i in range(start + 1, end):
                 words[i]["skip"] = True
 
-        page["image_url"] = "/" + image_paths[page_index]
+        # Return full Cloud Run URL for images
+        page["image_url"] = f"{CLOUD_RUN_BASE}/{image_paths[page_index]}"
 
     print(f"Finished all processing — {time.time() - start_time:.2f}s")
     return jsonify({"pages": pages})
