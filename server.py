@@ -12,7 +12,7 @@ from ontology import (
 )
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "https://cereuslydilutedscience.github.io"}})
 
 # Allow up to 50 MB uploads
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
@@ -23,8 +23,11 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(STATIC_PAGE_FOLDER, exist_ok=True)
 
 
-@app.route("/extract", methods=["POST"])
+@app.route("/extract", methods=["POST", "OPTIONS"])
 def extract():
+    if request.method == "OPTIONS":
+        return '', 204
+
     if "file" not in request.files:
         return jsonify({"error": "No file uploaded"}), 400
 
