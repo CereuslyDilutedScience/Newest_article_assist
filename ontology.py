@@ -5,6 +5,48 @@ import re
 TERM_CACHE = {}
 
 # -----------------------------
+# AUTHOR / CITATION DETECTION
+# -----------------------------
+
+def looks_like_author_name(word):
+    """
+    Detect capitalized author last names commonly found in citations.
+    """
+    # Smith, Johnson, Fisher, etc.
+    if re.match(r"^[A-Z][a-z]+$", word):
+        return True
+
+    # Smith,
+    if re.match(r"^[A-Z][a-z]+,$", word):
+        return True
+
+    return False
+
+
+def phrase_is_citation(phrase):
+    """
+    Detect multi-word citation patterns like:
+    - Smith et al.
+    - Johnson and Lee
+    - Baker et al., 2020
+    """
+    lower = phrase.lower()
+
+    if "et al" in lower:
+        return True
+
+    # Capitalized Lastname Lastname (common in citations)
+    if re.match(r"^[A-Z][a-z]+ [A-Z][a-z]+$", phrase):
+        return True
+
+    # Lastname, YEAR
+    if re.match(r"^[A-Z][a-z]+, \d{4}$", phrase):
+        return True
+
+    return False
+
+
+# -----------------------------
 # OLS4 LOOKUP
 # -----------------------------
 def lookup_term_ols4(term):
@@ -91,6 +133,10 @@ def is_candidate_term(word):
     if word_clean.isdigit():
         return False
 
+    # Reject author names
+    if looks_like_author_name(word_clean):
+        return False
+
     # Gene/protein names (e.g., BRCA1, rpoB)
     if re.match(r"^[A-Za-z]{2,5}\d+$", word_clean):
         return True
@@ -117,8 +163,16 @@ def is_candidate_phrase(phrase):
     """
     words = phrase.split()
 
+    # Reject citation patterns
+    if phrase_is_citation(phrase):
+        return False
+
     # Reject if any word is a common stopword
     if any(w.lower() in COMMON_WORDS for w in words):
+        return False
+
+    # Reject if any word is an author name
+    if any(looks_like_author_name(w) for w in words):
         return False
 
     # Species names: Genus species
