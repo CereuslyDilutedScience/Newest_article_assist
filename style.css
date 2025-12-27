@@ -75,7 +75,12 @@ h1, h2, h3 {
 }
 
 /* === Comprehendase Catalytic Clarity Theme === */
-
+.logo-img {
+  max-width: 350px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
 header {
   padding: 0;
