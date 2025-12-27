@@ -72,29 +72,32 @@ function renderPages(pages, viewer) {
         const overlay = document.createElement("div");
         overlay.className = "text-overlay";
 
-        img.onload = () => {
-            const scaleX = img.clientWidth / page.width;
-            const scaleY = img.clientHeight / page.height;
+      img.onload = () => {
+    const scaleX = img.clientWidth / page.width;
+    const scaleY = img.clientHeight / page.height;
 
-            page.words.forEach((word) => {
-                if (word.skip) return;
+    overlay.style.width = img.clientWidth + "px";
+    overlay.style.height = img.clientHeight + "px";
 
-                const span = document.createElement("span");
-                span.className = "word";
-                span.textContent = word.term || word.text;
+    page.words.forEach((word) => {
+        if (word.skip) return;
 
-                if (word.definition) {
-                    span.classList.add("has-definition");
-                    span.title = word.definition;
-                }
+        const span = document.createElement("span");
+        span.className = "word";
+        span.textContent = word.term || word.text;
 
-                span.style.left = (word.x * scaleX) + "px";
-                span.style.top = (word.y * scaleY) + "px";
-                span.style.fontSize = (word.height * scaleY) + "px";
+        if (word.definition) {
+            span.classList.add("has-definition");
+            span.title = word.definition;
+        }
 
-                overlay.appendChild(span);
-            });
-        };
+        span.style.left = (word.x * scaleX) + "px";
+        span.style.top = (word.y * scaleY) + "px";
+        span.style.fontSize = (word.height * scaleY) + "px";
+
+        overlay.appendChild(span);
+    });
+};
 
         pageWrapper.appendChild(img);
         pageWrapper.appendChild(overlay);
