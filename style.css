@@ -135,6 +135,7 @@ input[type="file"].upload::file-selector-button {
 
 button.reconstruct {
   background-color: var(--accent-teal);
+  font-weight: 600;
   color: var(--text-dark);
   border: none;
   padding: 0.5rem 1rem;
