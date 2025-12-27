@@ -1,11 +1,8 @@
 /* ------------------------------ GLOBAL PAGE STYLING --------------------------------*/
 body {
-    font-family: "Inter", Arial, sans-serif;
-    background: #f5f5f7;
-    margin: 0;
-    padding: 0;
-    color: #222;
-    line-height: 1.5;
+  background-color: #FDF6E3;
+  color: #2D3142;
+  font-family: 'Inter', sans-serif;
 }
 
 h1, h2, h3 {
@@ -78,11 +75,7 @@ h1, h2, h3 {
 }
 
 /* === Comprehendase Catalytic Clarity Theme === */
-body {
-  background-color: #FDF6E3;
-  color: #2D3142;
-  font-family: 'Inter', sans-serif;
-}
+
 
 header {
   background-color: #FDF6E3;
