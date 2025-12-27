@@ -102,20 +102,12 @@ header {
   margin: 0 auto;
 }
 
-h1 {
-  color: var(--text-dark);
-}
-
-.tagline {
-  color: var(--accent-teal);
-}
-
 /* Upload box */
 .upload-box {
-  border: 2px dashed var(--accent-teal);
-  background-color: #ffffff;
-  padding: 1rem;
-  border-radius: 8px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 1rem auto;
 }
 
 /* Buttons */
