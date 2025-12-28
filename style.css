@@ -73,12 +73,10 @@ h2, h3 {
 }
 
 /* Words with definitions */
-.word.has-definition {
-  background-color: var(--highlight-orange);
-  color: transparent !important;
-  -webkit-text-fill-color: transparent !important;
-  border-radius: 4px;
-  padding: 0 2px;
+.has-definition {
+  background: rgba(255, 255, 0, 0.25);
+  border-bottom: 1px dashed #c7a600;
+  cursor: help;
 }
 
 
