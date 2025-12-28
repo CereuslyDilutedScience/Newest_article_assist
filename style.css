@@ -94,10 +94,10 @@ h2, h3 {
 header {
   padding: 0;
   margin: 0;
-  display: flex;
+  display: block;
   flex-direction: row;
-  align-items: left;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   padding-bottom: 0;
 
 }
@@ -108,8 +108,8 @@ header {
   display: block;
   overflow: hidden;
   margin: 0;
-    align-items: left;
-  justify-content: left;
+    align-items: center;
+  justify-content: center;
   padding-bottom: 0;
 
 }
