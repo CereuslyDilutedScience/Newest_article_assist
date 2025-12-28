@@ -21,7 +21,7 @@ h2, h3 {
   background-color: var(--bg-cream);
   color: var(--text-dark);
   text-align: left;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 /* ------------------------------ PAGE DISPLAY AREA --------------------------------*/
@@ -132,7 +132,7 @@ input[type="file"].upload::file-selector-button {
   font-weight: 600;
   color: #002f62;
   border: none;
-  padding: 0;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
   cursor: pointer;
 }
