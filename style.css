@@ -20,8 +20,10 @@ h2, h3 {
   font-weight: 600;
   background-color: var(--bg-cream);
   color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
   text-align: left;
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* ------------------------------ PAGE DISPLAY AREA --------------------------------*/
