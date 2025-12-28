@@ -94,6 +94,8 @@ header {
   flex-direction: row;
   align-items: left;
   justify-content: left;
+  padding-bottom: 0;
+
 }
 
 .logo-img {
@@ -103,6 +105,8 @@ header {
   margin: 0 auto;
     align-items: left;
   justify-content: left;
+  padding-bottom: 0;
+
 }
 
 /* Upload box */
