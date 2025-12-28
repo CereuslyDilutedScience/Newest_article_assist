@@ -10,7 +10,7 @@ def extract_pdf_layout(pdf_path):
     pages_output = []
 
     for page_index, page in enumerate(doc):
-        raw_words = page.get_text("words")  # (text, x0, y0, x1, y1, block_no, line_no, word_no)
+        raw_words = page.get_text("words")  # (text, x0, y0, x1, y1, block, line, word_no)
         words = []
 
         for w in words_raw:
