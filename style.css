@@ -34,6 +34,7 @@ h2, h3 {
 /* Wrapper for each PDF page */
 .page-wrapper {
   position: relative;
+  padding-top: 0; 
   margin-bottom: 50px;
   background-color: var(--bg-cream);
   border-radius: 8px;
