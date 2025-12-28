@@ -114,7 +114,8 @@ header {
 /* Buttons */
 button.upload {
   background-color: var(--accent-teal);
-  color: #ffffff;
+  font-weight: 600;
+  color: #002f62;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -126,7 +127,8 @@ button.upload:hover {
 
 input[type="file"].upload::file-selector-button {
   background-color: var(--accent-teal);
-  color: #ffffff;
+  font-weight: 600;
+  color: #002f62;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
