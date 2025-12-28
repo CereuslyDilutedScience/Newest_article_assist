@@ -102,8 +102,8 @@ header {
 .logo-img {
   max-width: 600px;
   height: 400px;
-  display: block;
-  margin: 0 auto;
+  display: flex;
+  margin: 0;
     align-items: left;
   justify-content: left;
   padding-bottom: 0;
