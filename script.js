@@ -86,7 +86,7 @@ function renderPages(pages, viewer) {
         const span = document.createElement("span");
         span.className = "word";
         span.textContent = word.term || word.text;
-
+        span.style.color = "transparent"; 
 
 
         if (word.definition) {
