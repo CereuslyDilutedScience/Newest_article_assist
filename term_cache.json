@@ -739,5 +739,15 @@
     "label": "organism",
     "definition": "A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs.",
     "iri": "http://purl.obolibrary.org/obo/OBI_0100026"
+  },
+  "(pplo) agar (bd": null,
+  "(pplo) agar": null,
+  "(pplo)": null,
+  "agar (bd difco);": null,
+  "agar (bd": null,
+  "agar": {
+    "label": "agar",
+    "definition": "A complex mixture of polysaccharides extracted from species of red algae. Its two main components are agarose and agaropectin. Agarose is the component responsible for the high-strength gelling properties of agar, while agaropectin provides the viscous properties.",
+    "iri": "http://purl.obolibrary.org/obo/CHEBI_2509"
   }
 }
