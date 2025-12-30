@@ -328,5 +328,10 @@
     "label": "High",
     "definition": "An elevated level or position or degree; greater than normal in degree or intensity or amount.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25227"
+  },
+  "density": {
+    "label": "Density",
+    "definition": "The amount of something per unit size.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C45781"
   }
 }
