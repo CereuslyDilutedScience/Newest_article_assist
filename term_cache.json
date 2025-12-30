@@ -1508,5 +1508,10 @@
     "label": "Media",
     "definition": "Any mechanism of mass communication.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C19442"
+  },
+  "con\ufb02uent": {
+    "label": "confluent",
+    "definition": "A spatial pattern (or gall arrangement) in which adjacent objects (galls) are positioned in such a way that each gall cannot readily be distinguished as an individual.",
+    "iri": "http://purl.obolibrary.org/obo/GALLONT_0000020"
   }
 }
