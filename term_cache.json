@@ -7028,5 +7028,10 @@
     "label": "bsf",
     "definition": "The protein-coding gene bsf (bicoid stability factor) located on the chromosome 2L mapped at 36F5-36F5.",
     "iri": "http://identifiers.org/ncbigene/35100"
+  },
+  "45). samples taken": {
+    "label": "Toxicokinetic Samples Taken",
+    "definition": "A designation that subjects within the trial set had samples collected to support toxicokinetic analysis.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C198409"
   }
 }
