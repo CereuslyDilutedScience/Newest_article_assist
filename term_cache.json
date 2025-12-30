@@ -1338,5 +1338,10 @@
     "label": "Over",
     "definition": "Being above or beyond something.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C65018"
+  },
+  "time": {
+    "label": "time",
+    "definition": "A time is a facet that adds temporal information to an information content entity about the point in time when the information content entity it is participating in the some process. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/result#AFR_0000937"
   }
 }
