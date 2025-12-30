@@ -1888,5 +1888,10 @@
     "label": "antimicrobial peptide production",
     "definition": "The synthesis or release of an antimicrobial peptide during an immune response, resulting in an increase in intracellular or extracellular levels. Such peptides may have protective properties against bacteria, fungi, viruses, or protozoa.",
     "iri": "http://purl.obolibrary.org/obo/GO_0002775"
+  },
+  "membrane": {
+    "label": "membrane",
+    "definition": "A lipid bilayer along with all the proteins and protein complexes embedded in it and attached to it.",
+    "iri": "http://purl.obolibrary.org/obo/GO_0016020"
   }
 }
