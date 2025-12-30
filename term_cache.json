@@ -5258,5 +5258,10 @@
     "label": "based on",
     "definition": "The sequence on which the description of a modified sequence is based.",
     "iri": "http://purl.uniprot.org/core/basedOn"
+  },
+  "16s rrna": {
+    "label": "16S rRNA sequencing",
+    "definition": "16S ribosomal RNA sequencing is a sequencing method used to identify and compare bacteria present within a given sample. 16S rRNA gene sequencing is a well-established method for studying phylogeny and taxonomy of samples from complex microbiomes or environments that are difficult or impossible to study.",
+    "iri": "http://purl.obolibrary.org/obo/GENEPIO_0000053"
   }
 }
