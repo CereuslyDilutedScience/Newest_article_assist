@@ -2443,5 +2443,10 @@
     "label": "standard deviation",
     "definition": "The standard deviation is a measure of the amount of variation or dispersion of a set of values. [Wikipedia]",
     "iri": "http://purl.allotrope.org/ontologies/result#AFR_0002192"
+  },
+  "treatment group": {
+    "label": "Treatment Group",
+    "definition": "A study population that receives an intervention(s) within a trial. This could include the investigational product(s) or a comparator (e.g., placebo or an approved intervention).",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C161322"
   }
 }
