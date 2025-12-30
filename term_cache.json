@@ -4073,5 +4073,10 @@
     "label": "number of substrates",
     "definition": "Number of molecules which are acted upon by an enzyme.",
     "iri": "http://biomodels.net/SBO/SBO_0000149"
+  },
+  "trial. please note": {
+    "label": "Trial Schematic Note",
+    "definition": "A brief written record describing the trial schematic.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C218720"
   }
 }
