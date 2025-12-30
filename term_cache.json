@@ -873,5 +873,10 @@
     "label": "can",
     "definition": "carbonic anhydrase",
     "iri": "http://purl.obolibrary.org/obo/OGG_3000944832"
+  },
+  "mrsa": {
+    "label": "mrsA",
+    "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
   }
 }
