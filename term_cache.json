@@ -443,5 +443,10 @@
     "label": "Article",
     "definition": "Nonfictional prose forming an independent part of a publication.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C47902"
+  },
+  "distributed": {
+    "label": "distributed",
+    "definition": "A spatial pattern inhering in a bearer by virtue of the bearer's being spread out or scattered about or divided up.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0001566"
   }
 }
