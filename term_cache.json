@@ -63,5 +63,10 @@
     "label": "chromosome",
     "definition": "A structure composed of a very long molecule of DNA and associated proteins (e.g. histones) that carries hereditary information.",
     "iri": "http://purl.obolibrary.org/obo/GO_0005694"
+  },
+  "content": {
+    "label": "Content",
+    "definition": "Everything that is included in a collection, container, or communication.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C44476"
   }
 }
