@@ -1738,5 +1738,10 @@
     "label": "booklung leaves internal spacer",
     "definition": "Each of the hollow cuticular columns arising from the ventral cuticle of the booklung leaf, which prevents the collapsing of the leaf.",
     "iri": "http://purl.obolibrary.org/obo/SPD_0000249"
+  },
+  "(its) 1/2": {
+    "label": "ITS",
+    "definition": "Insulinoma tumor suppressor gene locus",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000282551"
   }
 }
