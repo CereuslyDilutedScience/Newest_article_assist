@@ -1480,5 +1480,21 @@
     "label": "Shotgun",
     "definition": "",
     "iri": "https://www.commoncoreontologies.org/ont00000015"
+  },
+  "libraries with inserts": null,
+  "with inserts of": null,
+  "with inserts": null,
+  "inserts of 20": null,
+  "inserts of": null,
+  "inserts": null,
+  "kb were generated": null,
+  "were generated and": null,
+  "were generated": null,
+  "generated and se-": null,
+  "generated and": null,
+  "generated": {
+    "label": "generated",
+    "definition": "",
+    "iri": "http://www.w3.org/ns/prov#generated"
   }
 }
