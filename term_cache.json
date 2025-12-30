@@ -7088,5 +7088,10 @@
     "label": "Low",
     "definition": "A minimum level or position or degree; less than normal in degree, intensity or amount.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C54722"
+  },
+  "prevalence of staphylococcus": {
+    "label": "prevalence of malaria",
+    "definition": "The number of malaria cases existing in a given population at any given time.",
+    "iri": "http://purl.obolibrary.org/obo/IDOMAL_0000019"
   }
 }
