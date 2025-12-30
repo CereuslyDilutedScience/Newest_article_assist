@@ -2428,5 +2428,10 @@
     "label": "Taenia coli",
     "definition": "The taeniae coli (also teniae coli) are three separate longitudinal ribbons of smooth muscle on the outside of the ascending, transverse, descending and sigmoid colons. They are visible, and can be seen just below the serosa or fibrosa. They are the Mesocolic, Free and Omental Coli. The teniae coli contracts length wise to produce the haustra, the bulges in the colon. The bands converge at the root of the vermiform appendix and the rectum. These bands correspond to the outer layer of the muscularis externa, in other portions of the digestive tract.",
     "iri": "http://purl.obolibrary.org/obo/UBERON_0012419"
+  },
+  "spp.": {
+    "label": "SPP",
+    "definition": "The protein-coding gene SPP located on the chromosome 2.",
+    "iri": "http://identifiers.org/ncbigene/814841"
   }
 }
