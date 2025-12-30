@@ -48,5 +48,10 @@
     "label": "Calf",
     "definition": "The posterior aspect of the lower extremity that extends from the knee to the foot.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C93027"
+  },
+  "single": {
+    "label": "Single",
+    "definition": "Never married.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C150721"
   }
 }
