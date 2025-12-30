@@ -7078,5 +7078,10 @@
     "label": "Genera (Croatia)",
     "definition": "Company in Croatia established in 1901",
     "iri": "https://ror.org/0518jvn15"
+  },
+  "bacteria, potentially linking": {
+    "label": "linking",
+    "definition": "Linking is coupling flows together by means of an intermediary flow. [NIST]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003358"
   }
 }
