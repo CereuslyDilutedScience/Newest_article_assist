@@ -284,5 +284,14 @@
     "label": "GEN",
     "definition": "The GEN file format contains genetic data and describes SNPs.",
     "iri": "http://edamontology.org/format_3812"
+  },
+  "that causes pneumonia": null,
+  "that causes": null,
+  "causes pneumonia and": null,
+  "causes pneumonia": null,
+  "causes": {
+    "label": "causes",
+    "definition": "",
+    "iri": "https://w3id.org/biolink/vocab/causes"
   }
 }
