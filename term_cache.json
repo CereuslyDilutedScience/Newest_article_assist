@@ -109,5 +109,18 @@
     "label": "strain",
     "definition": "A strain is a quality quantification facet that quantifies the magnitude of deformation representing the displacement between particles in the body relative to a reference length. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/result#AFR_0002591"
+  },
+  "xby01, which was": null,
+  "xby01, which": null,
+  "which was isolated": null,
+  "which was": null,
+  "which": null,
+  "was isolated from": null,
+  "was isolated": null,
+  "isolated from a": null,
+  "isolated": {
+    "label": "Isolated",
+    "definition": "",
+    "iri": "http://snomed.info/id/46651001"
   }
 }
