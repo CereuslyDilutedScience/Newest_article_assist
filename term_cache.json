@@ -16168,5 +16168,10 @@
     "label": "soldier",
     "definition": "A person who fights as part of an army. A soldier can be a conscripted or volunteer enlisted person, a non-commissioned officer, or an officer.",
     "iri": "http://purl.obolibrary.org/obo/GSSO_005823"
+  },
+  "signi\ufb01cantly change the": {
+    "label": "Change the Equation",
+    "definition": "Nonprofit in United States established in 2010",
+    "iri": "https://ror.org/039sz0x75"
   }
 }
