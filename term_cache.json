@@ -16978,5 +16978,10 @@
     "label": "Ep",
     "definition": "embryonic cell",
     "iri": "http://purl.obolibrary.org/obo/WBbt_0006612"
+  },
+  "2012. an improved": {
+    "label": "Improved",
+    "definition": "A subjective response indicating that something improved.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C125459"
   }
 }
