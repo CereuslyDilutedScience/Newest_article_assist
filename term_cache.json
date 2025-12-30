@@ -16553,5 +16553,10 @@
     "label": "functional and technical description",
     "definition": "Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.",
     "iri": "https://w3id.org/evorao/functionalAndTechnicalDescription"
+  },
+  "assessing the microbiota": {
+    "label": "assessing",
+    "definition": "Assessing is evaluating or estimating a quality or behavior. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003538"
   }
 }
