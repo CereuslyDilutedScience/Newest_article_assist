@@ -5118,5 +5118,10 @@
     "label": "counts",
     "definition": "Counts are like ratio scale that they have a zero point but there are no meaningful fractional units. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/result#AFR_0000915"
+  },
+  "waste streams and": {
+    "label": "Sierra Streams Institute",
+    "definition": "Nonprofit in United States established in 1995",
+    "iri": "https://ror.org/029pa0p32"
   }
 }
