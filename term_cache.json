@@ -3183,5 +3183,10 @@
     "label": "Are",
     "definition": "A unit of area equal to 100 square meters. Are is a non-SI unit accepted for use with SI.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C68869"
+  },
+  "substrate for bsfl": {
+    "label": "Michaelis constant for substrate",
+    "definition": "Synonym: Kms",
+    "iri": "http://biomodels.net/SBO/SBO_0000322"
   }
 }
