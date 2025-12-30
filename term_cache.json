@@ -8328,5 +8328,10 @@
     "label": "BPI - Pain on the Average",
     "definition": "Brief Pain Inventory (BPI) Please rate your pain by circling the one number that best describes your pain on the average.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C100305"
+  },
+  "cfu per gram": {
+    "label": "CFU per spleen",
+    "definition": "A colony forming unit (CFU) from the sample of mouse spleen.",
+    "iri": "http://purl.obolibrary.org/obo/VO_0001204"
   }
 }
