@@ -433,5 +433,10 @@
     "label": "Preparation",
     "definition": "The act or process of making something ready.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25625"
+  },
+  "access": {
+    "label": "Access",
+    "definition": "The right to obtain or make use of or take advantage of something (as services or membership); the right to enter.  Also, an act or means of approaching.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25396"
   }
 }
