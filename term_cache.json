@@ -16238,5 +16238,10 @@
     "label": "pbp2a (Streptococcus pneumoniae R6)",
     "definition": "A protein coding gene pbp2a in Streptococcus pneumoniae R6.",
     "iri": "http://www.ensembl.org/id/spr1823"
+  },
+  "mrsa. iubmb life": {
+    "label": "mrsA",
+    "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
   }
 }
