@@ -2923,5 +2923,10 @@
     "label": "A Little Effect",
     "definition": "A response indicating that there is little effect.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C209733"
+  },
+  "total bacterial counts": {
+    "label": "counts",
+    "definition": "Counts are like ratio scale that they have a zero point but there are no meaningful fractional units. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/result#AFR_0000915"
   }
 }
