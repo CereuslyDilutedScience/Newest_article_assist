@@ -3503,5 +3503,10 @@
     "label": "Were Itchy Question",
     "definition": "A question about whether an individual feels or felt itchy.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C136347"
+  },
+  "= 0.0002), while": {
+    "label": "Hyperkalemia while symptomatic",
+    "definition": "Increased concentration of potassium in the blood circulation specifically measured during a disease flareup, attack, or exacerbation.",
+    "iri": "http://purl.obolibrary.org/obo/HP_6000833"
   }
 }
