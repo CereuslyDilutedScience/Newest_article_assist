@@ -4268,5 +4268,10 @@
     "label": "Analysis of Variance",
     "definition": "A statistical technique which helps in making inference whether three or more samples might come from populations having the same mean; specifically, whether the differences among the samples might be caused by chance variation.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C53241"
+  },
+  "the potato substrate": {
+    "label": "Substrate",
+    "definition": "Any chemical that can be modified or consumed during a chemical reaction or biological process.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C120264"
   }
 }
