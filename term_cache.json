@@ -7368,5 +7368,10 @@
     "label": "case-only study",
     "definition": "Observational study whereby there is a single group of individuals with specific characteristics. This is a method that analyzes data from a case series and is used in case-crossover studies, in case-specular designs, and in molecular and genetic epidemiology to assess relationships between environmental exposures and genotypes.",
     "iri": "http://purl.obolibrary.org/obo/ERO_0000348"
+  },
+  "consistent": {
+    "label": "Consistent",
+    "definition": "Marked by a reasonable or logical relation of parts and holding together as a harmonious or credible whole.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C85901"
   }
 }
