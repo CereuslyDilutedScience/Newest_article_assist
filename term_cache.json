@@ -1543,5 +1543,10 @@
     "label": "voiding of nitrogenous wastes",
     "definition": "During the first day after feeding, deamination of amino acids produces excess nitrogen which is voided in the form of low molecular weight nitrogenous metabolites.",
     "iri": "http://purl.obolibrary.org/obo/IDOMAL_0002046"
+  },
+  "into ingredients of": {
+    "label": "ingredients",
+    "definition": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
+    "iri": "http://schema.org/ingredients"
   }
 }
