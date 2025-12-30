@@ -1968,5 +1968,10 @@
     "label": "waste management",
     "definition": "A planned process that involves all aspects of dealing with the waste produced in experiments.",
     "iri": "http://purl.obolibrary.org/obo/CHMO_0002845"
+  },
+  "in agriculture is": {
+    "label": "agriculture",
+    "definition": "A land use process during which terrestrial environments are modified such that they can grow crop plants or allow the rearing of animals to provide food, fiber, medicines, or other products used by humans.",
+    "iri": "http://purl.obolibrary.org/obo/ENVO_01001442"
   }
 }
