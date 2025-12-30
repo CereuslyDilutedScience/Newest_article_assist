@@ -2229,5 +2229,12 @@
     "label": "Associated",
     "definition": "Joined in some kind of relationship.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25281"
+  },
+  "data for m.": null,
+  "data for": null,
+  "data": {
+    "label": "Data",
+    "definition": "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information.",
+    "iri": "https://w3id.org/evorao/Data"
   }
 }
