@@ -16973,5 +16973,10 @@
     "label": "Nucleotide Sequence",
     "definition": "The sequence of nucleotide residues along an RNA or DNA chain.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C45374"
+  },
+  "nawrocki ep, desantis": {
+    "label": "Ep",
+    "definition": "embryonic cell",
+    "iri": "http://purl.obolibrary.org/obo/WBbt_0006612"
   }
 }
