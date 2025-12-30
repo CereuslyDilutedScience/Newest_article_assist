@@ -3128,5 +3128,10 @@
     "label": "Reduced total lung capacity",
     "definition": "Abnormally reduced volume of air in the lungs upon the maximum effort of inspiration.",
     "iri": "http://purl.obolibrary.org/obo/HP_0033169"
+  },
+  "bacterial counts in": {
+    "label": "counts",
+    "definition": "Counts are like ratio scale that they have a zero point but there are no meaningful fractional units. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/result#AFR_0000915"
   }
 }
