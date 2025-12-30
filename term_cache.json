@@ -5333,5 +5333,10 @@
     "label": "Cu(2+) suppressing and bleomycin sensitive protein 1 (yeast)",
     "definition": "A protein that is a translation product of the CUB1 gene in yeast.",
     "iri": "http://purl.obolibrary.org/obo/PR_Q08977"
+  },
+  "proteobacteria in unsterilized": {
+    "label": "crayfish preparation (unsterilized)",
+    "definition": "SIREN DB annotation:\n* skeletal meat part FOODON:03420175",
+    "iri": "http://purl.obolibrary.org/obo/FOODON_03316326"
   }
 }
