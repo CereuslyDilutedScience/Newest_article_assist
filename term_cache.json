@@ -1638,5 +1638,10 @@
     "label": "Heavy",
     "definition": "Of comparatively great physical weight or density.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C68807"
+  },
+  "dominance": {
+    "label": "dominance",
+    "definition": "Undertaking or practicing the dominant role in BDSM activities.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_001305"
   }
 }
