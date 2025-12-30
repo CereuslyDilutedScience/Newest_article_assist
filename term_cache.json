@@ -16733,5 +16733,10 @@
     "label": "SPP",
     "definition": "The protein-coding gene SPP located on the chromosome 2.",
     "iri": "http://identifiers.org/ncbigene/814841"
+  },
+  "2017. a survey": {
+    "label": "Survey",
+    "definition": "A document used in a method of data collection that involves interviewing (or giving questionnaires to) a representative and often large group of people.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C17176"
   }
 }
