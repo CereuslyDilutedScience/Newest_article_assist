@@ -2903,5 +2903,10 @@
     "label": "mrsA",
     "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
     "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
+  },
+  "microbiology spectrum september/october": {
+    "label": "October",
+    "definition": "The tenth month of the year in the Gregorian calendar.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C106189"
   }
 }
