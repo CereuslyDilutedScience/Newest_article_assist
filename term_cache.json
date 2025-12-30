@@ -2078,5 +2078,10 @@
     "label": "Other Than",
     "definition": "Distinct from those already mentioned, listed, or considered.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C151896"
+  },
+  "and widely accepted": {
+    "label": "Accepted",
+    "definition": "Generally approved or used.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C62559"
   }
 }
