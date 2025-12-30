@@ -135,5 +135,12 @@
     "label": "Diseased",
     "definition": "An indication that an anatomic structure has detectable aberrations.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C175249"
+  },
+  "young calf in": null,
+  "young calf": null,
+  "young": {
+    "label": "young",
+    "definition": "An age which is relatively low.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0000309"
   }
 }
