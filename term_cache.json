@@ -382,5 +382,27 @@
     "label": "Industry",
     "definition": "",
     "iri": "http://purl.obolibrary.org/obo/OMIT_0008348"
+  },
+  "worldwide (1, 2).": null,
+  "worldwide (1,": null,
+  "worldwide": null,
+  "2). virulence-associated factors": null,
+  "virulence-associated factors of": null,
+  "virulence-associated factors": null,
+  "factors of m.": null,
+  "factors of": null,
+  "factors": null,
+  "of m. bovis,": null,
+  "m. bovis, including": null,
+  "m. bovis,": null,
+  "bovis, including lipopro-": null,
+  "bovis, including": null,
+  "bovis,": null,
+  "including lipopro- teins": null,
+  "including lipopro-": null,
+  "including": {
+    "label": "Including",
+    "definition": "",
+    "iri": "http://snomed.info/id/55919000"
   }
 }
