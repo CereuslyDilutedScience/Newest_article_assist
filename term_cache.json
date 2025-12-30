@@ -1158,5 +1158,10 @@
     "label": "accumulation",
     "definition": "A structural quality of the collection or massing of one physical object within another physical object.",
     "iri": "http://purl.obolibrary.org/obo/PATO_0002269"
+  },
+  "substrate": {
+    "label": "Substrate",
+    "definition": "Any chemical that can be modified or consumed during a chemical reaction or biological process.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C120264"
   }
 }
