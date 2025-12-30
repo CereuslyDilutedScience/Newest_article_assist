@@ -2248,5 +2248,10 @@
     "label": "supermarket",
     "definition": "A self-service shop offering a wide variety of food, beverages and household products, organized into sections.",
     "iri": "http://purl.obolibrary.org/obo/ENVO_03501290"
+  },
+  "deionized water": {
+    "label": "deionized water",
+    "definition": "This is any condition in which the main influencing factor is deionized water, a form of purified water that is filtered through one or two tanks of ion-exchange resin which replaces cations with hydrogen (H+) ions and anions with hydroxyl (OH-) ions, leaving a mineral-free water.",
+    "iri": "http://purl.obolibrary.org/obo/XCO_0001119"
   }
 }
