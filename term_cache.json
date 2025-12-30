@@ -2653,5 +2653,10 @@
     "label": "BWCS - Been Constipated",
     "definition": "Bowel Control Scale (BWCS) During the past 4 weeks, how often have you been constipated?",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C113957"
+  },
+  "infections of": {
+    "label": "Infections",
+    "definition": "Invasion of the host organism by microorganisms or their toxins or by parasites that can cause pathological conditions or diseases.",
+    "iri": "http://id.nlm.nih.gov/mesh/D007239"
   }
 }
