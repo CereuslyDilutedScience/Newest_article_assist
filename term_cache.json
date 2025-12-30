@@ -4213,5 +4213,10 @@
     "label": "Fragmentation of the epiphyses of the phalanges of the hand",
     "definition": "Fragmented appearance of the epiphyses of the phalanges of the fingers.",
     "iri": "http://purl.obolibrary.org/obo/HP_0010232"
+  },
+  "shared genera often": {
+    "label": "Genera (Croatia)",
+    "definition": "Company in Croatia established in 1901",
+    "iri": "https://ror.org/0518jvn15"
   }
 }
