@@ -3068,5 +3068,10 @@
     "label": "Results for Development Institute",
     "definition": "Nonprofit in United States established in 2007",
     "iri": "https://ror.org/05fjfdm02"
+  },
+  "the pooled results": {
+    "label": "Pooled Sample",
+    "definition": "A sample containing a mixture of multiple individual specimens of interest that were collected in a study.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C165587"
   }
 }
