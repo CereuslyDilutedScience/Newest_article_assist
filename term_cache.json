@@ -2478,5 +2478,10 @@
     "label": "Topic",
     "definition": "A category denoting a rather broad domain or field of interest, study, application, work, data, or technology. Topics have no clearly defined borders between each other.",
     "iri": "http://purl.obolibrary.org/obo/topic_0003"
+  },
+  "variant of s.": {
+    "label": "S phase checkpoint variant",
+    "definition": "Mitotic cells exhibit variations during the passage through a cell cycle control point late in the S phase of the mitotic cell cycle, which ensures DNA replication is complete, compared to control cells.",
+    "iri": "http://purl.obolibrary.org/obo/WBPhenotype_0000875"
   }
 }
