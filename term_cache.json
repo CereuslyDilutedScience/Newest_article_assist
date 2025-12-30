@@ -16938,5 +16938,10 @@
     "label": "CutAdapt",
     "definition": "Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads.",
     "iri": "http://www.ebi.ac.uk/swo/SWO_1100145"
+  },
+  "adapter sequences from": {
+    "label": "Phylogenetic inference (from molecular sequences)",
+    "definition": "Phylogenetic tree construction from molecular sequences.",
+    "iri": "http://edamontology.org/operation_0540"
   }
 }
