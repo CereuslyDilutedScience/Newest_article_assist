@@ -1973,5 +1973,10 @@
     "label": "contained in",
     "definition": "Inverse of contains. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/property#AFX_0001049"
+  },
+  "aerobic": {
+    "label": "aerobic",
+    "definition": "A quality inhering in a bearer by virtue of the bearer's dependence on oxygen.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0001455"
   }
 }
