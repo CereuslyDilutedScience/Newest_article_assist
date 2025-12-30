@@ -3753,5 +3753,10 @@
     "label": "Coded Data and Samples",
     "definition": "Coded data and samples are labelled with at least one unique code and do not carry any personal identifiers.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C68756"
+  },
+  "signi\ufb01cantly fewer mrsa": {
+    "label": "mrsA",
+    "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
   }
 }
