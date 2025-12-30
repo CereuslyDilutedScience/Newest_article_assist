@@ -2708,5 +2708,10 @@
     "label": "Several",
     "definition": "An indefinite small quantity that is more than two but less than many.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C107221"
+  },
+  "aureus over": {
+    "label": "Over",
+    "definition": "Being above or beyond something.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C65018"
   }
 }
