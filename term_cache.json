@@ -588,5 +588,10 @@
     "label": "Inner",
     "definition": "Inside or closer to the inside of the body or object.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C37980"
+  },
+  "\ufb01nal": {
+    "label": "Final",
+    "definition": "Conclusive in a process or progression.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25508"
   }
 }
