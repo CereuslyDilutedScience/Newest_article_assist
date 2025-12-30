@@ -16403,5 +16403,10 @@
     "label": "Canadian Council on Social Development",
     "definition": "Nonprofit in Canada established in 1920",
     "iri": "https://ror.org/031903y12"
+  },
+  "black soldier \ufb02y,": {
+    "label": "soldier",
+    "definition": "A person who fights as part of an army. A soldier can be a conscripted or volunteer enlisted person, a non-commissioned officer, or an officer.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_005823"
   }
 }
