@@ -1293,5 +1293,10 @@
     "label": "poisoning",
     "definition": "A condition or physical state produced by the ingestion, injection, inhalation of or exposure to a deleterious agent.",
     "iri": "http://purl.obolibrary.org/obo/MONDO_0029000"
+  },
+  "ingestion": {
+    "label": "ingestion",
+    "definition": "The process of taking a material (e.g., stressor) into the mouth or body.",
+    "iri": "http://purl.obolibrary.org/obo/ExO_0000056"
   }
 }
