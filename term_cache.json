@@ -3,5 +3,10 @@
     "label": "order",
     "definition": "An order facet adds information of the ordering of some information in an aggregation of information. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/result#AFR_0000932"
+  },
+  "authors": {
+    "label": "authors",
+    "definition": "The list of authors.",
+    "iri": "https://w3id.org/evorao/authors"
   }
 }
