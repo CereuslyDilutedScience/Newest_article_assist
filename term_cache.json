@@ -16958,5 +16958,10 @@
     "label": "amiR",
     "definition": "aliphatic amidase regulator",
     "iri": "http://purl.obolibrary.org/obo/OGG_3000880573"
+  },
+  "2017. deblur rapidly": {
+    "label": "Rapidly",
+    "definition": "Acting or occurring in a brief period of time.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C65069"
   }
 }
