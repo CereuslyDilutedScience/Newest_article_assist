@@ -3658,5 +3658,10 @@
     "label": "Day of the Week",
     "definition": "Any of the seven named, 24-hour divisions of a calendar week.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C77539"
+  },
+  "sampling (df =": {
+    "label": "sampling",
+    "definition": "Sampling is the process of taking parts or partitions of an object aggregate or data set for the interest for studying it. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003634"
   }
 }
