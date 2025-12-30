@@ -5223,5 +5223,10 @@
     "label": "In the Field",
     "definition": "A setting outside the clinic or a comparable health care facility, e.g., a doctor's office, the subject's home or workplace, a school, a public park, or a restaurant.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C102650"
+  },
+  "samples of potato": {
+    "label": "diseases of potato",
+    "definition": "A plant disease (PSO:0000013) affecting potato (Solanum tuberosum) which results in a disorder in a plant structure (PO:0009011).",
+    "iri": "http://purl.obolibrary.org/obo/PSO_0100092"
   }
 }
