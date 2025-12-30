@@ -1415,5 +1415,17 @@
     "label": "distributed",
     "definition": "A spatial pattern inhering in a bearer by virtue of the bearer's being spread out or scattered about or divided up.",
     "iri": "http://purl.obolibrary.org/obo/PATO_0001566"
+  },
+  "under the terms": null,
+  "under the": null,
+  "under": null,
+  "the terms of": null,
+  "the terms": null,
+  "terms of the": null,
+  "terms of": null,
+  "terms": {
+    "label": "terms",
+    "definition": "",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_002608"
   }
 }
