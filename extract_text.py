@@ -63,5 +63,5 @@ pages_output.append({
         "words": words
         })
 
-    doc.close()
+doc.close()
     return pages_output
