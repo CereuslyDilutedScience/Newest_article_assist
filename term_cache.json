@@ -1048,5 +1048,10 @@
     "label": "Conflict",
     "definition": "PEFF keyword for the sequence conflict; a UniProtKB term.",
     "iri": "http://purl.obolibrary.org/obo/PEFF_0001023"
+  },
+  "its": {
+    "label": "ITS",
+    "definition": "Insulinoma tumor suppressor gene locus",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000282551"
   }
 }
