@@ -1608,5 +1608,10 @@
     "label": "Extreme Environments",
     "definition": "An ENVIRONMENT which falls outside the range of tolerance for the survival of organisms that are not specifically adapted to survive or thrive in it. Examples of such environments are among the hottest and coldest places on earth.",
     "iri": "http://id.nlm.nih.gov/mesh/D000071251"
+  },
+  "can be pathogenic": {
+    "label": "Child Can be Rebellious Question",
+    "definition": "A question about whether a child is sometimes rebellious.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C183265"
   }
 }
