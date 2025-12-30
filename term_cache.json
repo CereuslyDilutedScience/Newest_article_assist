@@ -1548,5 +1548,10 @@
     "label": "ingredients",
     "definition": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
     "iri": "http://schema.org/ingredients"
+  },
+  "animal feeds on": {
+    "label": "050  legume animal feeds (al) (ccpr)",
+    "definition": "Legume animal feeds include various species of leguminous plants used for animal forage, grazing, fodder hay or silage, with or without seed. Several species are grown exclusively for animal feeding purposes, whereas some others are grown primarily as food crops. The \"waste\" parts of the latter crops are often used as animal feed, either in the fresh form or as hay.\nThe entire commodity may be consumed by livestock animals.",
+    "iri": "http://purl.obolibrary.org/obo/FOODON_03400753"
   }
 }
