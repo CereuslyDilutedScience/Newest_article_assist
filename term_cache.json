@@ -753,5 +753,10 @@
     "label": "Identification",
     "definition": "A taxonomic determination (e.g., the assignment to a taxon).",
     "iri": "http://rs.tdwg.org/dwc/terms/Identification"
+  },
+  "assembler": {
+    "label": "Assembler",
+    "definition": "Occupations held by individuals who assemble prefabricated parts of components to form subassemblies, products and equipment.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C198721"
   }
 }
