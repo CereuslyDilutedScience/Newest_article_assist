@@ -2343,5 +2343,10 @@
     "label": "water",
     "definition": "An oxygen hydride consisting of an oxygen atom that is covalently bonded to two hydrogen atoms",
     "iri": "http://purl.obolibrary.org/obo/CHEBI_15377"
+  },
+  "to remove": {
+    "label": "to remove",
+    "definition": "To take away a part of a flow from its prefixed place. [NIST]",
+    "iri": "http://purl.allotrope.org/ontologies/function#AFFN_0000108"
   }
 }
