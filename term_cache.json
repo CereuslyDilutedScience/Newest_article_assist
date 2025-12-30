@@ -6378,5 +6378,10 @@
     "label": "exposure to risk reduction",
     "definition": "An exposure event involving Risk Reduction",
     "iri": "http://purl.obolibrary.org/obo/ECTO_6000011"
+  },
+  "of mrsa within": {
+    "label": "mrsA",
+    "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
   }
 }
