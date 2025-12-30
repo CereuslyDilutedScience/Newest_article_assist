@@ -7353,5 +7353,10 @@
     "label": "Oligoclonal Bands",
     "definition": "The presence of more than one immunoglobulin band in the serum, urine, or cerebrospinal fluid. It usually results from infectious or immunologic disorders.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C113809"
+  },
+  "cheesecloth were sterilized": {
+    "label": "cream (sterilized)",
+    "definition": "SIREN DB annotation:\n* liquid, low viscosity, with no visible particles FOODON:03430123\n* fully heat-treated FOODON:03440014\n* cream food product FOODON:00001216\n* sterilization by heating FOODON:03470123",
+    "iri": "http://purl.obolibrary.org/obo/FOODON_03305284"
   }
 }
