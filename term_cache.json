@@ -3163,5 +3163,10 @@
     "label": "counts",
     "definition": "Counts are like ratio scale that they have a zero point but there are no meaningful fractional units. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/result#AFR_0000915"
+  },
+  "in the \ufb01rst": {
+    "label": "In the Field",
+    "definition": "A setting outside the clinic or a comparable health care facility, e.g., a doctor's office, the subject's home or workplace, a school, a public park, or a restaurant.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C102650"
   }
 }
