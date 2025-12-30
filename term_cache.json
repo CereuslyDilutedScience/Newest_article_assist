@@ -622,5 +622,18 @@
     "label": "Small",
     "definition": "Limited in number, quantity, magnitude or extent.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25376"
+  },
+  "pieces of the": null,
+  "pieces of": null,
+  "pieces": null,
+  "of the affected": null,
+  "the affected parts": null,
+  "the affected": null,
+  "affected parts of": null,
+  "affected parts": null,
+  "affected": {
+    "label": "Affected",
+    "definition": "To be influenced by or changed.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C64917"
   }
 }
