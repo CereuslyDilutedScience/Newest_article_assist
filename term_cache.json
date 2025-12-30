@@ -6383,5 +6383,10 @@
     "label": "mrsA",
     "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
     "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
+  },
+  "are hypothesized to": {
+    "label": "Are",
+    "definition": "A unit of area equal to 100 square meters. Are is a non-SI unit accepted for use with SI.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C68869"
   }
 }
