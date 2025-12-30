@@ -15918,5 +15918,10 @@
     "label": "we",
     "definition": "A second- or third-person pronoun for a person in the speaker's care.",
     "iri": "http://purl.obolibrary.org/obo/GSSO_002476"
+  },
+  "thank haley morrill,": {
+    "label": "Thank You",
+    "definition": "An expression of gratitude.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C94783"
   }
 }
