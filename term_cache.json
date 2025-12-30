@@ -1533,5 +1533,10 @@
     "label": "fig",
     "definition": "A fruit multiple of a fig plant (Ficus carica).",
     "iri": "http://purl.obolibrary.org/obo/FOODON_00003266"
+  },
+  "recorded": {
+    "label": "recorded",
+    "definition": "A categorical choice indicating that a datum is available for retrieval.",
+    "iri": "http://purl.obolibrary.org/obo/GENEPIO_0001851"
   }
 }
