@@ -2238,5 +2238,10 @@
     "label": "rearing measurement",
     "definition": "Any measurement of a movement in which a quadrupedal subject rises up on its back legs.",
     "iri": "http://purl.obolibrary.org/obo/CMO_0001515"
+  },
+  "of bsfl on": {
+    "label": "acts on population of",
+    "definition": "p acts on population of c iff c' is a collection, has members of type c, and p has participant c",
+    "iri": "http://purl.obolibrary.org/obo/RO_0012003"
   }
 }
