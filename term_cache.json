@@ -5638,5 +5638,10 @@
     "label": "8 days after blood meal",
     "definition": "Eight days after blood meal.",
     "iri": "http://purl.obolibrary.org/obo/IDOMAL_0000731"
+  },
+  "in bsfl treatments": {
+    "label": "number of treatments",
+    "definition": "Number of treatments tested during an experiment.",
+    "iri": "http://purl.obolibrary.org/obo/AGRO_00000323"
   }
 }
