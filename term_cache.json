@@ -5088,5 +5088,10 @@
     "label": "sensitivity toward",
     "definition": "A quality inhering in a bearer by virtue of the bearer's disposition to detect or perceive external stimulation.",
     "iri": "http://purl.obolibrary.org/obo/PATO_0000085"
+  },
+  "gram-positive bacteria in": {
+    "label": "Gram Positive Bacteria",
+    "definition": "Any bacteria with a thick peptidoglycan layer and no outer lipid membrane that stains dark purple with the Gram staining technique.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C173515"
   }
 }
