@@ -6318,5 +6318,10 @@
     "label": "sensitive to high pH",
     "definition": "A cell phenotype observed in the vegetative growth phase of the life cycle in which cells show increased sensitivity to pH higher than that of standard S. pombe growth media (about 5.8). Cells stop growing (and may die) at a pH that allows wild type cells to grow.",
     "iri": "http://purl.obolibrary.org/obo/FYPO_0001987"
+  },
+  "diversity observed": {
+    "label": "Diversity",
+    "definition": "Variety; quality, state, fact, or instance of being different.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C62263"
   }
 }
