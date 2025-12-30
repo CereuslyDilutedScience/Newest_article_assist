@@ -5978,5 +5978,10 @@
     "label": "composed of",
     "definition": "The property specifies of which kind of general portion of material something is built of. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/property#AFX_0000940"
+  },
+  "of long-chain carbohydrates": {
+    "label": "exudation of carbohydrates",
+    "definition": "A process in which carbohydrates are transported from the interior of an organism to its surroundings.",
+    "iri": "http://purl.obolibrary.org/obo/ENVO_1000747"
   }
 }
