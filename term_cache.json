@@ -6868,5 +6868,10 @@
     "label": "Derivatives allowed",
     "definition": "Derivatives allowed clauses are derivatives clauses which state that  derivative resources are allowed using the licensed resource. Even when allowed, such a clause may or may not restrict the usage of the licensed resource in a variety of ways.",
     "iri": "http://www.ebi.ac.uk/swo/license/SWO_10000038"
+  },
+  "for additional micro\ufb02ora": {
+    "label": "Additional",
+    "definition": "Added; extra; further.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25406"
   }
 }
