@@ -4,23 +4,7 @@ import re
 # -----------------------------
 # CACHE
 # -----------------------------
-import json
-import os
 
-CACHE_FILE = "/tmp/term_cache.json"
-
-# If /tmp cache doesn't exist yet, initialize it from the repo version
-if not os.path.exists(CACHE_FILE):
-    if os.path.exists("term_cache.json"):
-        with open("term_cache.json", "r") as src, open(CACHE_FILE, "w") as dst:
-            dst.write(src.read())
-
-# Load the cache
-if os.path.exists(CACHE_FILE):
-    with open(CACHE_FILE, "r") as f:
-        TERM_CACHE = json.load(f)
-else:
-    TERM_CACHE = {}
 
 # -----------------------------
 # AUTHOR / CITATION DETECTION
