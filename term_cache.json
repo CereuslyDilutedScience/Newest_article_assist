@@ -3323,5 +3323,10 @@
     "label": "Second Portion of the Duodenum",
     "definition": "The descending portion of the duodenum between the neck of the gallbladder and the inferior duodenal flexure.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C33522"
+  },
+  "trial (tukey\u2019s test,": {
+    "label": "Montreal Cognitive Assessment Functional Test Memory, 1st Trial Test",
+    "definition": "An individual's first attempt at completing the Montreal Cognitive Assessment functional memory test.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C183248"
   }
 }
