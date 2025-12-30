@@ -2313,5 +2313,10 @@
     "label": "harvested crop",
     "definition": "A crop that has been harvested after an harvesting process.",
     "iri": "http://purl.obolibrary.org/obo/AGRO_00002049"
+  },
+  "substrate (5). it": {
+    "label": "it/it pronouns",
+    "definition": "A pronoun set composed of it, its, and itself.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_011533"
   }
 }
