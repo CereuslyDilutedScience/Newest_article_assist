@@ -3203,5 +3203,10 @@
     "label": "sampling",
     "definition": "Sampling is the process of taking parts or partitions of an object aggregate or data set for the interest for studying it. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003634"
+  },
+  "the interaction between": {
+    "label": "Skin Between the Eyebrows",
+    "definition": "The integumentary covering located medial to the orbital ridges and superior to the nose.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C142317"
   }
 }
