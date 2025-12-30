@@ -2883,5 +2883,10 @@
     "label": "to support",
     "definition": "To firmly fix a material into a defined location, or secure an energy or signal into a specific course. [NIST]",
     "iri": "http://purl.allotrope.org/ontologies/function#AFFN_0000028"
+  },
+  "therefore, we focused": {
+    "label": "focused",
+    "definition": "An optical quality inhering in a bearer by virtue of the bearer's having focus.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0001517"
   }
 }
