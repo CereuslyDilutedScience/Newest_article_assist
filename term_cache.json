@@ -1558,5 +1558,10 @@
     "label": "Treatment Effect",
     "definition": "Any intended or unintended effect of the intervention on the body or disease.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C209469"
+  },
+  "followed by": {
+    "label": "followed by",
+    "definition": "AL 2.9.22: When incorporating all BFO annotations, it became clear that we were using BFO 'precedes' (which was the original parent for 'directly followed by') incorrectly. 'precedes' has a range  and domain of occurent, and the IAO version number class is an ICE, which is a continuant. This led to an inconsistent ontology. To fix this for now, we have created a new class that performs a similar function to BFO 'precedes' but without the domain/range restrictions.",
+    "iri": "http://www.ebi.ac.uk/swo/SWO_0000300"
   }
 }
