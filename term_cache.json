@@ -3888,5 +3888,10 @@
     "label": "day",
     "definition": "A one-dimensional temporal region which spans the duration an astronomical body completes one rotation on its axis.",
     "iri": "http://purl.obolibrary.org/obo/ENVO_01003005"
+  },
+  "were overwhelmingly": {
+    "label": "Were Itchy Question",
+    "definition": "A question about whether an individual feels or felt itchy.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C136347"
   }
 }
