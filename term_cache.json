@@ -2403,5 +2403,10 @@
     "label": "ingredients",
     "definition": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
     "iri": "http://schema.org/ingredients"
+  },
+  "3). bsfl have": {
+    "label": "Have",
+    "definition": "Used to describe the possession, relationships, or the state of something or someone.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C101282"
   }
 }
