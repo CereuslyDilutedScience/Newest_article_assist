@@ -2123,5 +2123,10 @@
     "label": "makeup",
     "definition": "Any of various cosmetics that are applied to the face to enhance one's appearance.",
     "iri": "http://purl.obolibrary.org/obo/GSSO_007553"
+  },
+  "diet": {
+    "label": "diet",
+    "definition": "The customary allowance of food and drink taken by a person or an animal from day to day, particularly one especially planned to meet specific requirements of the individual, including or excluding certain items of food; a prescribed course of eating and drinking in which the amount and kind of food, as well as the times at which it is to be taken, are regulated for therapeutic purposes or selected with reference to a particular state of health.",
+    "iri": "http://purl.obolibrary.org/obo/ExO_0000106"
   }
 }
