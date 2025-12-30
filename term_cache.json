@@ -1068,5 +1068,10 @@
     "label": "food",
     "definition": "A physiological role played by any substance of either plant, animal or artificial origin which contains essential body nutrients that can be ingested by an organism to provide energy, promote growth, and maintain the processes of life.",
     "iri": "http://purl.obolibrary.org/obo/CHEBI_33290"
+  },
+  "variety": {
+    "label": "Variety",
+    "definition": "In botanical nomenclature, a rank below subspecies but above forma.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C62709"
   }
 }
