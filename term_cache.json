@@ -2888,5 +2888,10 @@
     "label": "focused",
     "definition": "An optical quality inhering in a bearer by virtue of the bearer's having focus.",
     "iri": "http://purl.obolibrary.org/obo/PATO_0001517"
+  },
+  "this investigation on": {
+    "label": "comment on investigation",
+    "definition": "A textual entity that is about any of the aspects of an investigation worth noting",
+    "iri": "http://purl.obolibrary.org/obo/OBI_0001898"
   }
 }
