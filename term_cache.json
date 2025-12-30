@@ -5138,5 +5138,10 @@
     "label": "Sleep as Well as Always",
     "definition": "A response indicating that an individual sleeps or slept as well as they always have.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C124165"
+  },
+  "from this project": {
+    "label": "Histological Subtype Different, Pathology Review for this Project",
+    "definition": "The pathologic prescreen review for this project determined that the histologic subtype is different from the pathology report.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C125616"
   }
 }
