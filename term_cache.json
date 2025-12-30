@@ -1208,5 +1208,10 @@
     "label": "group",
     "definition": "A group is a an aggregate of people. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/material#AFM_0001084"
+  },
+  "indicating": {
+    "label": "indicating",
+    "definition": "Indicating is signaling to make something known to the user about a flow. [NIST]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003488"
   }
 }
