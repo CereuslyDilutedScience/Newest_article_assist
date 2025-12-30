@@ -2128,5 +2128,10 @@
     "label": "eggs per brood",
     "definition": "An average value that specifies the number of eggs produced during one reproductive cycle for each individual female within a population.",
     "iri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000453"
+  },
+  "female (2). these": {
+    "label": "None of These Describe Me",
+    "definition": "A response indicating that an individual feels that no option listed is a good description for them.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C177109"
   }
 }
