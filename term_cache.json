@@ -2368,5 +2368,10 @@
     "label": "Several",
     "definition": "An indefinite small quantity that is more than two but less than many.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C107221"
+  },
+  "in vitro studies": {
+    "label": "In Vitro",
+    "definition": "In the laboratory; literally, \"in glass\".",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C15263"
   }
 }
