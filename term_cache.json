@@ -3673,5 +3673,10 @@
     "label": "Number of Tissue Samples in Specimen",
     "definition": "The total number of tissue samples within the specimen.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C176276"
+  },
+  "on day 7": {
+    "label": "day 7 of adulthood",
+    "definition": "7th day after eclosion.",
+    "iri": "http://purl.obolibrary.org/obo/FBdv_00007082"
   }
 }
