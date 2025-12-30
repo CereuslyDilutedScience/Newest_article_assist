@@ -3028,5 +3028,10 @@
     "label": "death from other causes",
     "definition": "A recorded follow-up status noting that a patient died from other causes than the condition under study.",
     "iri": "http://www.ebi.ac.uk/efo/EFO_0030051"
+  },
+  "we also analyzed": {
+    "label": "Analyzed form",
+    "definition": "A descriptive qualifier that indicates the nature/extent/availability of an analyte as it was determined in the sample, e.g. dissolved, labile, total etc.",
+    "iri": "http://champ-project.org/images/ontology/cao.owl#CAO_000080"
   }
 }
