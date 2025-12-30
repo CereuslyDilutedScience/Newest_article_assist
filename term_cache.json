@@ -1073,5 +1073,10 @@
     "label": "Variety",
     "definition": "In botanical nomenclature, a rank below subspecies but above forma.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62709"
+  },
+  "organic": {
+    "label": "Organic",
+    "definition": "A substance relating to or containing elemental carbon or carbon compounds.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C63848"
   }
 }
