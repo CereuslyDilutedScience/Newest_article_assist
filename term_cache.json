@@ -2508,5 +2508,10 @@
     "label": "Nosocomial Infection",
     "definition": "An infection acquired in a hospital or other healthcare setting.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C115164"
+  },
+  "found ubiquitously in": {
+    "label": "ubiquitously expressed in",
+    "definition": "x is ubiquitously expressed in y if and only if x is expressed in y, and the majority of cells in y express x",
+    "iri": "http://purl.obolibrary.org/obo/RO_0002291"
   }
 }
