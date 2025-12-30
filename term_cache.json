@@ -1238,5 +1238,10 @@
     "label": "resistant to",
     "definition": "A resistance quality inhering in a bearer by virtue of the bearer's resistance to a stimulus.",
     "iri": "http://purl.obolibrary.org/obo/PATO_0001178"
+  },
+  "antibiotic": {
+    "label": "antibiotic",
+    "definition": "A substance that is biostatic or biocidal at low concentrations towards bacteria, yeasts, moulds, or other form of life, especially pathogenic or noxious organisms. Although the term was originally restricted to substances produced by microorganisms, its use was later expanded to include derivatives of such substances and it is now commonly used to include entirely synthetic compounds.",
+    "iri": "http://purl.obolibrary.org/obo/CHEBI_22582"
   }
 }
