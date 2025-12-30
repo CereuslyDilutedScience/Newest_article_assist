@@ -343,5 +343,10 @@
     "label": "Fragment",
     "definition": "A part of a larger entity.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C48295"
+  },
+  "software": {
+    "label": "software",
+    "definition": "Software is a plan specification composed of a series of instructions that can be \ninterpreted by or directly executed by a processing unit.",
+    "iri": "http://purl.obolibrary.org/obo/IAO_0000010"
   }
 }
