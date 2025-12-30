@@ -3148,5 +3148,10 @@
     "label": "When",
     "definition": "At what time, how soon, in what circumstances?",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C65140"
+  },
+  "left as": {
+    "label": "As",
+    "definition": "In the same amount or manner; to the same degree; in the role, function, or capacity of.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C64938"
   }
 }
