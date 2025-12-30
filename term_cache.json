@@ -815,5 +815,15 @@
     "label": "Twice",
     "definition": "Two times.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C65134"
+  },
+  "by single-colony isolation": null,
+  "single-colony isolation and": null,
+  "single-colony isolation": null,
+  "isolation and identi\ufb01ed": null,
+  "isolation and": null,
+  "isolation": {
+    "label": "Isolation",
+    "definition": "A state of separation; the act of isolating something; setting something apart from others; marked by separation of or from usually contiguous elements.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25549"
   }
 }
