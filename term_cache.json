@@ -2738,5 +2738,10 @@
     "label": "Currently Receiving",
     "definition": "An indication that an individual is receiving something at the present time.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C159274"
+  },
+  "available on this": {
+    "label": "Available on the Cloud",
+    "definition": "Data or documents are able to be accessed via a cloud server.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C183343"
   }
 }
