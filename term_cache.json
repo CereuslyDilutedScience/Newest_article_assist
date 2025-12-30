@@ -6673,5 +6673,10 @@
     "label": "Explanation",
     "definition": "A set of statements describing a group of facts that clarifies the cause, context and/or consequence of those facts.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C86073"
+  },
+  "these results is": {
+    "label": "None of These Describe Me",
+    "definition": "A response indicating that an individual feels that no option listed is a good description for them.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C177109"
   }
 }
