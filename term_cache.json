@@ -2688,5 +2688,10 @@
     "label": "Staphylococcal Food Poisoning",
     "definition": "Food poisoning that is caused by Staphylococcal infection.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C35037"
+  },
+  "23). previous research": {
+    "label": "Previous Research Experience Indicator",
+    "definition": "An indication as to whether the study subject has been in a previous study.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C158348"
   }
 }
