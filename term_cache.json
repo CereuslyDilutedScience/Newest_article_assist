@@ -6828,5 +6828,10 @@
     "label": "mrsA",
     "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
     "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
+  },
+  "potato substrate, it": {
+    "label": "it/it pronouns",
+    "definition": "A pronoun set composed of it, its, and itself.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_011533"
   }
 }
