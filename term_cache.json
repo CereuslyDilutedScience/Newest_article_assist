@@ -6498,5 +6498,10 @@
     "label": "Consistent",
     "definition": "Marked by a reasonable or logical relation of parts and holding together as a harmonious or credible whole.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C85901"
+  },
+  "between the presence": {
+    "label": "presence of between group difference hypothesis",
+    "definition": "a null hypothesis stating that there are differences observed between group of subjects",
+    "iri": "http://purl.obolibrary.org/obo/STATO_0000146"
   }
 }
