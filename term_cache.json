@@ -3623,5 +3623,10 @@
     "label": "counts",
     "definition": "Counts are like ratio scale that they have a zero point but there are no meaningful fractional units. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/result#AFR_0000915"
+  },
+  "similar on": {
+    "label": "similar spectrum",
+    "definition": "A cross reference to another spectrum that has high spectral similarity with this one, usually assumed to originate from the same analyte ion.",
+    "iri": "http://purl.obolibrary.org/obo/MS_1003262"
   }
 }
