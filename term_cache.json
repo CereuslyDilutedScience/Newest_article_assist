@@ -1948,5 +1948,10 @@
     "label": "ubiquitous",
     "definition": "Expressed everywhere at some specified stage.",
     "iri": "http://purl.obolibrary.org/obo/FBcv_0000069"
+  },
+  "bacterium pathogenic to": {
+    "label": "Variant Pathogenic/Likely Pathogenic",
+    "definition": "An ad hoc category that describes genetic variants with 90% or greater certainty of contributing to the development of a disease.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C168803"
   }
 }
