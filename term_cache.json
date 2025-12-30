@@ -2168,5 +2168,10 @@
     "label": "capturing behaviour",
     "definition": "Suite of behaviors involved in securing a prey item once it has been located.",
     "iri": "http://purl.obolibrary.org/obo/NBO_0020292"
+  },
+  "that are otherwise": {
+    "label": "SOAPP-R - Felt That Things Are Overwhelming",
+    "definition": "Screener and Opioid Assessment for Patients with Pain - Revised (SOAPP-R) How often have you felt that things are just too overwhelming that you can't handle them?",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C100873"
   }
 }
