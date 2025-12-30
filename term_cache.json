@@ -2543,5 +2543,10 @@
     "label": "Feed",
     "definition": "To move something gradually into or through.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C69427"
+  },
+  "several in vitro": {
+    "label": "In Vitro",
+    "definition": "In the laboratory; literally, \"in glass\".",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C15263"
   }
 }
