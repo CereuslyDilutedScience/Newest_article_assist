@@ -16693,5 +16693,10 @@
     "label": "Low-Dose Treatment",
     "definition": "A reduced quantity of a therapeutic agent prescribed to be taken at one time or at stated intervals.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C49341"
+  },
+  "doses of x-ray": {
+    "label": "X ray",
+    "definition": "Mutation induced by exposure to X rays.",
+    "iri": "http://purl.obolibrary.org/obo/FBcv_0000518"
   }
 }
