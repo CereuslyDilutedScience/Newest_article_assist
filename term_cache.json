@@ -16543,5 +16543,10 @@
     "label": "novel",
     "definition": "An attribute of a genomic feature that represents a feature not previously found in a given genome, e.g. an extrachromosomal replicon or aneusomic third copy of a chromosome.",
     "iri": "http://purl.obolibrary.org/obo/GENO_0000685"
+  },
+  "antibacterial peptide from": {
+    "label": "antibacterial peptide production",
+    "definition": "The synthesis or release of an antibacterial peptide during an immune response, resulting in an increase in intracellular or extracellular levels.",
+    "iri": "http://purl.obolibrary.org/obo/GO_0002778"
   }
 }
