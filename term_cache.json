@@ -16723,5 +16723,10 @@
     "label": "polyether",
     "definition": "Any ether that contains more than one ether linkage.",
     "iri": "http://purl.obolibrary.org/obo/CHEBI_46774"
+  },
+  "antibiotic production in": {
+    "label": "first antibiotic in treatment",
+    "definition": "The first mention of an antibiotic that is administered as part of a treatment.",
+    "iri": "http://purl.obolibrary.org/obo/EUPATH_0050504"
   }
 }
