@@ -3418,5 +3418,10 @@
     "label": "Analyzed form",
     "definition": "A descriptive qualifier that indicates the nature/extent/availability of an analyte as it was determined in the sample, e.g. dissolved, labile, total etc.",
     "iri": "http://champ-project.org/images/ontology/cao.owl#CAO_000080"
+  },
+  "the trials conducted": {
+    "label": "Conducted Interference",
+    "definition": "Problems related to electromagnetic interference (EMI) by physical contact with conductors (e.g. wires, resistors, terminals) as opposed to radiated EMI which is caused by induction (without physical contact of the conductors).",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C92037"
   }
 }
