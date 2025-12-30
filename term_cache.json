@@ -16953,5 +16953,10 @@
     "label": "J wave",
     "definition": "The J wave is a positive convex deflection that occurs at the junction of the QRS complex and ST segment, the J-point.",
     "iri": "http://purl.obolibrary.org/obo/HP_0012272"
+  },
+  "amir a, mcdonald": {
+    "label": "amiR",
+    "definition": "aliphatic amidase regulator",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000880573"
   }
 }
