@@ -2428,5 +2428,10 @@
     "label": "Environment",
     "definition": "The totality of surrounding conditions.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C16551"
+  },
+  "average": {
+    "label": "Average",
+    "definition": "A statistical calculation describing the central tendency of a set of numbers; used to interpret quantitative data.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C37917"
   }
 }
