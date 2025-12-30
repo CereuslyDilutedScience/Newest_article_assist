@@ -1233,5 +1233,10 @@
     "label": "variant of",
     "definition": "An object property that represents a relation between a molecular variant and a gene or protein where the variant derives from the gene or protein",
     "iri": "http://purl.obolibrary.org/obo/CIDO_0000244"
+  },
+  "resistant to": {
+    "label": "resistant to",
+    "definition": "A resistance quality inhering in a bearer by virtue of the bearer's resistance to a stimulus.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0001178"
   }
 }
