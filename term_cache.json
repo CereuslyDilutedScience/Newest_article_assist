@@ -1263,5 +1263,10 @@
     "label": "skin",
     "definition": "The integument of an animal (as a fur-bearing mammal or a bird) separated from the body usually with its hair or feathers.",
     "iri": "http://purl.obolibrary.org/obo/BTO_0001253"
+  },
+  "known": {
+    "label": "Known",
+    "definition": "Recognized, familiar, or within the scope of knowledge.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C80137"
   }
 }
