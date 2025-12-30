@@ -2458,5 +2458,10 @@
     "label": "gram positive",
     "definition": "A gram stain phenotype where a cell or cells retain crystal violet stain when decolorized with an organic solvent such as ethanol.",
     "iri": "http://purl.obolibrary.org/obo/OMP_0000188"
+  },
+  "species at the": {
+    "label": "molecular species at pH 7.4 descriptor",
+    "definition": "Molecular Species is a description of the predominant form of the molecule at pH7.4.",
+    "iri": "http://semanticscience.org/resource/CHEMINF_000326"
   }
 }
