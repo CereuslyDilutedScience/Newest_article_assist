@@ -6968,5 +6968,10 @@
     "label": "External",
     "definition": "Happening or arising or located outside or beyond some limits, or especially, some surface.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C44280"
+  },
+  "the common taxonomic": {
+    "label": "The Common Market",
+    "definition": "Nonprofit in United States established in 2008",
+    "iri": "https://ror.org/03j5rfg21"
   }
 }
