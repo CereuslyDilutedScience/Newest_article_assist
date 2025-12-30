@@ -803,5 +803,10 @@
     "label": "USA",
     "definition": "USA is a country that exists in north America.",
     "iri": "http://purl.obolibrary.org/obo/VO_0010633"
+  },
+  "black": {
+    "label": "black",
+    "definition": "A color that lacks any hues as parts.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0000317"
   }
 }
