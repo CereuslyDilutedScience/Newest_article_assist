@@ -2218,5 +2218,10 @@
     "label": "Common",
     "definition": "Widely known or encountered; standard; of no special distinction or quality.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C43461"
+  },
+  "for industrial bsfl": {
+    "label": "Centre for Industrial Technological Development",
+    "definition": "Nonprofit in Spain established in 1977",
+    "iri": "https://ror.org/0124x7055"
   }
 }
