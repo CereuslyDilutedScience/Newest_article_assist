@@ -2043,5 +2043,10 @@
     "label": "role",
     "definition": "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts.",
     "iri": "http://purl.obolibrary.org/obo/BFO_0000023"
+  },
+  "commensal": {
+    "label": "commensal",
+    "definition": "An organism bearing a commensal role.",
+    "iri": "http://purl.obolibrary.org/obo/IDO_0000525"
   }
 }
