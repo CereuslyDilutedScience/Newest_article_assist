@@ -850,5 +850,14 @@
     "label": "Targeting",
     "definition": "The process of directing an agent to a specific anatomic location.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C64542"
+  },
+  "the uvrc gene": null,
+  "the uvrc": null,
+  "uvrc gene of": null,
+  "uvrc gene": null,
+  "uvrc": {
+    "label": "uvrC",
+    "definition": "Probable excinuclease ABC (subunit C-nuclease) UvrC",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000886672"
   }
 }
