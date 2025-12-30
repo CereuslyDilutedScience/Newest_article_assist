@@ -8288,5 +8288,10 @@
     "label": "Min charge",
     "definition": "Minimum charge of precursor to be search",
     "iri": "http://purl.obolibrary.org/obo/PRIDE_0000487"
+  },
+  "a benchtop orbital": {
+    "label": "Orbital margin",
+    "definition": "The mostly sharp edge of the orbital opening that is the peripheral border of the base of the pyramidal orbit.",
+    "iri": "http://purl.obolibrary.org/obo/UBERON_0035849"
   }
 }
