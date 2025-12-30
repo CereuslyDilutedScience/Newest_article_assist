@@ -2123,5 +2123,10 @@
     "label": "to produce",
     "definition": "The function to bring something into existence. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/function#AFFN_0000196"
+  },
+  "900 eggs per": {
+    "label": "eggs per brood",
+    "definition": "An average value that specifies the number of eggs produced during one reproductive cycle for each individual female within a population.",
+    "iri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000453"
   }
 }
