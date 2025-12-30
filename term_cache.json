@@ -3093,5 +3093,10 @@
     "label": "Hyperkalemia while symptomatic",
     "definition": "Increased concentration of potassium in the blood circulation specifically measured during a disease flareup, attack, or exacerbation.",
     "iri": "http://purl.obolibrary.org/obo/HP_6000833"
+  },
+  "of the sampling": {
+    "label": "sampling",
+    "definition": "Sampling is the process of taking parts or partitions of an object aggregate or data set for the interest for studying it. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003634"
   }
 }
