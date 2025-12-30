@@ -7178,5 +7178,10 @@
     "label": "has developmental potential involving",
     "definition": "x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction).",
     "iri": "http://purl.obolibrary.org/obo/RO_0002384"
+  },
+  "uses in large-scale": {
+    "label": "uses method in",
+    "definition": "Example: We follow [X] in using design patterns for testing.",
+    "iri": "http://purl.org/spar/cito/usesMethodIn"
   }
 }
