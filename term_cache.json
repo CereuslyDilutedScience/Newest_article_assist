@@ -2788,5 +2788,10 @@
     "label": "What Year is It Question",
     "definition": "A question asking an individual to state the current year.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C110929"
+  },
+  "to cause sickness": {
+    "label": "to cause disease",
+    "definition": "to cause disease is the capability to materially change a biological object in that it functions abnormally.",
+    "iri": "http://semanticscience.org/resource/SIO_000547"
   }
 }
