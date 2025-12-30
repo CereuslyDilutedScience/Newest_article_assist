@@ -6733,5 +6733,10 @@
     "label": "Give of Such Doses",
     "definition": "An instruction to specify how many doses of a product to administer.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C64660"
+  },
+  "species as": {
+    "label": "species as a collection of organisms",
+    "definition": "A collection of organisms that has as members every organism of given species and no organisms of any other species.",
+    "iri": "http://purl.obolibrary.org/obo/PCO_0000017"
   }
 }
