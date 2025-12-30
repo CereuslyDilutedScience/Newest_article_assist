@@ -657,5 +657,23 @@
     "label": "broth",
     "definition": "",
     "iri": "http://purl.obolibrary.org/obo/FOODON_03309462"
+  },
+  "difco) and cultured": null,
+  "difco) and": null,
+  "and cultured at": null,
+  "and cultured": null,
+  "cultured at 37\u00b0c.": null,
+  "cultured at": null,
+  "cultured": null,
+  "on the third": null,
+  "on the": null,
+  "the third day": null,
+  "the third": null,
+  "third day of": null,
+  "third day": null,
+  "third": {
+    "label": "Third",
+    "definition": "A suffix denoting the third person having the same complete name (first, middle, and family names).",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C49464"
   }
 }
