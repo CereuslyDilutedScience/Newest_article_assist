@@ -778,5 +778,10 @@
     "label": "Repeat",
     "definition": "Make or do or perform again.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C47886"
+  },
+  "analysis": {
+    "label": "analysis",
+    "definition": "A result that is produced from the detailed examination of data to come to some conclusion.",
+    "iri": "http://purl.obolibrary.org/obo/FBcv_0003108"
   }
 }
