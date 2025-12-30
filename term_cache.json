@@ -4708,5 +4708,10 @@
     "label": "Trial Schematic Note",
     "definition": "A brief written record describing the trial schematic.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C218720"
+  },
+  "the difference in": {
+    "label": "difference in differences",
+    "definition": "A statistic that is a subtraction of one difference from another.",
+    "iri": "http://purl.obolibrary.org/obo/STATO_0000665"
   }
 }
