@@ -1197,5 +1197,15 @@
     "label": "sequencing",
     "definition": "Refers to the level of sequencing performed on the nucleic acid. Possible values include 'Not sequenced' (no sequencing has been performed), 'Partly sequenced' (only a portion of the nucleic acid sequence has been determined), and 'Fully sequenced' (the entire nucleic acid sequence has been determined).",
     "iri": "https://w3id.org/evorao/sequencing"
+  },
+  "library. the parameters": null,
+  "library. the": null,
+  "the parameters for": null,
+  "the parameters": null,
+  "parameters for the": null,
+  "parameters for": {
+    "label": "parameters for",
+    "definition": "",
+    "iri": "http://www.biomodels.net/kisao/KISAO#KISAO_0000695"
   }
 }
