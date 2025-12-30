@@ -2423,5 +2423,10 @@
     "label": "creating",
     "definition": "creating is the process in which an entity comes into existence.",
     "iri": "http://semanticscience.org/resource/SIO_000588"
+  },
+  "environment": {
+    "label": "Environment",
+    "definition": "The totality of surrounding conditions.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C16551"
   }
 }
