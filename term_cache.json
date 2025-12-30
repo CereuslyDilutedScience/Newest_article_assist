@@ -6813,5 +6813,10 @@
     "label": "Some Days",
     "definition": "A response indicating that an individual experiences or experienced something on some days.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C131735"
+  },
+  "given the arti\ufb01cial": {
+    "label": "given name",
+    "definition": "A given name is a name that is a part of a person's personal name. [Wikipedia]",
+    "iri": "http://purl.allotrope.org/ontologies/result#AFR_0001062"
   }
 }
