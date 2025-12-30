@@ -2538,5 +2538,10 @@
     "label": "Extreme Environments",
     "definition": "An ENVIRONMENT which falls outside the range of tolerance for the survival of organisms that are not specifically adapted to survive or thrive in it. Examples of such environments are among the hottest and coldest places on earth.",
     "iri": "http://id.nlm.nih.gov/mesh/D000071251"
+  },
+  "skin of": {
+    "label": "skin",
+    "definition": "The organ covering the body that consists of the dermis and epidermis.",
+    "iri": "http://purl.obolibrary.org/obo/UBERON_0002097"
   }
 }
