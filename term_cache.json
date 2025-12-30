@@ -6778,5 +6778,10 @@
     "label": "table",
     "definition": "A table is a placement device with a flat top and one or more legs, providing a level surface for placement. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/equipment#AFE_0002210"
+  },
+  "1). similar numbers": {
+    "label": "similar spectrum",
+    "definition": "A cross reference to another spectrum that has high spectral similarity with this one, usually assumed to originate from the same analyte ion.",
+    "iri": "http://purl.obolibrary.org/obo/MS_1003262"
   }
 }
