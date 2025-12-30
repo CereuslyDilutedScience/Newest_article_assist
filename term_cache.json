@@ -2108,5 +2108,10 @@
     "label": "HELP",
     "definition": "The package contains a modular pipeline for analysis of HELP microarray data, and includes graphical and mathematical tools with more general applications",
     "iri": "http://www.ebi.ac.uk/swo/SWO_0000213"
+  },
+  "answer": {
+    "label": "Answer",
+    "definition": "A statement (either spoken or written) that is made in reply to a question or request or criticism or accusation; a statement that solves a problem or explains how to solve the problem.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C49149"
   }
 }
