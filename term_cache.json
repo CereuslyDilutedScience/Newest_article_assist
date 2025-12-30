@@ -603,5 +603,10 @@
     "label": "Total",
     "definition": "Pertaining to an entirety or whole, also constituting the full quantity or extent; complete; derived by addition.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25304"
+  },
+  "present": {
+    "label": "present",
+    "definition": "A quality inhering in a bearer by virtue of the bearer's existence.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0000467"
   }
 }
