@@ -16898,5 +16898,10 @@
     "label": "The Jackson Laboratory Cancer Center",
     "definition": "The Jackson Laboratory Cancer Center conducts basic research using the mouse as a research tool. Its mission is to discover the genetic basis for preventing, treating, and curing human disease, and to enable broader research in the global biomedical community. This independent, nonprofit organization was designated as an NCI cancer center in 1983.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C39529"
+  },
+  "2002. rearing methods": {
+    "label": "rearing measurement",
+    "definition": "Any measurement of a movement in which a quadrupedal subject rises up on its back legs.",
+    "iri": "http://purl.obolibrary.org/obo/CMO_0001515"
   }
 }
