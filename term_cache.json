@@ -6803,5 +6803,10 @@
     "label": "Consistent",
     "definition": "Marked by a reasonable or logical relation of parts and holding together as a harmonious or credible whole.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C85901"
+  },
+  "with mrsa were": {
+    "label": "mrsA",
+    "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
   }
 }
