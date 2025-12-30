@@ -1593,5 +1593,10 @@
     "label": "Have Some Difficulties Swallowing Fluids Question",
     "definition": "A question about how often an individual has or had some difficulties swallowing fluids.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C136545"
+  },
+  "antimicrobial properties.": {
+    "label": "complex-properties",
+    "definition": "Information on the complex being annotated. Attribute generally associated to an interaction.",
+    "iri": "http://purl.obolibrary.org/obo/MI_0629"
   }
 }
