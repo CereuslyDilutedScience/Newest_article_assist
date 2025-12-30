@@ -3723,5 +3723,10 @@
     "label": "Breast Scattered Fibroglandular Densities",
     "definition": "There are scattered areas of fibroglandular density, as defined by the visually estimated content of fibroglandular-density tissue within the breast, based on updated editions of the American College of Radiology's Breast Imaging Reporting and Data System (BI-RADS).",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C160850"
+  },
+  "to 2 cfu.": {
+    "label": "CFU reduction assay",
+    "definition": "CFU reduction assay is an assay that measures the reduction of the colony forming units of infected pathogens in vaccine-vaccinated animals compared to nonvaccinated animals.",
+    "iri": "http://purl.obolibrary.org/obo/VO_0000242"
   }
 }
