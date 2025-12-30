@@ -4353,5 +4353,10 @@
     "label": "Are",
     "definition": "A unit of area equal to 100 square meters. Are is a non-SI unit accepted for use with SI.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C68869"
+  },
+  "day 3 because": {
+    "label": "day",
+    "definition": "A one-dimensional temporal region which spans the duration an astronomical body completes one rotation on its axis.",
+    "iri": "http://purl.obolibrary.org/obo/ENVO_01003005"
   }
 }
