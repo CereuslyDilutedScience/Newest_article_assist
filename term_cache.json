@@ -999,5 +999,12 @@
     "label": "DNA",
     "definition": "High molecular weight, linear polymers, composed of nucleotides containing deoxyribose and linked by phosphodiester bonds; DNA contain the genetic information of organisms (from CHEBI).",
     "iri": "http://purl.obolibrary.org/obo/FBcv_0000579"
+  },
+  "kit (omega biotech,": null,
+  "kit (omega": null,
+  "kit": {
+    "label": "KIT",
+    "definition": "",
+    "iri": "http://identifiers.org/ensembl/ENSG00000157404"
   }
 }
