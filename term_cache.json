@@ -16138,5 +16138,10 @@
     "label": "extracts of rosemary",
     "definition": "Food additive; technological purpose(s): antioxidant.",
     "iri": "http://purl.obolibrary.org/obo/FOODON_03414392"
+  },
+  "larvae against gram-negative": {
+    "label": "gram negative",
+    "definition": "A gram stain phenotype where a cell or cells do not retain crystal violet stain when decolorized with an organic solvent such as ethanol.",
+    "iri": "http://purl.obolibrary.org/obo/OMP_0000189"
   }
 }
