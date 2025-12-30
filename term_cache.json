@@ -6178,5 +6178,10 @@
     "label": "number of treatments",
     "definition": "Number of treatments tested during an experiment.",
     "iri": "http://purl.obolibrary.org/obo/AGRO_00000323"
+  },
+  "indicating some level": {
+    "label": "indicating",
+    "definition": "Indicating is signaling to make something known to the user about a flow. [NIST]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003488"
   }
 }
