@@ -16208,5 +16208,10 @@
     "label": "number of substrates",
     "definition": "Number of molecules which are acted upon by an enzyme.",
     "iri": "http://biomodels.net/SBO/SBO_0000149"
+  },
+  "for black soldier": {
+    "label": "Institute for Soldier Nanotechnologies",
+    "definition": "Facility in United States established in 2002",
+    "iri": "https://ror.org/01t9bgr30"
   }
 }
