@@ -2223,5 +2223,10 @@
     "label": "Integrity",
     "definition": "The state of being complete or undivided, of being sound or undamaged.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62446"
+  },
+  "materials": {
+    "label": "Materials",
+    "definition": "Material entity supplies, consumables, or chemicals used in the performance of scientific research",
+    "iri": "http://champ-project.org/images/ontology/cao.owl#CAO_000150"
   }
 }
