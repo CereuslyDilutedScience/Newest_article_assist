@@ -2323,5 +2323,10 @@
     "label": "is equivalent to",
     "definition": "Property is a note about a proposed logical expression in order to describe the term as defined class. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/property#AFX_0002794"
+  },
+  "that bsfl rearing": {
+    "label": "rearing measurement",
+    "definition": "Any measurement of a movement in which a quadrupedal subject rises up on its back legs.",
+    "iri": "http://purl.obolibrary.org/obo/CMO_0001515"
   }
 }
