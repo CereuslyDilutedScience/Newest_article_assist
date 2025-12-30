@@ -5228,5 +5228,10 @@
     "label": "diseases of potato",
     "definition": "A plant disease (PSO:0000013) affecting potato (Solanum tuberosum) which results in a disorder in a plant structure (PO:0009011).",
     "iri": "http://purl.obolibrary.org/obo/PSO_0100092"
+  },
+  "substrates inhabited by": {
+    "label": "number of substrates",
+    "definition": "Number of molecules which are acted upon by an enzyme.",
+    "iri": "http://biomodels.net/SBO/SBO_0000149"
   }
 }
