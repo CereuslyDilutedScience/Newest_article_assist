@@ -16678,5 +16678,10 @@
     "label": "lipid storage increased process quality, abnormal",
     "definition": "Abnormal(ly) increased process quality (of) lipid storage.",
     "iri": "http://purl.obolibrary.org/obo/ZP_0017654"
+  },
+  "and composition of": {
+    "label": "composition",
+    "definition": "A single physical entity inhering in an bearer by virtue of the bearer's quantities or relative ratios of subparts. [PATO]",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0000025"
   }
 }
