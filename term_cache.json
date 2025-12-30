@@ -4598,5 +4598,10 @@
     "label": "Diversity",
     "definition": "Variety; quality, state, fact, or instance of being different.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62263"
+  },
+  "expressed by the": {
+    "label": "Hospice By The Bay",
+    "definition": "Nonprofit in United States established in 1975",
+    "iri": "https://ror.org/03wrq2n31"
   }
 }
