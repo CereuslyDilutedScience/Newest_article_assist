@@ -2808,5 +2808,10 @@
     "label": "environmental pets or farm animals information",
     "definition": "An information content entity about presence of pets or farm animals in the environment of subject, if yes the animals should be specified; can include multiple animals present.",
     "iri": "http://purl.obolibrary.org/obo/EUPATH_0000602"
+  },
+  "mastitis in dairy": {
+    "label": "mastitis",
+    "definition": "A breast disease characterized by painful infection of the breast tissue.",
+    "iri": "http://purl.obolibrary.org/obo/DOID_10690"
   }
 }
