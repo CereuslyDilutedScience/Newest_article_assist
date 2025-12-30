@@ -2138,5 +2138,10 @@
     "label": "Can Stand on Tiptoes Question",
     "definition": "A question about whether an individual is able to stand on their tiptoes.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C209985"
+  },
+  "substrates, including food": {
+    "label": "number of substrates",
+    "definition": "Number of molecules which are acted upon by an enzyme.",
+    "iri": "http://biomodels.net/SBO/SBO_0000149"
   }
 }
