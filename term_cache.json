@@ -1538,5 +1538,10 @@
     "label": "Animal and Functionality of Animal Products",
     "definition": "Facility in France",
     "iri": "https://ror.org/02ynmc580"
+  },
+  "plant wastes": {
+    "label": "voiding of nitrogenous wastes",
+    "definition": "During the first day after feeding, deamination of amino acids produces excess nitrogen which is voided in the form of low molecular weight nitrogenous metabolites.",
+    "iri": "http://purl.obolibrary.org/obo/IDOMAL_0002046"
   }
 }
