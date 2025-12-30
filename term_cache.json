@@ -5523,5 +5523,10 @@
     "label": "Strategy",
     "definition": "A plan of action intended to accomplish a specific goal.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C147914"
+  },
+  "treatments not inoculated": {
+    "label": "number of treatments",
+    "definition": "Number of treatments tested during an experiment.",
+    "iri": "http://purl.obolibrary.org/obo/AGRO_00000323"
   }
 }
