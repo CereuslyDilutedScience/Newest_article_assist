@@ -1347,5 +1347,23 @@
     "label": "Insert Size",
     "definition": "The number of nucleotides inserted into a sequencing vector.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C180312"
+  },
+  "bp were prepared": null,
+  "were prepared and": null,
+  "were prepared": null,
+  "prepared and quali\ufb01ed": null,
+  "prepared and": null,
+  "prepared": null,
+  "and quali\ufb01ed following": null,
+  "and quali\ufb01ed": null,
+  "quali\ufb01ed following illumina\u2019s": null,
+  "quali\ufb01ed following": null,
+  "quali\ufb01ed": null,
+  "following illumina\u2019s standard": null,
+  "following illumina\u2019s": null,
+  "following": {
+    "label": "Following",
+    "definition": "",
+    "iri": "http://snomed.info/id/255260001"
   }
 }
