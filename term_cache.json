@@ -2723,5 +2723,10 @@
     "label": "by",
     "definition": "The protein-coding gene by (blistery) located on the chromosome 3R mapped at 85D19-85D22|3-48.7 cM.",
     "iri": "http://identifiers.org/ncbigene/41144"
+  },
+  "to the best": {
+    "label": "Best",
+    "definition": "Having the most positive qualities.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25432"
   }
 }
