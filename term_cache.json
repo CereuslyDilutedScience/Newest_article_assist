@@ -8313,5 +8313,10 @@
     "label": "diluted",
     "definition": "A concentration which is relatively low. [PATO]",
     "iri": "http://purl.obolibrary.org/obo/PATO_0001161"
+  },
+  "onto both tsa": {
+    "label": "TSA cell",
+    "definition": "TSA is an aggressive and poorly immunogenic cell line established from a moderately differentiated mammary adenocarcinoma that arose spontaneously in a multiparous BALB/c mouse.",
+    "iri": "http://purl.obolibrary.org/obo/BTO_0004282"
   }
 }
