@@ -223,5 +223,10 @@
     "label": "Change",
     "definition": "The act of alteration or modification; changed or altered in form or character.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25446"
+  },
+  "organism": {
+    "label": "organism",
+    "definition": "A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs.",
+    "iri": "http://purl.obolibrary.org/obo/OBI_0100026"
   }
 }
