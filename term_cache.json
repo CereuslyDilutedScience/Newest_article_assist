@@ -6963,5 +6963,10 @@
     "label": "Were Itchy Question",
     "definition": "A question about whether an individual feels or felt itchy.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C136347"
+  },
+  "while fungi were": {
+    "label": "Were Itchy Question",
+    "definition": "A question about whether an individual feels or felt itchy.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C136347"
   }
 }
