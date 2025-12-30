@@ -16268,5 +16268,10 @@
     "label": "swine",
     "definition": "Suidae is a family of artiodactyl mammals which are commonly called pigs, hogs or boars.",
     "iri": "http://purl.obolibrary.org/obo/FOODON_03411136"
+  },
+  "farm. front vet": {
+    "label": "vet-2",
+    "definition": "The protein-coding gene vet-2 located on the chromosome I.",
+    "iri": "http://identifiers.org/ncbigene/172993"
   }
 }
