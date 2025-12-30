@@ -2008,5 +2008,10 @@
     "label": "Benefit",
     "definition": "The positive effects of something.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25387"
+  },
+  "mammalian": {
+    "label": "mammalian",
+    "definition": "This includes animal models typically used in drug discovery for toxicity or pharmacology studies, such as mouse, rat (mammals).",
+    "iri": "http://www.bioassayontology.org/bao#BAO_0000362"
   }
 }
