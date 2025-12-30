@@ -73,5 +73,10 @@
     "label": "Bacterium",
     "definition": "The bacterium as a biological material.",
     "iri": "https://w3id.org/evorao/Bacterium"
+  },
+  "zoonotic": {
+    "label": "zoonotic",
+    "definition": "A disease that can be transmitted from animals to people.",
+    "iri": "http://purl.obolibrary.org/obo/IDOMAL_0000023"
   }
 }
