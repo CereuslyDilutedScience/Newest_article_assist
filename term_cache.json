@@ -1418,5 +1418,10 @@
     "label": "investigation",
     "definition": "a planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s).",
     "iri": "http://purl.obolibrary.org/obo/OBI_0000066"
+  },
+  "signi\ufb01cant": {
+    "label": "Significant",
+    "definition": "A term applied to differences, correlations, cause-and-effect relationships, etc., to indicate that they are noticeable, probably too closely correlated to be attributed to chance and therefore indicating a systematic relation: substantial, fairly large; also having consequence or import, important in effect or meaning. In statistics significant ordinarily indicates a probability of not less than 95 percent, while highly significant indicates a probability of not less than 99 percent.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C41130"
   }
 }
