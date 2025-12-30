@@ -15903,5 +15903,10 @@
     "label": "material",
     "definition": "A material entity that occupies space and possesses a rest mass. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/material#AFM_0000275"
+  },
+  "only. supplemental file": {
+    "label": "Supplemental Data File",
+    "definition": "An electronic file containing additional content related to a data submission.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C175247"
   }
 }
