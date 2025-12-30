@@ -3773,5 +3773,10 @@
     "label": "day",
     "definition": "A one-dimensional temporal region which spans the duration an astronomical body completes one rotation on its axis.",
     "iri": "http://purl.obolibrary.org/obo/ENVO_01003005"
+  },
+  "day 7 (df": {
+    "label": "day 7 of adulthood",
+    "definition": "7th day after eclosion.",
+    "iri": "http://purl.obolibrary.org/obo/FBdv_00007082"
   }
 }
