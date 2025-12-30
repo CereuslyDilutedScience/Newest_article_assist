@@ -16813,5 +16813,10 @@
     "label": "matrix",
     "definition": "Those components of a sample that are not measured by an experiment.",
     "iri": "http://purl.obolibrary.org/obo/CHMO_0002743"
+  },
+  "matrix.": {
+    "label": "matrix",
+    "definition": "Those components of a sample that are not measured by an experiment.",
+    "iri": "http://purl.obolibrary.org/obo/CHMO_0002743"
   }
 }
