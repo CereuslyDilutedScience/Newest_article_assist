@@ -16608,5 +16608,10 @@
     "label": "Toll signaling pathway",
     "definition": "The series of molecular signals initiated by an extracellular ligand binding to the receptor Toll on the surface of a target cell, and ending with the regulation of a downstream cellular process, e.g. transcription.",
     "iri": "http://purl.obolibrary.org/obo/GO_0008063"
+  },
+  "zoonotic pathogens through": {
+    "label": "zoonotic",
+    "definition": "A disease that can be transmitted from animals to people.",
+    "iri": "http://purl.obolibrary.org/obo/IDOMAL_0000023"
   }
 }
