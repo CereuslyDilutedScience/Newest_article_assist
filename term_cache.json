@@ -2563,5 +2563,10 @@
     "label": "to cause disease",
     "definition": "to cause disease is the capability to materially change a biological object in that it functions abnormally.",
     "iri": "http://semanticscience.org/resource/SIO_000547"
+  },
+  "among farm animals,": {
+    "label": "environmental pets or farm animals information",
+    "definition": "An information content entity about presence of pets or farm animals in the environment of subject, if yes the animals should be specified; can include multiple animals present.",
+    "iri": "http://purl.obolibrary.org/obo/EUPATH_0000602"
   }
 }
