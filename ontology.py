@@ -7,9 +7,15 @@ import re
 import json
 import os
 
-CACHE_FILE = "term_cache.json"
+CACHE_FILE = "/tmp/term_cache.json"
 
-# Load persistent cache if it exists
+# If /tmp cache doesn't exist yet, initialize it from the repo version
+if not os.path.exists(CACHE_FILE):
+    if os.path.exists("term_cache.json"):
+        with open("term_cache.json", "r") as src, open(CACHE_FILE, "w") as dst:
+            dst.write(src.read())
+
+# Load the cache
 if os.path.exists(CACHE_FILE):
     with open(CACHE_FILE, "r") as f:
         TERM_CACHE = json.load(f)
@@ -99,7 +105,9 @@ def lookup_term_ols4(term):
 
         with open(CACHE_FILE, "w") as f:
             json.dump(TERM_CACHE, f, indent=2)
-
+            
+        commit_cache_to_github()
+        
         return result
     
     except Exception:
@@ -251,3 +259,46 @@ def generate_ngrams(words, max_n=3):
                 phrase = " ".join(words[i:i+n])
                 ngrams.append((i, i+n, phrase))
     return ngrams
+
+#----------------------
+#Token to write terms into file
+#----------------------
+
+import base64
+
+def commit_cache_to_github():
+    import os
+    import requests
+
+    repo_owner = "CereuslyDilutedScience"
+    repo_name = "comprehendase"
+    file_path = "term_cache.json"
+    branch = "main"
+
+    token = os.environ.get("GITHUB_TOKEN")
+    if not token:
+        raise RuntimeError("GITHUB_TOKEN not set")
+
+    # Read updated cache from /tmp
+    with open("/tmp/term_cache.json", "r") as f:
+        content = f.read()
+
+    # GitHub API URL
+    url = f"url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}""
+
+    # Get current file SHA
+    r = requests.get(url, headers={"Authorization": f"token {token}"})
+    r.raise_for_status()
+    sha = r.json()["sha"]
+
+    # Prepare commit payload
+    payload = {
+        "message": "Update ontology cache",
+        "content": base64.b64encode(content.encode()).decode(),
+        "sha": sha,
+        "branch": branch
+    }
+
+    # Commit the file
+    r = requests.put(url, json=payload, headers={"Authorization": f"token {token}"})
+    r.raise_for_status()
