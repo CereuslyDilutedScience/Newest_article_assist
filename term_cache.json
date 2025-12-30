@@ -2553,5 +2553,10 @@
     "label": "it/it pronouns",
     "definition": "A pronoun set composed of it, its, and itself.",
     "iri": "http://purl.obolibrary.org/obo/GSSO_011533"
+  },
+  "is known": {
+    "label": "Known",
+    "definition": "Recognized, familiar, or within the scope of knowledge.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C80137"
   }
 }
