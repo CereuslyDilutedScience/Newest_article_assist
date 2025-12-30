@@ -2451,5 +2451,22 @@
     "label": "agent of",
     "definition": "'agent of' is a relation between a participant and a process, in which the participant is active in the relevant process.",
     "iri": "http://purl.obolibrary.org/obo/TXPO_0001896"
+  },
+  "mastitis, pneumonia, arthritis": null,
+  "mastitis, pneumonia,": null,
+  "mastitis,": null,
+  "pneumonia, arthritis and": null,
+  "pneumonia, arthritis": null,
+  "pneumonia,": null,
+  "arthritis and genital": null,
+  "arthritis and": null,
+  "and genital disorders": null,
+  "and genital": null,
+  "genital disorders in": null,
+  "genital disorders": null,
+  "genital": {
+    "label": "Genital",
+    "definition": "The group of organs and glands involved with having a child. In women, these are the uterus (womb), the fallopian tubes, the ovaries, and the vagina (birth canal). The reproductive system in men includes the testes, the prostate, and the penis.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C13348"
   }
 }
