@@ -3458,5 +3458,10 @@
     "label": "In the Field",
     "definition": "A setting outside the clinic or a comparable health care facility, e.g., a doctor's office, the subject's home or workplace, a school, a public park, or a restaurant.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C102650"
+  },
+  "jars complicated the": {
+    "label": "Complicated",
+    "definition": "Difficult to analyze or understand.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C86059"
   }
 }
