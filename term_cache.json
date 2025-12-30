@@ -6648,5 +6648,10 @@
     "label": "Sequencing Data",
     "definition": "A collection of digital nucleic acid sequences, protein sequences, or other polymer sequences stored on a computer.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C153329"
+  },
+  "than might be": {
+    "label": "TSCYC - Worrying Someone Might Be Sexual",
+    "definition": "Trauma Symptom Checklist for Young Children (TSCYC) Please indicate how often he or she has done, felt, or experienced each of the following things in the last month: Worrying that someone might be sexual with him or her.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C147764"
   }
 }
