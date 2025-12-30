@@ -7028,5 +7028,10 @@
     "label": "Within the Last Year",
     "definition": "An indication that something occurred within the last year.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C205531"
+  },
+  "commensal microbiota could": {
+    "label": "commensal",
+    "definition": "An organism bearing a commensal role.",
+    "iri": "http://purl.obolibrary.org/obo/IDO_0000525"
   }
 }
