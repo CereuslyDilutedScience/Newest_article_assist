@@ -1293,5 +1293,12 @@
     "label": "Illumina HiSeq",
     "definition": "A DNA sequencer manufactured by the Illumina corporation using sequence-by-synthesis chemistry, enabling deep sequencing and high yield.",
     "iri": "http://purl.obolibrary.org/obo/GENEPIO_0100110"
+  },
+  "platform in paired-end": null,
+  "platform in": null,
+  "platform": {
+    "label": "Platform",
+    "definition": "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms.",
+    "iri": "http://www.w3.org/ns/sosa/Platform"
   }
 }
