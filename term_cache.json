@@ -423,5 +423,10 @@
     "label": "library preparation",
     "definition": "is a process which results in the creation of a library from fragments of DNA using cloning vectors or oligonucleotides with the role of adaptors.",
     "iri": "http://purl.obolibrary.org/obo/OBI_0000711"
+  },
+  "library": {
+    "label": "library",
+    "definition": "A curated collection of sources of information and similar resources, selected by experts and made accessible to a defined community for reference or borrowing. It provides physical or digital access to material, and may be a physical location or a virtual space, or both.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_004225"
   }
 }
