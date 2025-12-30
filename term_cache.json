@@ -1235,5 +1235,12 @@
     "label": "read",
     "definition": "A read is a process boundary within a measuring where a data about the measured object is captured. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003805"
+  },
+  "number was 15,425,194,": null,
+  "number was": null,
+  "number": {
+    "label": "number",
+    "definition": "Number types can have min / max limits for validation.  Regular expressions would be used mostly for data entry transformation and display.",
+    "iri": "http://purl.obolibrary.org/obo/GENEPIO_0001919"
   }
 }
