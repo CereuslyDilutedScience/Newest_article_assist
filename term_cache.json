@@ -16713,5 +16713,10 @@
     "label": "caused or contributed to by",
     "definition": "A relationship between a condition (a phenotype or disease) and an entity (a genotype or genetic variation) where the entity has a causal role for the condition.",
     "iri": "http://purl.obolibrary.org/obo/SCDO_0000660"
+  },
+  "glucose. curr microbiol": {
+    "label": "glucose",
+    "definition": "An aldohexose used as a source of energy and metabolic intermediate.",
+    "iri": "http://purl.obolibrary.org/obo/CHEBI_17234"
   }
 }
