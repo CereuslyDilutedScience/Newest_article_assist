@@ -2893,5 +2893,10 @@
     "label": "comment on investigation",
     "definition": "A textual entity that is about any of the aspects of an investigation worth noting",
     "iri": "http://purl.obolibrary.org/obo/OBI_0001898"
+  },
+  "simulated potato waste.": {
+    "label": "simulated population",
+    "definition": "A simulation of a population or populations of organisms of a particular biological taxon that simulates a particular type of event or types of event that occur in a specified time interval.",
+    "iri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000031"
   }
 }
