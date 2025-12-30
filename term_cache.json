@@ -2013,5 +2013,10 @@
     "label": "mammalian",
     "definition": "This includes animal models typically used in drug discovery for toxicity or pharmacology studies, such as mouse, rat (mammals).",
     "iri": "http://www.bioassayontology.org/bao#BAO_0000362"
+  },
+  "likely": {
+    "label": "Likely",
+    "definition": "Having a good chance of being the case or of coming about.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C85550"
   }
 }
