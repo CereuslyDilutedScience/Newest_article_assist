@@ -337,5 +337,14 @@
     "label": "mastitis",
     "definition": "A breast disease characterized by painful infection of the breast tissue.",
     "iri": "http://purl.obolibrary.org/obo/DOID_10690"
+  },
+  "and arthritis in": null,
+  "and arthritis": null,
+  "arthritis in cattle,": null,
+  "arthritis in": null,
+  "arthritis": {
+    "label": "Arthritis",
+    "definition": "Inflammation of a joint.",
+    "iri": "http://purl.obolibrary.org/obo/HP_0001369"
   }
 }
