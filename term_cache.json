@@ -5288,5 +5288,10 @@
     "label": "proportion mapped reads",
     "definition": "A sequence datum that is the specified output of a read mapping and is the ratio of the count of mapped reads to the total count of reads.",
     "iri": "http://purl.obolibrary.org/obo/OBI_0003056"
+  },
+  "(n) shannon-wiener index": {
+    "label": "Shannon diversity index",
+    "definition": "A community species diversity metric that accounts for both the abundance and evenness of the species present quantified via the following formula: the negative sum of, the product of the proportion of species i relative to the total number of species (pi) multiplied by the natural logarithm of this proportion (ln pi).",
+    "iri": "http://purl.obolibrary.org/obo/PCO_0000062"
   }
 }
