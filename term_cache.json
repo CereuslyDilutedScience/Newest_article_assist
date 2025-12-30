@@ -2368,5 +2368,10 @@
     "label": "introduced",
     "definition": "The ecological state of a species living outside its native distributional range, which has arrived there by human activity, either deliberate or accidental.",
     "iri": "http://purl.obolibrary.org/obo/ECOCORE_00000071"
+  },
+  "account": {
+    "label": "account",
+    "definition": "An account describes authority and authorization to access resources on a system. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/result#AFR_0001483"
   }
 }
