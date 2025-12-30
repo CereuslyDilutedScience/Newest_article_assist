@@ -73,6 +73,7 @@ def lookup_term_ols4(term):
 
     key = term.strip().lower()
 
+    # Only return cached entries that actually contain definitions
     if key in TERM_CACHE:
         return TERM_CACHE[key]
 
@@ -91,27 +92,33 @@ def lookup_term_ols4(term):
 
         docs = data.get("response", {}).get("docs", [])
         if not docs:
-            TERM_CACHE[key] = None
+            # Do NOT cache missing terms
             return None
 
         doc = docs[0]
-        result = {
-            "label": doc.get("label"),
-            "definition": (doc.get("description") or [""])[0],
-            "iri": doc.get("iri")
-        }
-        
-        TERM_CACHE[key] = result
+        definition = (doc.get("description") or [""])[0].strip()
 
-        with open(CACHE_FILE, "w") as f:
-            json.dump(TERM_CACHE, f, indent=2)
-            
-        commit_cache_to_github()
-        
-        return result
-    
+        # Only cache if definition is non-empty
+        if definition:
+            result = {
+                "label": doc.get("label"),
+                "definition": definition,
+                "iri": doc.get("iri")
+            }
+
+            TERM_CACHE[key] = result
+
+            with open(CACHE_FILE, "w") as f:
+                json.dump(TERM_CACHE, f, indent=2)
+
+            commit_cache_to_github()
+            return result
+
+        # If definition is empty, do NOT cache
+        return None
+
     except Exception:
-        TERM_CACHE[key] = None
+        # Do NOT cache failures
         return None
 
 
