@@ -2523,5 +2523,10 @@
     "label": "mrsA",
     "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
     "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
+  },
+  "has": {
+    "label": "has characteristic",
+    "definition": "Inverse of characteristic_of",
+    "iri": "http://purl.obolibrary.org/obo/RO_0000053"
   }
 }
