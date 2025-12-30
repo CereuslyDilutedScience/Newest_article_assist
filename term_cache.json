@@ -546,5 +546,19 @@
     "label": "Diseases",
     "definition": "",
     "iri": "http://purl.obolibrary.org/obo/mesh#C"
+  },
+  "in cattle on": null,
+  "in cattle": null,
+  "cattle on a": null,
+  "cattle on": null,
+  "on a farm": null,
+  "a farm in": null,
+  "a farm": null,
+  "farm in henan": null,
+  "farm in": null,
+  "farm": {
+    "label": "farm",
+    "definition": "An area of land which is used for the cultivation of crops or grazing of livestock, including any agricultural constructions therein.",
+    "iri": "http://purl.obolibrary.org/obo/ENVO_00000078"
   }
 }
