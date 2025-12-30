@@ -2503,5 +2503,17 @@
     "label": "Due To",
     "definition": "Caused by or resulting from.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C89272"
+  },
+  "mycoplasma bovis. j": null,
+  "mycoplasma bovis.": null,
+  "bovis. j vet": null,
+  "bovis. j": null,
+  "bovis.": null,
+  "2017. comparative genomics": null,
+  "comparative genomics of": null,
+  "comparative genomics": {
+    "label": "Comparative genomics",
+    "definition": "The study (typically comparison) of the sequence, structure or function of multiple genomes.",
+    "iri": "http://edamontology.org/topic_0797"
   }
 }
