@@ -2213,5 +2213,10 @@
     "label": "Characterization",
     "definition": "The act of describing distinctive characteristics or essential features.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62606"
+  },
+  "participate": {
+    "label": "Participate",
+    "definition": "To take part in an activity.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C203923"
   }
 }
