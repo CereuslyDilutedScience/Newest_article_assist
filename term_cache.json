@@ -6693,5 +6693,10 @@
     "label": "Science for All",
     "definition": "Nonprofit in Australia established in 2018",
     "iri": "https://ror.org/0282y0p95"
+  },
+  "samples, but mrsa-speci\ufb01c": {
+    "label": "mrsA",
+    "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
   }
 }
