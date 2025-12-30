@@ -16908,5 +16908,10 @@
     "label": "Black Women for Wellness",
     "definition": "Nonprofit in United States established in 1997",
     "iri": "https://ror.org/032sbdv65"
+  },
+  "soldier \ufb02y (diptera:": {
+    "label": "soldier",
+    "definition": "A person who fights as part of an army. A soldier can be a conscripted or volunteer enlisted person, a non-commissioned officer, or an officer.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_005823"
   }
 }
