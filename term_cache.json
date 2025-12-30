@@ -1648,5 +1648,10 @@
     "label": "Few",
     "definition": "An indefinite but relatively small number.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C64942"
+  },
+  "depth": {
+    "label": "depth",
+    "definition": "A 1-D extent quality inhering in a bearer by virtue of the bearer's downward or backward or inward dimension.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0001595"
   }
 }
