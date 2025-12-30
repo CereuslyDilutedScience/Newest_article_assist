@@ -6138,5 +6138,10 @@
     "label": "CFU reduction assay",
     "definition": "CFU reduction assay is an assay that measures the reduction of the colony forming units of infected pathogens in vaccine-vaccinated animals compared to nonvaccinated animals.",
     "iri": "http://purl.obolibrary.org/obo/VO_0000242"
+  },
+  "of bsfl, suggesting": {
+    "label": "Voltage Criteria Suggesting Left Ventricular Hypertrophy, Without Secondary ECG Findings",
+    "definition": "An electrocardiographic finding of large QRS amplitudes that may indicate left ventricular hypertrophy, but is without any of the secondary findings that are typically seen with this diagnosis: left atrial enlargement, left axis deviation, or typical pattern of ST depression and T wave inversion.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C130067"
   }
 }
