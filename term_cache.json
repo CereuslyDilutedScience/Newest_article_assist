@@ -1378,5 +1378,10 @@
     "label": "Contaminated",
     "definition": "The presence of any substance or organism that makes a preparation impure.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C68768"
+  },
+  "reference": {
+    "label": "reference",
+    "definition": "A reference is an information content entity that is referred to in another information content entity for the purpose of comparison. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/result#AFR_0002008"
   }
 }
