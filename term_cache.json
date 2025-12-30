@@ -1250,5 +1250,17 @@
     "label": "read length",
     "definition": "A datum of the number of base pairs per read.",
     "iri": "http://purl.obolibrary.org/obo/GENEPIO_0000076"
+  },
+  "2, the sequence": null,
+  "the sequence reads": null,
+  "the sequence": null,
+  "sequence reads totaled": null,
+  "sequence reads": null,
+  "reads totaled 2,313,779,100": null,
+  "reads totaled": null,
+  "reads": {
+    "label": "reads",
+    "definition": "",
+    "iri": "https://w3id.org/mixs/ContamScreenInputEnum#reads"
   }
 }
