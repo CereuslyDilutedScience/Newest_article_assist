@@ -6523,5 +6523,10 @@
     "label": "Observed",
     "definition": "Ascertained or determined through monitoring or observation.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25599"
+  },
+  "2). the high": {
+    "label": "High",
+    "definition": "An elevated level or position or degree; greater than normal in degree or intensity or amount.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25227"
   }
 }
