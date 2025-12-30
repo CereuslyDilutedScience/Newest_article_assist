@@ -2103,5 +2103,10 @@
     "label": "Future",
     "definition": "A time that is yet to come.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C67527"
+  },
+  "help": {
+    "label": "HELP",
+    "definition": "The package contains a modular pipeline for analysis of HELP microarray data, and includes graphical and mathematical tools with more general applications",
+    "iri": "http://www.ebi.ac.uk/swo/SWO_0000213"
   }
 }
