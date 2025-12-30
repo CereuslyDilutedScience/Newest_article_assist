@@ -6893,5 +6893,10 @@
     "label": "Diversity",
     "definition": "Variety; quality, state, fact, or instance of being different.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62263"
+  },
+  "observed": {
+    "label": "Observed",
+    "definition": "Ascertained or determined through monitoring or observation.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25599"
   }
 }
