@@ -618,5 +618,10 @@
     "label": "length",
     "definition": "Length is a quality quantification facet that quantifies the distance between two points in space. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/result#AFR_0001817"
+  },
+  "accession": {
+    "label": "Accession",
+    "definition": "The process of increasing by addition (as to a collection or group).",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C45257"
   }
 }
