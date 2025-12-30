@@ -1798,5 +1798,10 @@
     "label": "Index Value",
     "definition": "A statistic which assigns a single number to several individual statistics in order to quantify trends and evaluate a value or quantity as compared with a standard or a base value.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C67368"
+  },
+  "prior": {
+    "label": "Prior",
+    "definition": "Earlier in time or order.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25629"
   }
 }
