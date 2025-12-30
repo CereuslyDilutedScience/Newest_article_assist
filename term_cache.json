@@ -2363,5 +2363,10 @@
     "label": "being",
     "definition": "The material or immaterial existence of a thing. Anything that exists is being. Anything that partakes in being is also called a \"being\".",
     "iri": "http://purl.obolibrary.org/obo/GSSO_009996"
+  },
+  "introduced": {
+    "label": "introduced",
+    "definition": "The ecological state of a species living outside its native distributional range, which has arrived there by human activity, either deliberate or accidental.",
+    "iri": "http://purl.obolibrary.org/obo/ECOCORE_00000071"
   }
 }
