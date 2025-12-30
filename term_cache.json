@@ -958,5 +958,10 @@
     "label": "method",
     "definition": "The protocol for an assay.",
     "iri": "http://purl.obolibrary.org/obo/ExO_0000090"
+  },
+  "contamination": {
+    "label": "contamination",
+    "definition": "The process of existence without reproduction of a pathogen of a particular biological taxon in or on some material entity or the process of reproduction of a pathogen in or on a material entity that is not an organism.",
+    "iri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000186"
   }
 }
