@@ -508,5 +508,10 @@
     "label": "Long",
     "definition": "A variable that is stored as a signed 64-bit (8-byte) integer.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C48311"
+  },
+  "genome assembly": {
+    "label": "genome assembly",
+    "definition": "The result of reconstruction of the genome achieved by aligning and merging smaller fragments.",
+    "iri": "http://purl.obolibrary.org/obo/FBcv_0003086"
   }
 }
