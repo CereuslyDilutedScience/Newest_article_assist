@@ -16718,5 +16718,10 @@
     "label": "glucose",
     "definition": "An aldohexose used as a source of energy and metabolic intermediate.",
     "iri": "http://purl.obolibrary.org/obo/CHEBI_17234"
+  },
+  "a polyether promoting": {
+    "label": "polyether",
+    "definition": "Any ether that contains more than one ether linkage.",
+    "iri": "http://purl.obolibrary.org/obo/CHEBI_46774"
   }
 }
