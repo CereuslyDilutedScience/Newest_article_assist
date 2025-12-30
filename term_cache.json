@@ -1993,5 +1993,10 @@
     "label": "degradation",
     "definition": "Degradation is the state of changing in the qualities of a material under the influence of one or more environmental factors such as heat, light or chemicals such as acids, alkalies and some salts to a lower level of quality. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003641"
+  },
+  "starch": {
+    "label": "starch",
+    "definition": "The most important reserve polysaccharide found in plants. It is a glucan consisting of amylose and amylopectin.",
+    "iri": "http://purl.obolibrary.org/obo/CHEBI_28017"
   }
 }
