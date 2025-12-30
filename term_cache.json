@@ -16518,5 +16518,10 @@
     "label": "Characterization",
     "definition": "The act of describing distinctive characteristics or essential features.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62606"
+  },
+  "and key amino": {
+    "label": "Key",
+    "definition": "A value used to identify a record in a database.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C46002"
   }
 }
