@@ -1573,5 +1573,10 @@
     "label": "test",
     "definition": "A test can be considered a technical operation or procedure that consists of determination of one or more characteristics of a given product, process or service according to a specified procedure. Often a test is part of an experiment. The test result can be qualitative (yes/no), categorical, or quantitative (a measured value). It can be a personal observation or the output of a precision measuring instrument. [Wikipedia]",
     "iri": "http://purl.allotrope.org/ontologies/process#AFP_0002834"
+  },
+  "microbial community": {
+    "label": "microbial community",
+    "definition": "An ecological community which is composed of co-existing populations of microbial organisms that interact, directly or indirectly, such that they impact one another's ecological fitness.",
+    "iri": "http://purl.obolibrary.org/obo/PCO_1000004"
   }
 }
