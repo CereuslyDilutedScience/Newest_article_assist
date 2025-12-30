@@ -2378,5 +2378,10 @@
     "label": "Any",
     "definition": "One, some, every, or all without specification.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C81168"
+  },
+  "possible": {
+    "label": "Possible",
+    "definition": "Capable of happening or occurring.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C82490"
   }
 }
