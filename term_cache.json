@@ -7593,5 +7593,10 @@
     "label": "CFU reduction assay",
     "definition": "CFU reduction assay is an assay that measures the reduction of the colony forming units of infected pathogens in vaccine-vaccinated animals compared to nonvaccinated animals.",
     "iri": "http://purl.obolibrary.org/obo/VO_0000242"
+  },
+  "this dilution was": {
+    "label": "dilution",
+    "definition": "Dilution is the process of adding a solvent to a solution to lower its concentration. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0000785"
   }
 }
