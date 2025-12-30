@@ -16428,5 +16428,10 @@
     "label": "The Welsh Black Cattle Society",
     "definition": "Nonprofit in United Kingdom established in 1904",
     "iri": "https://ror.org/005smnq10"
+  },
+  "soldier \ufb02y hermetia": {
+    "label": "soldier",
+    "definition": "A person who fights as part of an army. A soldier can be a conscripted or volunteer enlisted person, a non-commissioned officer, or an officer.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_005823"
   }
 }
