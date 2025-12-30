@@ -1953,5 +1953,10 @@
     "label": "Variant Pathogenic/Likely Pathogenic",
     "definition": "An ad hoc category that describes genetic variants with 90% or greater certainty of contributing to the development of a disease.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C168803"
+  },
+  "(including humans). keywords": {
+    "label": "keywords",
+    "definition": "List of terms used to tag and categorize this Item.",
+    "iri": "https://w3id.org/evorao/keywords"
   }
 }
