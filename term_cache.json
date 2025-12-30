@@ -1628,5 +1628,10 @@
     "label": "mrsA",
     "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
     "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
+  },
+  "on potato substrate.": {
+    "label": "biomass yield on substrate",
+    "definition": "generation of biomass for an substrate through a defined reaction/s.",
+    "iri": "http://biomodels.net/SBO/SBO_0000669"
   }
 }
