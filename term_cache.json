@@ -1873,5 +1873,10 @@
     "label": "pig manure",
     "definition": "Manure which is primarily composed of pig feces.",
     "iri": "http://purl.obolibrary.org/obo/ENVO_00003860"
+  },
+  "increased": {
+    "label": "increased",
+    "definition": "The observed feature is increased compared to that in the wild type (faster, stronger, higher, larger, etc.).",
+    "iri": "http://purl.obolibrary.org/obo/APO_0000004"
   }
 }
