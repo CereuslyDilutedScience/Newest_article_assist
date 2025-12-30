@@ -2303,5 +2303,10 @@
     "label": "Use",
     "definition": "To put into action or service.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C95018"
+  },
+  "the accumulation of": {
+    "label": "accumulation of xenobiotics",
+    "definition": "Accumulation of xenobiotics is a subtype of accumulation of substances in a biological object: A process that keeps xenobiotics in an organism, tissue, organelle, or cell.",
+    "iri": "http://purl.obolibrary.org/obo/TXPO_0000169"
   }
 }
