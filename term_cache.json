@@ -2813,5 +2813,10 @@
     "label": "For farmers (United Kingdom)",
     "definition": "Company in United Kingdom established in 1893",
     "iri": "https://ror.org/024g9p727"
+  },
+  "because there are": {
+    "label": "NPI - Talk to People Who Are Not There",
+    "definition": "Neuropsychiatric Inventory (NPI) Does the patient talk to people who are not there?",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C100634"
   }
 }
