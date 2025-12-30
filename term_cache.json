@@ -16868,5 +16868,10 @@
     "label": "function of",
     "definition": "A relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence. [RO]",
     "iri": "http://purl.obolibrary.org/obo/RO_0000079"
+  },
+  "food waste biodegradation": {
+    "label": "food waste",
+    "definition": "A waste material which is primarily composed of uneaten food and removed from the food supply chain.",
+    "iri": "http://purl.obolibrary.org/obo/ENVO_03600006"
   }
 }
