@@ -3428,5 +3428,10 @@
     "label": "counts",
     "definition": "Counts are like ratio scale that they have a zero point but there are no meaningful fractional units. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/result#AFR_0000915"
+  },
+  "samples from three": {
+    "label": "From Position Dimension Three",
+    "definition": "A reference to the third directional coordinate of the entity in the old location.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C164522"
   }
 }
