@@ -16473,5 +16473,10 @@
     "label": "gene of Salmonella",
     "definition": "A gene of an organism of Salmonella",
     "iri": "http://purl.obolibrary.org/obo/OGG_2_590"
+  },
+  "during rearing": {
+    "label": "rearing measurement",
+    "definition": "Any measurement of a movement in which a quadrupedal subject rises up on its back legs.",
+    "iri": "http://purl.obolibrary.org/obo/CMO_0001515"
   }
 }
