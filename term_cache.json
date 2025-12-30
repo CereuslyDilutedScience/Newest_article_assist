@@ -1838,5 +1838,10 @@
     "label": "reservoir",
     "definition": "The reservoir is a container that stores solutions. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/equipment#AFE_0000378"
+  },
+  "issue": {
+    "label": "Issue",
+    "definition": "One of a series of documents that are published periodically.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C43415"
   }
 }
