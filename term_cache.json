@@ -16858,5 +16858,10 @@
     "label": "soldier",
     "definition": "A person who fights as part of an army. A soldier can be a conscripted or volunteer enlisted person, a non-commissioned officer, or an officer.",
     "iri": "http://purl.obolibrary.org/obo/GSSO_005823"
+  },
+  "strengthen the": {
+    "label": "FACIT-Searchable Item Library Adult Version - Illness Strengthen Faith/Spiritual",
+    "definition": "Functional Assessment of Chronic Illness Therapy-Searchable Item Library Adult Version (FACIT-Searchable Item Library Adult Version) My illness has strengthened my faith or spiritual beliefs.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C184177"
   }
 }
