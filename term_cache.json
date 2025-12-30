@@ -1148,5 +1148,10 @@
     "label": "Security",
     "definition": "Services provided to prevent, deter, detect and/or document crime, fire, disorder or violations of company rules.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25669"
+  },
+  "in relation to": {
+    "label": "in relation to",
+    "definition": "in relation to is a comparative relation to indicate that the instance of the class holding the relation exists in relation to another entity.",
+    "iri": "http://semanticscience.org/resource/SIO_000668"
   }
 }
