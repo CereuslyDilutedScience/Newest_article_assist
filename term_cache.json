@@ -2398,5 +2398,10 @@
     "label": "Period",
     "definition": "An interval of time.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25616"
+  },
+  "dry": {
+    "label": "dry",
+    "definition": "A wetness quality inhering in a bearer by virtue of the bearer's not being covered by a liquid.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0001824"
   }
 }
