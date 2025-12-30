@@ -470,5 +470,17 @@
     "label": "well",
     "definition": "A well is a site that is a cavity in a surface open at the top. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/spatial#AFSP_0000009"
+  },
+  "as subsequent survival": null,
+  "as subsequent": null,
+  "subsequent survival and": null,
+  "subsequent survival": null,
+  "subsequent": null,
+  "survival and dissemination": null,
+  "survival and": null,
+  "survival": {
+    "label": "survival",
+    "definition": "",
+    "iri": "http://purl.obolibrary.org/obo/ERO_0001915"
   }
 }
