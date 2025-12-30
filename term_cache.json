@@ -7173,5 +7173,10 @@
     "label": "SPP",
     "definition": "The protein-coding gene SPP located on the chromosome 2.",
     "iri": "http://identifiers.org/ncbigene/814841"
+  },
+  "shown that when": {
+    "label": "When",
+    "definition": "At what time, how soon, in what circumstances?",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C65140"
   }
 }
