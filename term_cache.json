@@ -18,5 +18,10 @@
     "label": "Complete",
     "definition": "To possess every necessary or normal part or component or step; having come or been brought to a conclusion.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25250"
+  },
+  "genome": {
+    "label": "genome",
+    "definition": "A genome is a material entity that represents the entirety of an organism's hereditary information. The genome includes both the genes and the non-coding sequences of the DNA and RNA.",
+    "iri": "http://purl.obolibrary.org/obo/OGG_0000000001"
   }
 }
