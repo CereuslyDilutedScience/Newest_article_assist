@@ -16308,5 +16308,10 @@
     "label": "Characterization",
     "definition": "The act of describing distinctive characteristics or essential features.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62606"
+  },
+  "and outbreak investigation.": {
+    "label": "outbreak investigation",
+    "definition": "A surveillance context in which activities are specifically triggered by the detection of an outbreak",
+    "iri": "http://purl.obolibrary.org/obo/HSO_0000371"
   }
 }
