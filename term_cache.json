@@ -5928,5 +5928,10 @@
     "label": "Prolonged exposure to axillary pressure",
     "definition": "History of prolonged compressive pressure in the axillary region.",
     "iri": "http://purl.obolibrary.org/obo/HP_6001319"
+  },
+  "microbial peptides produced": {
+    "label": "produced by",
+    "definition": "a produced_by b iff some process that occurs_in b has_output a.",
+    "iri": "http://purl.obolibrary.org/obo/RO_0003001"
   }
 }
