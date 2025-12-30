@@ -7638,5 +7638,10 @@
     "label": "Substrate",
     "definition": "Any chemical that can be modified or consumed during a chemical reaction or biological process.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C120264"
+  },
+  "weight (grams) previously": {
+    "label": "sampling weight in grams",
+    "definition": "the weight of a specific collected specimen, in grams",
+    "iri": "http://purl.obolibrary.org/obo/HSO_0000357"
   }
 }
