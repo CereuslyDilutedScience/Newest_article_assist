@@ -16843,5 +16843,10 @@
     "label": "Isolation",
     "definition": "A state of separation; the act of isolating something; setting something apart from others; marked by separation of or from usually contiguous elements.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25549"
+  },
+  "from black soldier": {
+    "label": "soldier",
+    "definition": "A person who fights as part of an army. A soldier can be a conscripted or volunteer enlisted person, a non-commissioned officer, or an officer.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_005823"
   }
 }
