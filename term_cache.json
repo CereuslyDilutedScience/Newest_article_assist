@@ -458,5 +458,17 @@
     "label": "host",
     "definition": "An organism bearing a host role.",
     "iri": "http://purl.obolibrary.org/obo/IDO_0000531"
+  },
+  "cells, as well": null,
+  "cells, as": null,
+  "cells,": null,
+  "as well as": null,
+  "as well": null,
+  "well as subsequent": null,
+  "well as": null,
+  "well": {
+    "label": "well",
+    "definition": "A well is a site that is a cavity in a surface open at the top. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/spatial#AFSP_0000009"
   }
 }
