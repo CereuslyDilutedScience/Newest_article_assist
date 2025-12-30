@@ -2618,5 +2618,21 @@
     "label": "Tandem repeat",
     "definition": "Two or more adjacent copies of a region (of length greater than 1).",
     "iri": "http://ensembl.org/glossary/ENSGLOSSARY_0000119"
+  },
+  "analysis. bmc vet": null,
+  "analysis. bmc": null,
+  "analysis.": null,
+  "bmc vet res": null,
+  "bmc vet": null,
+  "bmc": null,
+  "1998. species identi\ufb01cation": null,
+  "species identi\ufb01cation of": null,
+  "species identi\ufb01cation": null,
+  "identi\ufb01cation of mycoplasma": null,
+  "identi\ufb01cation of": null,
+  "identi\ufb01cation": {
+    "label": "Identification",
+    "definition": "A taxonomic determination (e.g., the assignment to a taxon).",
+    "iri": "http://rs.tdwg.org/dwc/terms/Identification"
   }
 }
