@@ -16173,5 +16173,10 @@
     "label": "Change the Equation",
     "definition": "Nonprofit in United States established in 2010",
     "iri": "https://ror.org/039sz0x75"
+  },
+  "chicken manure. curr": {
+    "label": "chicken manure",
+    "definition": "Poultry manure made of chicken feces.",
+    "iri": "http://purl.obolibrary.org/obo/ENVO_03501252"
   }
 }
