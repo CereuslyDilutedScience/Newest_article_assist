@@ -1598,5 +1598,10 @@
     "label": "Make",
     "definition": "Form from constituents.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C64661"
+  },
+  "proportion": {
+    "label": "Proportion",
+    "definition": "A part, fraction, share, or number considered in relation to the whole amount or number.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C49159"
   }
 }
