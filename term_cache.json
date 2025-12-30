@@ -16223,5 +16223,10 @@
     "label": "rearing measurement",
     "definition": "Any measurement of a movement in which a quadrupedal subject rises up on its back legs.",
     "iri": "http://purl.obolibrary.org/obo/CMO_0001515"
+  },
+  "2014. penicillin-binding protein": {
+    "label": "penicillin binding",
+    "definition": "Binding to penicillin, an antibiotic that contains the condensed beta-lactamthiazolidine ring system.",
+    "iri": "http://purl.obolibrary.org/obo/GO_0008658"
   }
 }
