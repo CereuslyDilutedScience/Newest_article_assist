@@ -2503,5 +2503,10 @@
     "label": "sterile water",
     "definition": "Sterile water is water which does not contain lliving organisms.",
     "iri": "http://purl.obolibrary.org/obo/ENVO_00005791"
+  },
+  "gently": {
+    "label": "Gently",
+    "definition": "In a manner that is soft and mild, having little impact.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C64653"
   }
 }
