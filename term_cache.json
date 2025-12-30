@@ -6018,5 +6018,10 @@
     "label": "starch",
     "definition": "The most important reserve polysaccharide found in plants. It is a glucan consisting of amylose and amylopectin.",
     "iri": "http://purl.obolibrary.org/obo/CHEBI_28017"
+  },
+  "is expected": {
+    "label": "Expected",
+    "definition": "Considered likely or probable; anticipated.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25501"
   }
 }
