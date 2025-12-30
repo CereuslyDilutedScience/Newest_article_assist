@@ -6503,5 +6503,10 @@
     "label": "midgut",
     "definition": "Middle subdivision of a digestive tract[CJM]. In vertebrates: The middle part of the alimentary canal from the stomach, or entrance of the bile duct, to, or including, the large intestine[GO].",
     "iri": "http://purl.obolibrary.org/obo/UBERON_0001045"
+  },
+  "regions or prolonged": {
+    "label": "Therapy Delayed or Prolonged",
+    "definition": "An indication that a therapy was either delayed or prolonged.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C50425"
   }
 }
