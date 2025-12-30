@@ -16878,5 +16878,10 @@
     "label": "gut microbiome measurement",
     "definition": "quantification of some aspect of an individual's micrbiome of the gut",
     "iri": "http://www.ebi.ac.uk/efo/EFO_0007874"
+  },
+  "1992. new diets": {
+    "label": "Elimination Diets",
+    "definition": "Temporary dietary restrictions designed to help identify specific foods or FOOD ADDITIVES that trigger ALLERGIC REACTIONS, symptoms of DIGESTIVE SYSTEM DISORDERS, or other adverse food reactions.",
+    "iri": "http://id.nlm.nih.gov/mesh/D000092724"
   }
 }
