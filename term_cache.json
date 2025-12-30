@@ -3188,5 +3188,10 @@
     "label": "Michaelis constant for substrate",
     "definition": "Synonym: Kms",
     "iri": "http://biomodels.net/SBO/SBO_0000322"
+  },
+  "growth and": {
+    "label": "metabolism and growth",
+    "definition": "Processes relating to metabolism and growth.",
+    "iri": "http://purl.obolibrary.org/obo/APO_0000094"
   }
 }
