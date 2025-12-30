@@ -8038,5 +8038,10 @@
     "label": "Worry that Breast Cancer Recurrence Would Require Chemotherapy Question",
     "definition": "A question about whether an individual worries that recurrence of their breast cancer would require chemotherapy.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C172892"
+  },
+  "not represent in": {
+    "label": "Not in Person",
+    "definition": "Not involving or requiring an individual's personal presence.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C175575"
   }
 }
