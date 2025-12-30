@@ -1863,5 +1863,10 @@
     "label": "collection of larvae",
     "definition": "Any method designed to collect (and later examine) live larvae from a field population.",
     "iri": "http://purl.obolibrary.org/obo/MIRO_30000022"
+  },
+  "black soldier \ufb02ies,": {
+    "label": "soldier",
+    "definition": "A person who fights as part of an army. A soldier can be a conscripted or volunteer enlisted person, a non-commissioned officer, or an officer.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_005823"
   }
 }
