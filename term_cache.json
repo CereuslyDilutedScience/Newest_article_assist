@@ -98,5 +98,10 @@
     "label": "pneumonia",
     "definition": "A lung disease that involves lung parenchyma or alveolar inflammation and abnormal alveolar filling with fluid (consolidation and exudation). It results from a variety of causes including infection with bacteria, viruses, fungi or parasites, and chemical or physical injury to the lungs. It is accompanied by fever, chills, cough, and difficulty in breathing.",
     "iri": "http://purl.obolibrary.org/obo/DOID_552"
+  },
+  "otitis media": {
+    "label": "otitis media",
+    "definition": "A otitis which involves inflammation of the middle ear.",
+    "iri": "http://purl.obolibrary.org/obo/DOID_10754"
   }
 }
