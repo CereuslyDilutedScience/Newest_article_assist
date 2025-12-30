@@ -7278,5 +7278,10 @@
     "label": "digestive system",
     "definition": "Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes.",
     "iri": "http://purl.obolibrary.org/obo/UBERON_0001007"
+  },
+  "enzymes, antimicrobial peptides,": {
+    "label": "Antimicrobial Peptides",
+    "definition": "Small peptides that play an important role in early innate and induced defenses against invading microbes. Most have positive overall charges and are referred to as cationic antimicrobial peptides.",
+    "iri": "http://id.nlm.nih.gov/mesh/D000089882"
   }
 }
