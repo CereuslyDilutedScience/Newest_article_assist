@@ -2493,5 +2493,10 @@
     "label": "methicillin",
     "definition": "A penicillin that is 6-aminopenicillanic acid in which one of the amino hydrogens is replaced by a 2,6-dimethoxybenzoyl group.",
     "iri": "http://purl.obolibrary.org/obo/CHEBI_6827"
+  },
+  "(14). while mrsa": {
+    "label": "mrsA",
+    "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
   }
 }
