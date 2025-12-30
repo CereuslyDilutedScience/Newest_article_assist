@@ -2003,5 +2003,10 @@
     "label": "Expected",
     "definition": "Considered likely or probable; anticipated.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25501"
+  },
+  "bene\ufb01t": {
+    "label": "Benefit",
+    "definition": "The positive effects of something.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25387"
   }
 }
