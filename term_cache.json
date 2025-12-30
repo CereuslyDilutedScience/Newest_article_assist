@@ -5308,5 +5308,10 @@
     "label": "number of reads passing filter",
     "definition": "Raw data are filtered to remove any reads that do not meet the overall quality as measured by a chastity filter. The chastity of a base call is calculated as the ratio of the brightest intensity divided by the sum of the brightest and second brightest intensities.\nClusters passing filter are represented by PF in analysis reports. Clusters pass filter if no more than one base call in the first 25 cycles has a chastity of < 0.6.",
     "iri": "http://purl.obolibrary.org/obo/GENEPIO_0000087"
+  },
+  "assigned to an": {
+    "label": "Subject Not Assigned to Arm",
+    "definition": "The subject, who met eligibility criteria, was not assigned to an arm and was not treated.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C142239"
   }
 }
