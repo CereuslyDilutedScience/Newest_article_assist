@@ -3848,5 +3848,10 @@
     "label": "Technology",
     "definition": "Technology is the discipline dealing with the art or science of applying scientific knowledge to practical problems.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C17187"
+  },
+  "25 unique bacterial": {
+    "label": "Unique",
+    "definition": "The single one of its kind.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C45282"
   }
 }
