@@ -2658,5 +2658,10 @@
     "label": "Infections",
     "definition": "Invasion of the host organism by microorganisms or their toxins or by parasites that can cause pathological conditions or diseases.",
     "iri": "http://id.nlm.nih.gov/mesh/D007239"
+  },
+  "can survive": {
+    "label": "can",
+    "definition": "carbonic anhydrase",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000944832"
   }
 }
