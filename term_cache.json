@@ -6113,5 +6113,10 @@
     "label": "May",
     "definition": "The fifth month of the year in the Gregorian calendar.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C106184"
+  },
+  "contribute to the": {
+    "label": "has potential to developmentally contribute to",
+    "definition": "x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y",
+    "iri": "http://purl.obolibrary.org/obo/RO_0002385"
   }
 }
