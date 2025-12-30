@@ -16313,5 +16313,10 @@
     "label": "outbreak investigation",
     "definition": "A surveillance context in which activities are specifically triggered by the detection of an outbreak",
     "iri": "http://purl.obolibrary.org/obo/HSO_0000371"
+  },
+  "fems microbiol rev": {
+    "label": "rev",
+    "definition": "p19",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000155908"
   }
 }
