@@ -4213,5 +4213,10 @@
     "label": "Possible",
     "definition": "Capable of happening or occurring.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C82490"
+  },
+  "day 7, there": {
+    "label": "day 7 of adulthood",
+    "definition": "7th day after eclosion.",
+    "iri": "http://purl.obolibrary.org/obo/FBdv_00007082"
   }
 }
