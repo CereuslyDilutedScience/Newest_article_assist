@@ -8338,5 +8338,10 @@
     "label": "total time FFPE freshly poured blocks were cooled",
     "definition": "A time measurement datum that is the result of measuring the total time that freshly poured blocks were cooled in the formalin-fixed paraffin-embedded (FFPE) process.",
     "iri": "http://purl.obolibrary.org/obo/OBIB_0000313"
+  },
+  "collected from tsa": {
+    "label": "TSA from Leishmania major",
+    "definition": "Researchers evaluated the potency of different DNA vaccine candidates in BALB/c mice using high dose footpad parasite challenge with L. major.  Mice inoculated pCMV3ISS-TSA developed significantly smaller lesions in their footpads after challenge with the parasite.  The vaccine was able to induce a partially protective effect [PubMed: 18951941].",
+    "iri": "http://purl.obolibrary.org/obo/VO_0011273"
   }
 }
