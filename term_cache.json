@@ -435,5 +435,14 @@
     "label": "Bacterial Adhesion",
     "definition": "",
     "iri": "http://purl.obolibrary.org/obo/OMIT_0002798"
+  },
+  "and invasion into": null,
+  "and invasion": null,
+  "invasion into host": null,
+  "invasion into": null,
+  "invasion": {
+    "label": "Invasion",
+    "definition": "The movement of one cell type into an area normally occupied by a different cell type.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C75004"
   }
 }
