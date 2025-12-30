@@ -1968,5 +1968,10 @@
     "label": "composed of",
     "definition": "The property specifies of which kind of general portion of material something is built of. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/property#AFX_0000940"
+  },
+  "contained in": {
+    "label": "contained in",
+    "definition": "Inverse of contains. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/property#AFX_0001049"
   }
 }
