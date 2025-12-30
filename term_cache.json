@@ -703,5 +703,10 @@
     "label": "Due To",
     "definition": "Caused by or resulting from.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C89272"
+  },
+  "due": {
+    "label": "Due",
+    "definition": "Expected or scheduled.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C45263"
   }
 }
