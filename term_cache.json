@@ -2423,5 +2423,10 @@
     "label": "Label as Such",
     "definition": "An instruction for product to be labeled as explicitly directed.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C64662"
+  },
+  "coli": {
+    "label": "Taenia coli",
+    "definition": "The taeniae coli (also teniae coli) are three separate longitudinal ribbons of smooth muscle on the outside of the ascending, transverse, descending and sigmoid colons. They are visible, and can be seen just below the serosa or fibrosa. They are the Mesocolic, Free and Omental Coli. The teniae coli contracts length wise to produce the haustra, the bulges in the colon. The bands converge at the root of the vermiform appendix and the rectum. These bands correspond to the outer layer of the muscularis externa, in other portions of the digestive tract.",
+    "iri": "http://purl.obolibrary.org/obo/UBERON_0012419"
   }
 }
