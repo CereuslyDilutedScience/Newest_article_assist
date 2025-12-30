@@ -6748,5 +6748,10 @@
     "label": "table",
     "definition": "A table is a placement device with a flat top and one or more legs, providing a level surface for placement. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/equipment#AFE_0002210"
+  },
+  "3), we might": {
+    "label": "we",
+    "definition": "A second- or third-person pronoun for a person in the speaker's care.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_002476"
   }
 }
