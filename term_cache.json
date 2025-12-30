@@ -2698,5 +2698,10 @@
     "label": "Reduction in Life Expectancy",
     "definition": "Decrease in lifetime/ lifespan of an individual. Decline in the normal duration or in average life.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C172027"
+  },
+  "the populations of": {
+    "label": "The Institute for Bird Populations",
+    "definition": "Nonprofit in United States established in 1989",
+    "iri": "https://ror.org/010tqdr51"
   }
 }
