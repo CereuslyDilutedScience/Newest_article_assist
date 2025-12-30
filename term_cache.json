@@ -2088,5 +2088,10 @@
     "label": "Spectrum Clinical Research (India)",
     "definition": "Company in India established in 2006",
     "iri": "https://ror.org/00s8enb31"
+  },
+  "illucens [bsf]), particularly": {
+    "label": "bsf",
+    "definition": "The protein-coding gene bsf (bicoid stability factor) located on the chromosome 2L mapped at 36F5-36F5.",
+    "iri": "http://identifiers.org/ncbigene/35100"
   }
 }
