@@ -6273,5 +6273,10 @@
     "label": "gram positive",
     "definition": "A gram stain phenotype where a cell or cells retain crystal violet stain when decolorized with an organic solvent such as ethanol.",
     "iri": "http://purl.obolibrary.org/obo/OMP_0000188"
+  },
+  "been hypothesized to": {
+    "label": "Have Been Able to Remember to do Things Question",
+    "definition": "A question about whether an individual has or had been able to remember to do things, like take medicine or buy something they need.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C118751"
   }
 }
