@@ -293,5 +293,10 @@
     "label": "Culture",
     "definition": "A pattern of learned beliefs, values, and behavior that are shared within a group. It includes language, styles of communication, practices, customs, and views on roles and relationships.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C16478"
+  },
+  "cell": {
+    "label": "cell",
+    "definition": "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane.",
+    "iri": "http://purl.obolibrary.org/obo/CL_0000000"
   }
 }
