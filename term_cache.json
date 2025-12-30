@@ -1813,5 +1813,10 @@
     "label": "number of treatments",
     "definition": "Number of treatments tested during an experiment.",
     "iri": "http://purl.obolibrary.org/obo/AGRO_00000323"
+  },
+  "days, but": {
+    "label": "Some Days",
+    "definition": "A response indicating that an individual experiences or experienced something on some days.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C131735"
   }
 }
