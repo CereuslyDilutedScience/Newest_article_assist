@@ -6648,5 +6648,10 @@
     "label": "during which exists",
     "definition": "inverse of exists at [BFO]",
     "iri": "http://purl.obolibrary.org/obo/BFO_0000157"
+  },
+  "communities in this": {
+    "label": "Communities in School",
+    "definition": "Nonprofit in United States established in 1970",
+    "iri": "https://ror.org/02m5ztg20"
   }
 }
