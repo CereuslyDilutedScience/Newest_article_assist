@@ -6838,5 +6838,10 @@
     "label": "Less Productive Than Could Be Question",
     "definition": "A question about whether an individual is or was less productive than they could be.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C175964"
+  },
+  "expected that bacterial": {
+    "label": "Expected",
+    "definition": "Considered likely or probable; anticipated.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25501"
   }
 }
