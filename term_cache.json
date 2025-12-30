@@ -7713,5 +7713,10 @@
     "label": "Quantity Final Containers Returned",
     "definition": "Quantity of final containers returned.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C106328"
+  },
+  "were fed unsterilized": {
+    "label": "crayfish preparation (unsterilized)",
+    "definition": "SIREN DB annotation:\n* skeletal meat part FOODON:03420175",
+    "iri": "http://purl.obolibrary.org/obo/FOODON_03316326"
   }
 }
