@@ -2678,5 +2678,10 @@
     "label": "necessary (continuant)",
     "definition": "A necessity quality (continuant) inhering in a bearer by virtue of the bearer's being essential or indispensable.",
     "iri": "http://purl.obolibrary.org/obo/PATO_0001635"
+  },
+  "elderly, immunocompromised, or": {
+    "label": "Immunocompromised",
+    "definition": "A loss of any arm of immune functions, resulting in potential or actual increase in infections. This state may be reached secondary to specific genetic lesions, syndromes with unidentified or polygenic causes, acquired deficits from other disease states, or as result of therapy for other diseases or conditions.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C14139"
   }
 }
