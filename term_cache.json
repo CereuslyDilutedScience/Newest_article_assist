@@ -3578,5 +3578,10 @@
     "label": "interaction",
     "definition": "Previously described interaction now being used as an interactor to describe hierarchical build-up of complexes.",
     "iri": "http://purl.obolibrary.org/obo/MI_0317"
+  },
+  "overall treatment effect": {
+    "label": "Treatment Effect",
+    "definition": "Any intended or unintended effect of the intervention on the body or disease.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C209469"
   }
 }
