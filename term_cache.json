@@ -1688,5 +1688,10 @@
     "label": "Past",
     "definition": "Before the present time.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25609"
+  },
+  "against": {
+    "label": "Against",
+    "definition": "In opposition to or in competition with someone or something.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C64937"
   }
 }
