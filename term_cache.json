@@ -2973,5 +2973,10 @@
     "label": "The Japan-Multinational Trial Organization",
     "definition": "Nonprofit in Japan established in 1999",
     "iri": "https://ror.org/0528hwm66"
+  },
+  "(tukey\u2019s test, t": {
+    "label": "t-test",
+    "definition": "The t-test is a process of quantifying the closeness of two sets of data points. It is defined as the ratio of the difference between the means of the two sets divided by the standard error of the difference. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0002693"
   }
 }
