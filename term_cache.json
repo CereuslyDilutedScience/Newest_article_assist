@@ -2288,5 +2288,10 @@
     "label": "dilution",
     "definition": "Dilution is the process of adding a solvent to a solution to lower its concentration. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/process#AFP_0000785"
+  },
+  "appropriate treatment": {
+    "label": "Appropriate Treatment",
+    "definition": "Correct activity that produces an effect, or that is intended to alter the course of a disease in a patient or population. This is a general term that encompasses the medical, social, behavioral, and environmental acts that can have preventive, therapeutic, or palliative effects. (ACC)",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C101247"
   }
 }
