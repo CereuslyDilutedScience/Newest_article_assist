@@ -7633,5 +7633,10 @@
     "label": "volume",
     "definition": "A volume datum is a quality quantification facet that quantifies some amount of 3-dimensional space an entity occupies. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/result#AFR_0001843"
+  },
+  "ml) per substrate": {
+    "label": "Substrate",
+    "definition": "Any chemical that can be modified or consumed during a chemical reaction or biological process.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C120264"
   }
 }
