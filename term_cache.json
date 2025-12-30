@@ -3088,5 +3088,10 @@
     "label": "realized in response to",
     "definition": "r 'realized in response to' s iff, r is a realizable (e.g. a plant trait such as responsivity to drought), s is an environmental stimulus (a process), and s directly causes the realization of r.",
     "iri": "http://purl.obolibrary.org/obo/RO_0009501"
+  },
+  "to the presence": {
+    "label": "Pet Responds to Presence Question",
+    "definition": "A question about whether an individual's pet responds to their presence.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C167391"
   }
 }
