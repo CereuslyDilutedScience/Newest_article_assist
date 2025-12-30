@@ -3508,5 +3508,10 @@
     "label": "material to be added",
     "definition": "a material that is added to another one in a material combination process",
     "iri": "http://purl.obolibrary.org/obo/OBI_1110108"
+  },
+  "the p1bsfl treatment.": {
+    "label": "The Cancer Treatment Center",
+    "definition": "Healthcare in United States established in 1986",
+    "iri": "https://ror.org/05waabg59"
   }
 }
