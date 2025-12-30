@@ -16903,5 +16903,10 @@
     "label": "rearing measurement",
     "definition": "Any measurement of a movement in which a quadrupedal subject rises up on its back legs.",
     "iri": "http://purl.obolibrary.org/obo/CMO_0001515"
+  },
+  "for the black": {
+    "label": "Black Women for Wellness",
+    "definition": "Nonprofit in United States established in 1997",
+    "iri": "https://ror.org/032sbdv65"
   }
 }
