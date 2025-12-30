@@ -2238,5 +2238,10 @@
     "label": "lid",
     "definition": "The protein-coding gene lid (little imaginal discs) located on the chromosome 2L mapped at 26B2-26B2.",
     "iri": "http://identifiers.org/ncbigene/33837"
+  },
+  "autoclaving": {
+    "label": "autoclaving",
+    "definition": "A material processing step that involves heating apparatus in an autoclave.",
+    "iri": "http://purl.obolibrary.org/obo/CHMO_0002846"
   }
 }
