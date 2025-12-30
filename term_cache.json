@@ -818,5 +818,10 @@
     "label": "Biological",
     "definition": "Pertaining to biology or to life and living things.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C28226"
+  },
+  "conversion": {
+    "label": "Conversion",
+    "definition": "PEFF keyword for the description of the conversion from original format to this current one.",
+    "iri": "http://purl.obolibrary.org/obo/PEFF_0000016"
   }
 }
