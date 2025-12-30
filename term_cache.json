@@ -2283,5 +2283,10 @@
     "label": "optical density",
     "definition": "A physical quality that inheres in a bearer by virtue of the amount of light that the bearer of the quality is able to transmit",
     "iri": "http://purl.obolibrary.org/obo/MCO_0000077"
+  },
+  "dilution": {
+    "label": "dilution",
+    "definition": "Dilution is the process of adding a solvent to a solution to lower its concentration. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0000785"
   }
 }
