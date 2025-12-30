@@ -16538,5 +16538,10 @@
     "label": "Characterization",
     "definition": "The act of describing distinctive characteristics or essential features.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62606"
+  },
+  "of a novel": {
+    "label": "novel",
+    "definition": "An attribute of a genomic feature that represents a feature not previously found in a given genome, e.g. an extrachromosomal replicon or aneusomic third copy of a chromosome.",
+    "iri": "http://purl.obolibrary.org/obo/GENO_0000685"
   }
 }
