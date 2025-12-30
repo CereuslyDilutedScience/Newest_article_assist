@@ -5818,5 +5818,10 @@
     "label": "Female-Specific Cancer Risk Can Be Passed from Either Parent Question",
     "definition": "A question about whether an individual agrees that female-specific cancer risk, such as ovarian cancer, can generally be passed on from either the father or mother.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C213607"
+  },
+  "competitive inhibition with": {
+    "label": "competitive inhibition",
+    "definition": "A competitive inhibitor binds only to free enzyme. Often this binding event occurs on the active site of the target, precisely where substrate also binds. It will raise the apparent KM value for its substrate with no change in the apparent Vmax value. As a result, competitive inhibition can be overcome, observed by an increase in the apparent KI value, at higher concentrations of substrate.",
+    "iri": "http://www.bioassayontology.org/bao#BAO_0000482"
   }
 }
