@@ -5848,5 +5848,10 @@
     "label": "complex-properties",
     "definition": "Information on the complex being annotated. Attribute generally associated to an interaction.",
     "iri": "http://purl.obolibrary.org/obo/MI_0629"
+  },
+  "and their accompanying": {
+    "label": "accompanying artery",
+    "definition": "The first cardiac artery which accompanies the anterior aorta into the cephalothoracic region.",
+    "iri": "http://purl.obolibrary.org/obo/OARCS_0000065"
   }
 }
