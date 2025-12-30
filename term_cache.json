@@ -149,5 +149,16 @@
     "label": "Calf",
     "definition": "The posterior aspect of the lower extremity that extends from the knee to the foot.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C93027"
+  },
+  "china, in": null,
+  "2019. the genome": null,
+  "the genome of": null,
+  "the genome": null,
+  "genome of xby01": null,
+  "genome of": null,
+  "genome": {
+    "label": "genome",
+    "definition": "A genome is a material entity that represents the entirety of an organism's hereditary information. The genome includes both the genes and the non-coding sequences of the DNA and RNA.",
+    "iri": "http://purl.obolibrary.org/obo/OGG_0000000001"
   }
 }
