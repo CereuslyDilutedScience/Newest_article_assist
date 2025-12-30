@@ -7658,5 +7658,10 @@
     "label": "Total Number of Study Animals Purchased",
     "definition": "The absolute count of all animals bought for an intended purpose within a study.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C130198"
+  },
+  "symton bsf company": {
+    "label": "bsf",
+    "definition": "The protein-coding gene bsf (bicoid stability factor) located on the chromosome 2L mapped at 36F5-36F5.",
+    "iri": "http://identifiers.org/ncbigene/35100"
   }
 }
