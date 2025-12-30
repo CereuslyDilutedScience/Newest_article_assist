@@ -838,5 +838,10 @@
     "label": "ingredients",
     "definition": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
     "iri": "http://schema.org/ingredients"
+  },
+  "may": {
+    "label": "May",
+    "definition": "The fifth month of the year in the Gregorian calendar.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C106184"
   }
 }
