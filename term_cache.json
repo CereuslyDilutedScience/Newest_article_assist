@@ -2583,5 +2583,10 @@
     "label": "one of condition",
     "definition": "A one of condition is a collection of conditions that is valid if exactly one of its condition items is valid. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/common#AFC_0000093"
+  },
+  "the most prevalent": {
+    "label": "Prevalent",
+    "definition": "Widespread, especially in a particular area or at a particular time.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C159688"
   }
 }
