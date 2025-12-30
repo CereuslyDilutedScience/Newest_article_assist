@@ -3383,5 +3383,10 @@
     "label": "Age at First Treatment",
     "definition": "The age at which the first treatment event occurred.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C124440"
+  },
+  "the same time,": {
+    "label": "Stayed the Same",
+    "definition": "A subjective response indicating that something is unchanged.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C125460"
   }
 }
