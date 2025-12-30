@@ -273,5 +273,10 @@
     "label": "uvrC",
     "definition": "Probable excinuclease ABC (subunit C-nuclease) UvrC",
     "iri": "http://purl.obolibrary.org/obo/OGG_3000886672"
+  },
+  "gene": {
+    "label": "gene",
+    "definition": "A gene is a material entity that represents the entire DNA sequence required for synthesis of a functional protein or RNA molecule.",
+    "iri": "http://purl.obolibrary.org/obo/OGG_0000000002"
   }
 }
