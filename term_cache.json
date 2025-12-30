@@ -8113,5 +8113,10 @@
     "label": "Treatment Group",
     "definition": "A study population that receives an intervention(s) within a trial. This could include the investigational product(s) or a comparator (e.g., placebo or an approved intervention).",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C161322"
+  },
+  "were added, each": {
+    "label": "Added",
+    "definition": "Combined or joined to increase in size or quantity or scope.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C45330"
   }
 }
