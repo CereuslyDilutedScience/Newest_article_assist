@@ -16438,5 +16438,10 @@
     "label": "soldier",
     "definition": "A person who fights as part of an army. A soldier can be a conscripted or volunteer enlisted person, a non-commissioned officer, or an officer.",
     "iri": "http://purl.obolibrary.org/obo/GSSO_005823"
+  },
+  "reduce escherichia": {
+    "label": "reduce activity",
+    "definition": "Halting or diminution of activity to minimize detection by predator.",
+    "iri": "http://purl.obolibrary.org/obo/NBO_0020175"
   }
 }
