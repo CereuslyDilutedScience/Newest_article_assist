@@ -3848,5 +3848,10 @@
     "label": "Skin Between the Eyebrows",
     "definition": "The integumentary covering located medial to the orbital ridges and superior to the nose.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C142317"
+  },
+  "other two treatments": {
+    "label": "Specify Other Treatments Question",
+    "definition": "A request to specify other treatments.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C182229"
   }
 }
