@@ -1918,5 +1918,10 @@
     "label": "food harvested by hunting",
     "definition": "Food material that is obtained by hunting, the practice of seeking, pursuing and capturing or killing wild animals.",
     "iri": "http://purl.obolibrary.org/obo/FOODON_00003377"
+  },
+  "pathogenic microorganisms inhabiting": {
+    "label": "Variant Pathogenic/Likely Pathogenic",
+    "definition": "An ad hoc category that describes genetic variants with 90% or greater certainty of contributing to the development of a disease.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C168803"
   }
 }
