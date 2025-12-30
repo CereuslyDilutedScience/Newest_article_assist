@@ -413,5 +413,10 @@
     "label": "Insert Size",
     "definition": "The number of nucleotides inserted into a sequencing vector.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C180312"
+  },
+  "standard": {
+    "label": "standard",
+    "definition": "A standard is a norm or requirement that is established for technical systems. [Wikipedia]",
+    "iri": "http://purl.allotrope.org/ontologies/result#AFR_0001276"
   }
 }
