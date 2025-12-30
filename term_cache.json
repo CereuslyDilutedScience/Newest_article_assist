@@ -16918,5 +16918,10 @@
     "label": "reproducible research",
     "definition": "Results that can be replicated using the documented data, code, and methods employed by the author or provider without the need for any additional information or needing to communicate with the author or provider.",
     "iri": "http://purl.obolibrary.org/obo/T4FS_0000370"
+  },
+  "scalable and extensible": {
+    "label": "Scalable Vector Graphics",
+    "definition": "A specification for describing vector graphics using extensible markup language.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C85435"
   }
 }
