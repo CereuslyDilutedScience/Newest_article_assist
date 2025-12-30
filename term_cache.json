@@ -16663,5 +16663,10 @@
     "label": "aromatic",
     "definition": "Aromatic aromaticity is a quality that inheres in a molecular entity when it possesses at least one ring that is aromatic.",
     "iri": "http://semanticscience.org/resource/CHEMINF_000076"
+  },
+  "to access aerobic": {
+    "label": "Access to Care",
+    "definition": "The ability of individuals or a population to utilize and obtain care from the health care system.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C15244"
   }
 }
