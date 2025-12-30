@@ -5793,5 +5793,10 @@
     "label": "table",
     "definition": "A table is a placement device with a flat top and one or more legs, providing a level surface for placement. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/equipment#AFE_0002210"
+  },
+  "3 bacterial community": {
+    "label": "community",
+    "definition": "Two or more distinct populations that are part of the same biotic ecosystem.",
+    "iri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000094"
   }
 }
