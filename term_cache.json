@@ -1075,5 +1075,15 @@
     "label": "quality",
     "definition": "",
     "iri": "http://purl.obolibrary.org/obo/BFO_0000019"
+  },
+  "(optical density at": null,
+  "(optical density": null,
+  "(optical": null,
+  "density at 260": null,
+  "density at": null,
+  "density": {
+    "label": "Density",
+    "definition": "The amount of something per unit size.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C45781"
   }
 }
