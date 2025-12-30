@@ -2403,5 +2403,10 @@
     "label": "Variety",
     "definition": "In botanical nomenclature, a rank below subspecies but above forma.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62709"
+  },
+  "of organic wastes": {
+    "label": "voiding of nitrogenous wastes",
+    "definition": "During the first day after feeding, deamination of amino acids produces excess nitrogen which is voided in the form of low molecular weight nitrogenous metabolites.",
+    "iri": "http://purl.obolibrary.org/obo/IDOMAL_0002046"
   }
 }
