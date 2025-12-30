@@ -1733,5 +1733,10 @@
     "label": "Diversity",
     "definition": "Variety; quality, state, fact, or instance of being different.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62263"
+  },
+  "internal transcribed spacer": {
+    "label": "booklung leaves internal spacer",
+    "definition": "Each of the hollow cuticular columns arising from the ventral cuticle of the booklung leaf, which prevents the collapsing of the leaf.",
+    "iri": "http://purl.obolibrary.org/obo/SPD_0000249"
   }
 }
