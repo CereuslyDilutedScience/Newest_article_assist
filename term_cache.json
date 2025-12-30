@@ -5508,5 +5508,10 @@
     "label": "Characterization",
     "definition": "The act of describing distinctive characteristics or essential features.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62606"
+  },
+  "antimicrobial peptides, such": {
+    "label": "Antimicrobial Peptides",
+    "definition": "Small peptides that play an important role in early innate and induced defenses against invading microbes. Most have positive overall charges and are referred to as cationic antimicrobial peptides.",
+    "iri": "http://id.nlm.nih.gov/mesh/D000089882"
   }
 }
