@@ -53,7 +53,7 @@ for i in range(len(words)):
         merged_words.append(current)
 
 # Replace original words with merged version
-words = merged_words
+    words = merged_words
 
         
     pages_output.append({
