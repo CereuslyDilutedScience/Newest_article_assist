@@ -2552,5 +2552,24 @@
     "label": "Increasing",
     "definition": "",
     "iri": "http://snomed.info/id/260369004"
+  },
+  "pas- sages might": null,
+  "pas- sages": null,
+  "sages might correlate": null,
+  "sages might": null,
+  "sages": null,
+  "might correlate with": null,
+  "might correlate": null,
+  "correlate with potential": null,
+  "correlate with": null,
+  "correlate": null,
+  "with potential virulence-related": null,
+  "with potential": null,
+  "potential virulence-related factors.": null,
+  "potential virulence-related": null,
+  "potential": {
+    "label": "Potential",
+    "definition": "The likelihood or possibility that a specific state or condition will exist or that an action will occur.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C62230"
   }
 }
