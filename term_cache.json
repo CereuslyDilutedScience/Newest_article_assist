@@ -493,5 +493,10 @@
     "label": "Data",
     "definition": "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information.",
     "iri": "https://w3id.org/evorao/Data"
+  },
+  "complexity": {
+    "label": "complexity",
+    "definition": "A monadic quality of continuant inhering in a bearer by virtue of the bearer's being intricate and compounded.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0001502"
   }
 }
