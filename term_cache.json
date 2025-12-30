@@ -1473,5 +1473,10 @@
     "label": "Not Significant",
     "definition": "A result that does not allow a researcher to conclude that differences in the data obtained for different samples are meaningful.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C201564"
+  },
+  "complicated": {
+    "label": "Complicated",
+    "definition": "Difficult to analyze or understand.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C86059"
   }
 }
