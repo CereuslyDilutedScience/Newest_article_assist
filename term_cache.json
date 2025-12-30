@@ -2213,5 +2213,10 @@
     "label": "Global Communities",
     "definition": "Nonprofit in United States established in 1952",
     "iri": "https://ror.org/04rqj7157"
+  },
+  "(2). a common": {
+    "label": "Common",
+    "definition": "Widely known or encountered; standard; of no special distinction or quality.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C43461"
   }
 }
