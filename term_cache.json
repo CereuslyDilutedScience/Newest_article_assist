@@ -943,5 +943,10 @@
     "label": "Most",
     "definition": "Greatest in amount, extent, or degree; constituting a majority.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25258"
+  },
+  "to provide": {
+    "label": "to provide",
+    "definition": "to provide is the capability to make available some object to another that requires it.",
+    "iri": "http://semanticscience.org/resource/SIO_000397"
   }
 }
