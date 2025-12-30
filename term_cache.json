@@ -1143,5 +1143,10 @@
     "label": "Safety",
     "definition": "The state of being certain that adverse effects will not be caused by some agent under defined conditions.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C60828"
+  },
+  "security": {
+    "label": "Security",
+    "definition": "Services provided to prevent, deter, detect and/or document crime, fire, disorder or violations of company rules.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25669"
   }
 }
