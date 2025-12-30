@@ -6323,5 +6323,10 @@
     "label": "death",
     "definition": "End of the life of an organism.",
     "iri": "http://purl.obolibrary.org/obo/UBERON_0000071"
+  },
+  "evidence has suggested": {
+    "label": "has evidence",
+    "definition": "inverse of is evidence for",
+    "iri": "http://purl.obolibrary.org/obo/RO_0002558"
   }
 }
