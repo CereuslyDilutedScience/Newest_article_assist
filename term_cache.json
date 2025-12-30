@@ -2113,5 +2113,10 @@
     "label": "Answer",
     "definition": "A statement (either spoken or written) that is made in reply to a question or request or criticism or accusation; a statement that solves a problem or explains how to solve the problem.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C49149"
+  },
+  "microbiome": {
+    "label": "microbiome",
+    "definition": "A collection or collectivity of microorganisms.",
+    "iri": "http://www.ebi.ac.uk/efo/EFO_0004982"
   }
 }
