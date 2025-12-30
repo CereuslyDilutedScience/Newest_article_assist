@@ -4273,5 +4273,10 @@
     "label": "Between",
     "definition": "The space or interval separating two things.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C94545"
+  },
+  "and b. p1mrsa1bsfl": {
+    "label": "Haemophilus b and Hepatitis B vaccine",
+    "definition": "a viral vaccine against Hepatitis B virus and at the same time against bacterial H. influenzae serotype b.",
+    "iri": "http://purl.obolibrary.org/obo/VO_0000746"
   }
 }
