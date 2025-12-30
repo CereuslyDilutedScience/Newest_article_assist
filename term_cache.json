@@ -15843,5 +15843,10 @@
     "label": "repeated measure ANOVA",
     "definition": "repeated measure ANOVA is a kind of ANOVA specifically developed for non-independent observations as found when repeated measurements on the sample experimental unit. \nrepeated measure ANOVA is sensitive to departure from normality (evaluation using Bartlett's test), more so in the case of unbalanced groups (i.e. different sizes of sample populations).\nDeparture from sphericity (evaluation  using Mauchly'test)  used to be an issue which is now handled robustly by modern tools such as R's lme4 or nlme, which accommodate dependence assumptions other than sphericity.",
     "iri": "http://purl.obolibrary.org/obo/STATO_0000260"
+  },
+  "above. for the": {
+    "label": "None of the Above",
+    "definition": "None of the choices above are suitable.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C133298"
   }
 }
