@@ -16383,5 +16383,10 @@
     "label": "simultaneous with",
     "definition": "t1 simultaneous_with t2 iff:=  t1 before_or_simultaneous_with t2  and not (t1 before t2)",
     "iri": "http://purl.obolibrary.org/obo/RO_0002082"
+  },
+  "fermentation of nisin": {
+    "label": "nisin",
+    "definition": "A type-A lantibiotic containing 34 amino acid residues (including lanthionine (Lan), methyllanthionine (MeLan), didehydroalanine (Dha) and didehydroaminobutyric acid (Dhb)) and five thioether bridges. It is obtained by fermentation of the bacterium <em>Lactococcus lactis</em> and shows particular activity against <em>Clostridium botulinum</em>. It is used in the production of various processed foods to suppress Gram-positive spoilage and pathogenic bacteria and so extend shelf life.",
+    "iri": "http://purl.obolibrary.org/obo/CHEBI_71629"
   }
 }
