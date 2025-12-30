@@ -478,5 +478,10 @@
     "label": "Three",
     "definition": "A natural number greater than 2 and less than 4 and the quantity that it denotes: the sum of two and one.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C66834"
+  },
+  "combination": {
+    "label": "Combination",
+    "definition": "A collection of things that have been assembled together to form a new whole.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C61517"
   }
 }
