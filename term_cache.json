@@ -2303,5 +2303,10 @@
     "label": "volume",
     "definition": "A volume datum is a quality quantification facet that quantifies some amount of 3-dimensional space an entity occupies. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/result#AFR_0001843"
+  },
+  "weight": {
+    "label": "weight",
+    "definition": "A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.",
+    "iri": "https://w3id.org/evorao/weight"
   }
 }
