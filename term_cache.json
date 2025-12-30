@@ -15998,5 +15998,10 @@
     "label": "Sierra Streams Institute",
     "definition": "Nonprofit in United States established in 1995",
     "iri": "https://ror.org/029pa0p32"
+  },
+  "feed ingredients for": {
+    "label": "hay for animal feed",
+    "definition": "SIREN DB annotation:\n* divided into pieces FOODON:03430152\n* not heat-treated FOODON:03440003\n* whole plant or most parts used FOODON:03420150\n* water removal process FOODON:03460138\n* preservation by dehydration or drying FOODON:03470116\n* non-food animal as food consumer FOODON:03510013\n* food animal as consumer FOODON:03510015",
+    "iri": "http://purl.obolibrary.org/obo/FOODON_03301763"
   }
 }
