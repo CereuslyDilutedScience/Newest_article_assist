@@ -1623,5 +1623,10 @@
     "label": "absent",
     "definition": "Anatomical structure that would be present in wild-type is not present.",
     "iri": "http://purl.obolibrary.org/obo/FBcv_0007049"
+  },
+  "lowest": {
+    "label": "Lowest",
+    "definition": "In the lowest position, nearest the ground, at the bottom; minimal in magnitude, lowest in rank or importance; an extreme state of adversity.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C43517"
   }
 }
