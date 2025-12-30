@@ -6098,5 +6098,10 @@
     "label": "Further",
     "definition": "To or at a greater distance in time or space.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25519"
+  },
+  "this issue": {
+    "label": "Issue",
+    "definition": "One of a series of documents that are published periodically.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C43415"
   }
 }
