@@ -16623,5 +16623,10 @@
     "label": "community",
     "definition": "Two or more distinct populations that are part of the same biotic ecosystem.",
     "iri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000094"
+  },
+  "regulation of virulence": {
+    "label": "absence of virulence",
+    "definition": "A virulence phenotype where an organism does not possess the ability to cause disease in another organism (host).",
+    "iri": "http://purl.obolibrary.org/obo/OMP_0000065"
   }
 }
