@@ -3368,5 +3368,10 @@
     "label": "At",
     "definition": "Used to indicate position, location, or state.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25427"
+  },
+  "both dilutions. as": {
+    "label": "Both",
+    "definition": "One and the other; relating to or being two in conjunction.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C49636"
   }
 }
