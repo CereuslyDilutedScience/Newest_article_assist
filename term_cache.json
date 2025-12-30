@@ -2833,5 +2833,10 @@
     "label": "Both",
     "definition": "One and the other; relating to or being two in conjunction.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C49636"
+  },
+  "animals and": {
+    "label": "Animals and Society Institute",
+    "definition": "Nonprofit in United States established in 1983",
+    "iri": "https://ror.org/03p26k524"
   }
 }
