@@ -16348,5 +16348,10 @@
     "label": "antimicrobial resistance (AMR) phenotypic testing characterization tag",
     "definition": "A phenotypic microbiological characterization data tag which indicates the presence of antimicrobial resistance (AMR) phenotypic testing characterization data.",
     "iri": "http://purl.obolibrary.org/obo/GENEPIO_0100725"
+  },
+  "susceptibility of": {
+    "label": "susceptibility",
+    "definition": "The ability to participate in infection acquisition as a host.",
+    "iri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000172"
   }
 }
