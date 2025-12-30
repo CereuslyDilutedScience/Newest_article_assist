@@ -1128,5 +1128,28 @@
     "label": "software",
     "definition": "Software is a plan specification composed of a series of instructions that can be \ninterpreted by or directly executed by a processing unit.",
     "iri": "http://purl.obolibrary.org/obo/IAO_0000010"
+  },
+  "packages for our": null,
+  "packages for": null,
+  "packages": null,
+  "for our analyses,": null,
+  "our analyses, as": null,
+  "our analyses,": null,
+  "analyses, as described": null,
+  "analyses, as": null,
+  "analyses,": null,
+  "as described below.": null,
+  "as described": null,
+  "described below. default": null,
+  "described below.": null,
+  "described": null,
+  "below. default parameters": null,
+  "below. default": null,
+  "below.": null,
+  "default parameters were": null,
+  "default parameters": {
+    "label": "default parameters",
+    "definition": "It is possible that this really should be a class instead of an individual, namely the class of all default parameter specifications (which would then have instances specific to programs).",
+    "iri": "http://purl.obolibrary.org/obo/MIAPA_0000012"
   }
 }
