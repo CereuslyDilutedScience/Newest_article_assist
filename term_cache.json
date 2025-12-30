@@ -7293,5 +7293,10 @@
     "label": "And/Or",
     "definition": "Used to indicate that either or both of two items or options may be valid.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C48928"
+  },
+  "competitive microorganisms. further": {
+    "label": "Further",
+    "definition": "To or at a greater distance in time or space.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25519"
   }
 }
