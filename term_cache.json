@@ -1518,5 +1518,10 @@
     "label": "quantification",
     "definition": "In mathematics and empirical science, quantification (or quantitation) is the act of counting and measuring that maps human sense observations and experiences into members of some set of numbers. [Wikipedia]",
     "iri": "http://purl.allotrope.org/ontologies/process#AFP_0002849"
+  },
+  "excluded": {
+    "label": "Excluded",
+    "definition": "Present in 0% of the cases.",
+    "iri": "http://purl.obolibrary.org/obo/HP_0040285"
   }
 }
