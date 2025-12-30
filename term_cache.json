@@ -2263,5 +2263,10 @@
     "label": "cotton swab",
     "definition": "A device which is a cotton pad mounted on one or both ends of a stick.",
     "iri": "http://purl.obolibrary.org/obo/OBI_0002821"
+  },
+  "incubator": {
+    "label": "incubator",
+    "definition": "A device in which environmental conditions (light, photoperiod, temperature, humidity, etc.) can be controlled",
+    "iri": "http://purl.obolibrary.org/obo/OBI_0000136"
   }
 }
