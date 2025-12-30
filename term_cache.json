@@ -933,5 +933,10 @@
     "label": "Relative",
     "definition": "A person related by blood or marriage.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C21480"
+  },
+  "often": {
+    "label": "Often",
+    "definition": "A subjective answer that something occurs frequently.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C120595"
   }
 }
