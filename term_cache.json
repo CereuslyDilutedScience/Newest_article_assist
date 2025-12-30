@@ -6258,5 +6258,10 @@
     "label": "number of treatments",
     "definition": "Number of treatments tested during an experiment.",
     "iri": "http://purl.obolibrary.org/obo/AGRO_00000323"
+  },
+  "bsfl (35). initial": {
+    "label": "initial response",
+    "definition": "The initial response is the role of an outgoing signal as it was generated raw without signal processing from a processing component. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/role#AFRL_0000275"
   }
 }
