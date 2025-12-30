@@ -16298,5 +16298,10 @@
     "label": "Staphylococcal Food Poisoning",
     "definition": "Food poisoning that is caused by Staphylococcal infection.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C35037"
+  },
+  "aureus and its": {
+    "label": "ITS and S",
+    "definition": "Other in Czechia established in 2000",
+    "iri": "https://ror.org/03qy0hv94"
   }
 }
