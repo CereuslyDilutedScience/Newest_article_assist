@@ -5328,5 +5328,10 @@
     "label": "capable of",
     "definition": "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process.",
     "iri": "http://purl.obolibrary.org/obo/RO_0002215"
+  },
+  "suppressing bacteroides and": {
+    "label": "Cu(2+) suppressing and bleomycin sensitive protein 1 (yeast)",
+    "definition": "A protein that is a translation product of the CUB1 gene in yeast.",
+    "iri": "http://purl.obolibrary.org/obo/PR_Q08977"
   }
 }
