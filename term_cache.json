@@ -3628,5 +3628,10 @@
     "label": "similar spectrum",
     "definition": "A cross reference to another spectrum that has high spectral similarity with this one, usually assumed to originate from the same analyte ion.",
     "iri": "http://purl.obolibrary.org/obo/MS_1003262"
+  },
+  "there was": {
+    "label": "PR - Was There Perceptible Pain Relief",
+    "definition": "Pain Intensity (PR v1) Was there perceptible pain relief?",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C105274"
   }
 }
