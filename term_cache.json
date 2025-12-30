@@ -1058,5 +1058,10 @@
     "label": "ingredient",
     "definition": "A processed material which is referenced in an ingredient specification.",
     "iri": "http://purl.obolibrary.org/obo/FOODON_00004272"
+  },
+  "female": {
+    "label": "female",
+    "definition": "A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0000383"
   }
 }
