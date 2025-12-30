@@ -7888,5 +7888,10 @@
     "label": "The Cancer Treatment Center",
     "definition": "Healthcare in United States established in 1986",
     "iri": "https://ror.org/05waabg59"
+  },
+  "third trial": {
+    "label": "Trial",
+    "definition": "A run or execution of an activity.\nFor example, one execution of a script.",
+    "iri": "https://w3id.org/reproduceme#Trial"
   }
 }
