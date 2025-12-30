@@ -1033,5 +1033,10 @@
     "label": "More",
     "definition": "Greater in size, amount, extent, or degree.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C128667"
+  },
+  "other": {
+    "label": "other",
+    "definition": "A project type that is not described by other more specific terms.",
+    "iri": "http://purl.obolibrary.org/obo/FBcv_0003043"
   }
 }
