@@ -16788,5 +16788,10 @@
     "label": "Rat Strains",
     "definition": "Breeds of rats utilized for biological research.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C14417"
+  },
+  "aureus in co-culture.": {
+    "label": "Co-Culture",
+    "definition": "A mixture of two or more different kinds of cells that are grown together.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C93168"
   }
 }
