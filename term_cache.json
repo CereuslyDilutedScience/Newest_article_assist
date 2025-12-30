@@ -6353,5 +6353,10 @@
     "label": "evidence",
     "definition": "A type of information that is used to support an assertion.",
     "iri": "http://purl.obolibrary.org/obo/ECO_0000000"
+  },
+  "this phenomenon": {
+    "label": "Phenomenon",
+    "definition": "A fact or situation that is observed to exist.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C61380"
   }
 }
