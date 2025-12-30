@@ -2677,5 +2677,14 @@
     "label": "Assembler",
     "definition": "Occupations held by individuals who assemble prefabricated parts of components to form subassemblies, products and equipment.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C198721"
+  },
+  "for short read": null,
+  "for short": null,
+  "short read sequence": null,
+  "short read": null,
+  "short": {
+    "label": "Short",
+    "definition": "A variable that is stored as a signed 16-bit (2-byte) integer.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C73939"
   }
 }
