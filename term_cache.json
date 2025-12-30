@@ -2573,5 +2573,10 @@
     "label": "dramatic scene",
     "definition": "A part of a dramatic work that is set in the same place or time. In the theatre, generally a number of scenes constitute an act.",
     "iri": "http://purl.obolibrary.org/obo/GSSO_012524"
+  },
+  "of substrates they": {
+    "label": "number of substrates",
+    "definition": "Number of molecules which are acted upon by an enzyme.",
+    "iri": "http://biomodels.net/SBO/SBO_0000149"
   }
 }
