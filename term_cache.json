@@ -7003,5 +7003,10 @@
     "label": "has additional name",
     "definition": "Used to support property parameters for the additional name data property",
     "iri": "http://www.w3.org/2006/vcard/ns#hasAdditionalName"
+  },
+  "commensal genera, such": {
+    "label": "commensal",
+    "definition": "An organism bearing a commensal role.",
+    "iri": "http://purl.obolibrary.org/obo/IDO_0000525"
   }
 }
