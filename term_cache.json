@@ -7768,5 +7768,10 @@
     "label": "Substrate",
     "definition": "Any chemical that can be modified or consumed during a chemical reaction or biological process.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C120264"
+  },
+  "forceps. all experimental": {
+    "label": "forceps",
+    "definition": "A U-shaped microsclere",
+    "iri": "http://purl.obolibrary.org/obo/PORO_0000322"
   }
 }
