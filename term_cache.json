@@ -16353,5 +16353,10 @@
     "label": "susceptibility",
     "definition": "The ability to participate in infection acquisition as a host.",
     "iri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000172"
+  },
+  "from milk and": {
+    "label": "milk solids from milk byproducts",
+    "definition": "SIREN DB annotation:\n* milk or milk component FOODON:03420113\n* water removal process FOODON:03460138",
+    "iri": "http://purl.obolibrary.org/obo/FOODON_03304378"
   }
 }
