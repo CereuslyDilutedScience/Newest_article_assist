@@ -1668,5 +1668,10 @@
     "label": "Discussion",
     "definition": "An extended communication (often interactive) dealing with some particular topic.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C71323"
+  },
+  "antibacterial": {
+    "label": "antibacterial",
+    "definition": "A material entity bearing an antibacterial disposition.",
+    "iri": "http://purl.obolibrary.org/obo/IDO_0000562"
   }
 }
