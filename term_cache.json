@@ -2518,5 +2518,10 @@
     "label": "Rural and Agricultural Sociology",
     "definition": "Rural and Agricultural Sociology is a field of sociology traditionally associated with the study of social structure and conflict in rural areas and agricultural settings. The sociology of food and agriculture is one focus of rural sociology, and much of the field is dedicated to the economics of farm production. Other areas of study include rural migration and other demographic patterns, environmental sociology, amenity-led development, public lands policies, so-called \"boomtown\" development, social disruption, the sociology of natural resources (including forests, mining, fishing and other areas), rural cultures, and identities, rural health care, and educational policies.",
     "iri": "http://aims.fao.org/aos/agrovoc/c_6707"
+  },
+  "settings (15). mrsa": {
+    "label": "mrsA",
+    "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
   }
 }
