@@ -1673,5 +1673,10 @@
     "label": "antibacterial",
     "definition": "A material entity bearing an antibacterial disposition.",
     "iri": "http://purl.obolibrary.org/obo/IDO_0000562"
+  },
+  "consistent": {
+    "label": "Consistent",
+    "definition": "Marked by a reasonable or logical relation of parts and holding together as a harmonious or credible whole.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C85901"
   }
 }
