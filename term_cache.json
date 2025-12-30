@@ -4033,5 +4033,10 @@
     "label": "Largest",
     "definition": "Greatest in size of those under consideration.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25550"
+  },
+  "numbers": {
+    "label": "Numbers Forward",
+    "definition": "A component of the Children's Memory Scale. A child is asked to repeat a series of numbers of gradually increasing length.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C120335"
   }
 }
