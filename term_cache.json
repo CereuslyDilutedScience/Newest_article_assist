@@ -482,5 +482,14 @@
     "label": "survival",
     "definition": "",
     "iri": "http://purl.obolibrary.org/obo/ERO_0001915"
+  },
+  "and dissemination within": null,
+  "and dissemination": null,
+  "dissemination within hosts": null,
+  "dissemination within": null,
+  "dissemination": {
+    "label": "dissemination",
+    "definition": "",
+    "iri": "https://w3id.org/mixs/SampDisStageEnum#dissemination"
   }
 }
