@@ -3928,5 +3928,10 @@
     "label": "Substrate",
     "definition": "Any chemical that can be modified or consumed during a chemical reaction or biological process.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C120264"
+  },
+  "with mrsa and": {
+    "label": "mrsA",
+    "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
   }
 }
