@@ -6783,5 +6783,10 @@
     "label": "is major tautomer at pH 7.4 of",
     "definition": "A exists in an equilibrium with B at pH 7.4 and physiological temperature and A is the dominant isomer.",
     "iri": "http://semanticscience.org/resource/CHEMINF_000493"
+  },
+  "staphylococcus present. since": {
+    "label": "Since",
+    "definition": "Subsequent to; after.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C45325"
   }
 }
