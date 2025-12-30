@@ -16358,5 +16358,10 @@
     "label": "milk solids from milk byproducts",
     "definition": "SIREN DB annotation:\n* milk or milk component FOODON:03420113\n* water removal process FOODON:03460138",
     "iri": "http://purl.obolibrary.org/obo/FOODON_03304378"
+  },
+  "recognition and management": {
+    "label": "Prediction and recognition",
+    "definition": "Predict, recognise, detect or identify some properties of a biomolecule.",
+    "iri": "http://edamontology.org/operation_2423"
   }
 }
