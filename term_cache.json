@@ -233,5 +233,21 @@
     "label": "zoonotic",
     "definition": "A disease that can be transmitted from animals to people.",
     "iri": "http://purl.obolibrary.org/obo/IDOMAL_0000023"
+  },
+  "potential, belonging to": null,
+  "potential, belonging": null,
+  "potential,": null,
+  "belonging to the": null,
+  "belonging to": null,
+  "belonging": null,
+  "to the family": null,
+  "the family mycoplasmataceae": null,
+  "the family": null,
+  "family mycoplasmataceae in": null,
+  "family mycoplasmataceae": null,
+  "family": {
+    "label": "family",
+    "definition": "A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption.",
+    "iri": "http://purl.obolibrary.org/obo/PCO_0000020"
   }
 }
