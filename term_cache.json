@@ -4083,5 +4083,10 @@
     "label": "interaction",
     "definition": "Previously described interaction now being used as an interactor to describe hierarchical build-up of complexes.",
     "iri": "http://purl.obolibrary.org/obo/MI_0317"
+  },
+  "between the treatment": {
+    "label": "Days Between Diagnosis and Treatment",
+    "definition": "The number of days from the date of initial pathologic diagnosis to when treatment began.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C156417"
   }
 }
