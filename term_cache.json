@@ -16933,5 +16933,10 @@
     "label": "nat",
     "definition": "Arylamine N-acetyltransferase Nat (arylamine acetylase)",
     "iri": "http://purl.obolibrary.org/obo/OGG_3000888005"
+  },
+  "2011. cutadapt removes": {
+    "label": "CutAdapt",
+    "definition": "Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads.",
+    "iri": "http://www.ebi.ac.uk/swo/SWO_1100145"
   }
 }
