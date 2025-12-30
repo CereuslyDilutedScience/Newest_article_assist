@@ -7003,5 +7003,10 @@
     "label": "Large",
     "definition": "Of considerable or relatively great size, extent, or capacity.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C49508"
+  },
+  "role in the": {
+    "label": "role in the phenotype of",
+    "definition": "A gene included in a chromosomal rearrangement, and proved to have a major influence in the phenotype of the chromosomal rearrangement.",
+    "iri": "http://www.orpha.net/ORDO/Orphanet_317349"
   }
 }
