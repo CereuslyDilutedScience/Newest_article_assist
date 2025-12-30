@@ -948,5 +948,10 @@
     "label": "to provide",
     "definition": "to provide is the capability to make available some object to another that requires it.",
     "iri": "http://semanticscience.org/resource/SIO_000397"
+  },
+  "viable": {
+    "label": "viable",
+    "definition": "A viability quality inhering in a bearer or a population by virtue of the bearer's ability to survive or the long term survival ability of a given population. [PATO]",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0000719"
   }
 }
