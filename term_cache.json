@@ -3023,5 +3023,10 @@
     "label": "Routine Cytogenetics Were not Completed",
     "definition": "A response that routine cytogenetic testing was not completed.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C160755"
+  },
+  "from each other": {
+    "label": "death from other causes",
+    "definition": "A recorded follow-up status noting that a patient died from other causes than the condition under study.",
+    "iri": "http://www.ebi.ac.uk/efo/EFO_0030051"
   }
 }
