@@ -408,5 +408,10 @@
     "label": "Paired-End Sequencing",
     "definition": "A DNA sequencing strategy where a single read is initiated from each end of a DNA fragment.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C150423"
+  },
+  "insert size": {
+    "label": "Insert Size",
+    "definition": "The number of nucleotides inserted into a sequencing vector.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C180312"
   }
 }
