@@ -1743,5 +1743,10 @@
     "label": "Like",
     "definition": "A feeling of fondness for a person or thing.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C77969"
+  },
+  "enzymatic": {
+    "label": "enzymatic",
+    "definition": "An attribute describing the sequence of a transcript that has catalytic activity with or without an associated ribonucleoprotein.",
+    "iri": "http://purl.obolibrary.org/obo/SO_0001185"
   }
 }
