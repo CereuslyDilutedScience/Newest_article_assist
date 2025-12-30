@@ -4028,5 +4028,10 @@
     "label": "mrsA",
     "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
     "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
+  },
+  "where the largest": {
+    "label": "Largest",
+    "definition": "Greatest in size of those under consideration.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25550"
   }
 }
