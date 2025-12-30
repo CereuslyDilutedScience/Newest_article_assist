@@ -2243,5 +2243,10 @@
     "label": "autoclaving",
     "definition": "A material processing step that involves heating apparatus in an autoclave.",
     "iri": "http://purl.obolibrary.org/obo/CHMO_0002846"
+  },
+  "supermarket": {
+    "label": "supermarket",
+    "definition": "A self-service shop offering a wide variety of food, beverages and household products, organized into sections.",
+    "iri": "http://purl.obolibrary.org/obo/ENVO_03501290"
   }
 }
