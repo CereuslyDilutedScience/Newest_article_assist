@@ -20,7 +20,7 @@ h2, h3 {
   background-color: var(--bg-cream);
   color: var(--text-dark);
   font-family: 'Inter', sans-serif;
-  text-align: left;
+  text-align: center;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -96,7 +96,7 @@ header {
   padding: 0;
   margin: 0;
   display: block;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-bottom: 0;
