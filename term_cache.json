@@ -16203,5 +16203,10 @@
     "label": "Feed",
     "definition": "To move something gradually into or through.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C69427"
+  },
+  "aureus in substrates": {
+    "label": "number of substrates",
+    "definition": "Number of molecules which are acted upon by an enzyme.",
+    "iri": "http://biomodels.net/SBO/SBO_0000149"
   }
 }
