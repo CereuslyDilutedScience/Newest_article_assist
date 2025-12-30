@@ -1273,5 +1273,10 @@
     "label": "cause",
     "definition": "Cause is the causal role of an information content entity that is about something causally dependent for another thing. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/role#AFRL_0000055"
+  },
+  "sickness": {
+    "label": "Sickness",
+    "definition": "A state of ill health, bodily malfunction, or discomfort.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C107499"
   }
 }
