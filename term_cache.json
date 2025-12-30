@@ -6303,5 +6303,10 @@
     "label": "embryonic/larval hemolymph",
     "definition": "Hemolymph of the embryonic/larval circulatory system.",
     "iri": "http://purl.obolibrary.org/obo/FBbt_00001683"
+  },
+  "in cell membrane": {
+    "label": "change in cell membrane potential",
+    "definition": "Measurement of any change in the difference in electrical polarization or charge between two sides of a cell membrane or cell wall over time or after a change in conditions.",
+    "iri": "http://purl.obolibrary.org/obo/CMO_0001018"
   }
 }
