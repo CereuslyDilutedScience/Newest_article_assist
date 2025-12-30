@@ -6603,5 +6603,10 @@
     "label": "Department of Higher Education",
     "definition": "Government in India established in 1956",
     "iri": "https://ror.org/0218hya98"
+  },
+  "or lactococcus over": {
+    "label": "Age 90 or Over",
+    "definition": "An indication that an individual's age is or was 90 or greater.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C215216"
   }
 }
