@@ -16303,5 +16303,10 @@
     "label": "ITS and S",
     "definition": "Other in Czechia established in 2000",
     "iri": "https://ror.org/03qy0hv94"
+  },
+  "poisoning toxins: characterization": {
+    "label": "Characterization",
+    "definition": "The act of describing distinctive characteristics or essential features.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C62606"
   }
 }
