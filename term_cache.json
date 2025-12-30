@@ -6868,5 +6868,10 @@
     "label": "Many",
     "definition": "An indefinite large quantity that is considered to be greater than several.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C78728"
+  },
+  "the bacterial genera": {
+    "label": "Genera (Croatia)",
+    "definition": "Company in Croatia established in 1901",
+    "iri": "https://ror.org/0518jvn15"
   }
 }
