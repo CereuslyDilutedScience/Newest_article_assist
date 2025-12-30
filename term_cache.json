@@ -6428,5 +6428,10 @@
     "label": "NPI - Talk to People Who Are Not There",
     "definition": "Neuropsychiatric Inventory (NPI) Does the patient talk to people who are not there?",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C100634"
+  },
+  "is evidence that": {
+    "label": "is evidence for",
+    "definition": "A relationship between a piece of evidence a and some entity b, where b is  an information content entity, material entity or process, and \nthe a supports either the existence of b, or the truth value of b.",
+    "iri": "http://purl.obolibrary.org/obo/RO_0002472"
   }
 }
