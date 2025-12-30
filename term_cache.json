@@ -638,5 +638,10 @@
     "label": "GenBank",
     "definition": "The NIH genetic sequence database, an annotated collection of all publicly available DNA sequences. GenBank records are annotated using a standard set of biological terms and show these annotations in a Feature Table.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C43818"
+  },
+  "sra": {
+    "label": "sra",
+    "definition": "stationary-phase-induced ribosome-associated protein",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000946030"
   }
 }
