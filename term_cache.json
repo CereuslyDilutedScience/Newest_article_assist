@@ -903,5 +903,10 @@
     "label": "Diversity",
     "definition": "Variety; quality, state, fact, or instance of being different.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62263"
+  },
+  "internal": {
+    "label": "Internal",
+    "definition": "Happening or arising or located within some limits, or especially, within some surface.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25234"
   }
 }
