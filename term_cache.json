@@ -2088,5 +2088,10 @@
     "label": "expect",
     "definition": "X|Tandem expectancy score",
     "iri": "http://purl.obolibrary.org/obo/PRIDE_0000183"
+  },
+  "burden": {
+    "label": "Burden",
+    "definition": "The quantity of something that is borne or carried by an individual or population.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C85883"
   }
 }
