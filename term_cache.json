@@ -6558,5 +6558,10 @@
     "label": "potato Pythium spp. leak oomycete disease",
     "definition": "A potato disease caused by a Pythium affecting a plant structure.",
     "iri": "http://purl.obolibrary.org/obo/PSO_0000636"
+  },
+  "are composed of": {
+    "label": "composed of",
+    "definition": "The property specifies of which kind of general portion of material something is built of. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/property#AFX_0000940"
   }
 }
