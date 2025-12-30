@@ -17003,5 +17003,10 @@
     "label": "J wave",
     "definition": "The J wave is a positive convex deflection that occurs at the junction of the QRS complex and ST segment, the J-point.",
     "iri": "http://purl.obolibrary.org/obo/HP_0012272"
+  },
+  "2017. silva,": {
+    "label": "Silva",
+    "definition": "Facility in France established in 2018",
+    "iri": "https://ror.org/01d5v2p67"
   }
 }
