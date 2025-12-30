@@ -16818,5 +16818,10 @@
     "label": "matrix",
     "definition": "Those components of a sample that are not measured by an experiment.",
     "iri": "http://purl.obolibrary.org/obo/CHMO_0002743"
+  },
+  "2013. a survey": {
+    "label": "Survey",
+    "definition": "A document used in a method of data collection that involves interviewing (or giving questionnaires to) a representative and often large group of people.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C17176"
   }
 }
