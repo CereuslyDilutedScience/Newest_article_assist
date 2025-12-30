@@ -768,5 +768,10 @@
     "label": "Large",
     "definition": "Of considerable or relatively great size, extent, or capacity.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C49508"
+  },
+  "nome": {
+    "label": "Nome",
+    "definition": "A person having origins in the original Nome people.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C44693"
   }
 }
