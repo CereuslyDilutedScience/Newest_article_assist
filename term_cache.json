@@ -6558,5 +6558,10 @@
     "label": "Pathogen",
     "definition": "Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus.",
     "iri": "https://w3id.org/evorao/Pathogen"
+  },
+  "be attributed to": {
+    "label": "Adverse Event Attributed to Disease",
+    "definition": "An indication that an adverse event is causally related to the natural history of disease.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C166261"
   }
 }
