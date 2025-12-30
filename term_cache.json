@@ -1123,5 +1123,10 @@
     "label": "livestock",
     "definition": "Domesticated farm animals raised for home use or profit but excluding POULTRY. Typically livestock includes CATTLE; SHEEP; HORSES; SWINE; GOATS; and others.",
     "iri": "http://purl.bioontology.org/ontology/MESH/D058751"
+  },
+  "integrated": {
+    "label": "Integrated",
+    "definition": "Combining things, people, or ideas of different types in one effective unit, group, or system.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C165682"
   }
 }
