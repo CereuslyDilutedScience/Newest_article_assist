@@ -2408,5 +2408,10 @@
     "label": "voiding of nitrogenous wastes",
     "definition": "During the first day after feeding, deamination of amino acids produces excess nitrogen which is voided in the form of low molecular weight nitrogenous metabolites.",
     "iri": "http://purl.obolibrary.org/obo/IDOMAL_0002046"
+  },
+  "suppress the growth": {
+    "label": "growth of the alimentary canal",
+    "definition": "During the larval stage the alimentary canal grows by increase in cell size and with the formation polytene and endopolyploid nuclei.",
+    "iri": "http://purl.obolibrary.org/obo/IDOMAL_0002453"
   }
 }
