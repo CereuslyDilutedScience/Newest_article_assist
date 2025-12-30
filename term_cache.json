@@ -6038,5 +6038,10 @@
     "label": "How Often had Stools That Were Loose or Liquid Question",
     "definition": "A question about how often an individual had stools that were loose or liquid.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C125025"
+  },
+  "not observable in": {
+    "label": "Not in Person",
+    "definition": "Not involving or requiring an individual's personal presence.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C175575"
   }
 }
