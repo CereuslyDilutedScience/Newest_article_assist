@@ -1568,5 +1568,10 @@
     "label": "letter",
     "definition": "A written message from one person to another addressed to a person or organization.",
     "iri": "http://purl.obolibrary.org/obo/ENVO_02000081"
+  },
+  "test": {
+    "label": "test",
+    "definition": "A test can be considered a technical operation or procedure that consists of determination of one or more characteristics of a given product, process or service according to a specified procedure. Often a test is part of an experiment. The test result can be qualitative (yes/no), categorical, or quantitative (a measured value). It can be a personal observation or the output of a precision measuring instrument. [Wikipedia]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0002834"
   }
 }
