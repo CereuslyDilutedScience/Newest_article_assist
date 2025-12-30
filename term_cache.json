@@ -5583,5 +5583,10 @@
     "label": "indicating",
     "definition": "Indicating is signaling to make something known to the user about a flow. [NIST]",
     "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003488"
+  },
+  "some level of": {
+    "label": "Some",
+    "definition": "At least a small amount or number of, but not a large amount of, or often.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C65099"
   }
 }
