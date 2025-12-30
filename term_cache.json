@@ -16613,5 +16613,10 @@
     "label": "zoonotic",
     "definition": "A disease that can be transmitted from animals to people.",
     "iri": "http://purl.obolibrary.org/obo/IDOMAL_0000023"
+  },
+  "regulating the intestinal": {
+    "label": "regulating",
+    "definition": "Regulating is the adjusting of a flow in response to a control signal. [NIST]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003485"
   }
 }
