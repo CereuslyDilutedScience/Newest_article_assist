@@ -16643,5 +16643,10 @@
     "label": "impact",
     "definition": "Bruker Daltonics' impact: ESI Q-TOF, Nanospray, APCI, APPI, GC-APCI, CaptiveSpray.",
     "iri": "http://purl.obolibrary.org/obo/MS_1002077"
+  },
+  "on rhizoctonia disease": {
+    "label": "maize Rhizoctonia banded leaf fungal disease",
+    "definition": "A maize disease caused by a Rhizoctonia solani affecting a vascular leaf.",
+    "iri": "http://purl.obolibrary.org/obo/PSO_0000100"
   }
 }
