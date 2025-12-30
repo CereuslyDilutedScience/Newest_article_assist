@@ -2378,5 +2378,10 @@
     "label": "MFIS - Have Been Forgetful",
     "definition": "Modified Fatigue Impact Scale (MFIS) Because of my fatigue during the past 4 weeks I have been forgetful.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C113971"
+  },
+  "showing they are": {
+    "label": "GOSE - Work: How Restricted Are They",
+    "definition": "Extended Glasgow Outcome Scale (GOSE) How restricted are they?",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C115837"
   }
 }
