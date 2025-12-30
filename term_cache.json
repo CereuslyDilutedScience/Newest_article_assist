@@ -863,5 +863,10 @@
     "label": "antimicrobial",
     "definition": "A material entity with an antimicrobial disposition.",
     "iri": "http://purl.obolibrary.org/obo/IDO_0000558"
+  },
+  "associated with": {
+    "label": "associated with",
+    "definition": "A structural quality inhering in a bearer by virtue of the bearer's being in close proximity and physically interacting with another entity.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0001668"
   }
 }
