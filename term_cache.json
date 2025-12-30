@@ -4403,5 +4403,10 @@
     "label": "For",
     "definition": "The reason of something.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C64956"
+  },
+  "the treatment": {
+    "label": "The Cancer Treatment Center",
+    "definition": "Healthcare in United States established in 1986",
+    "iri": "https://ror.org/05waabg59"
   }
 }
