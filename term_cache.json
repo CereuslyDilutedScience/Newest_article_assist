@@ -1833,5 +1833,10 @@
     "label": "observable",
     "definition": "Features of ascomycete fungal cells, cultures, or colonies that can be detected, observed, measured, or monitored.",
     "iri": "http://purl.obolibrary.org/obo/APO_0000017"
+  },
+  "reservoir": {
+    "label": "reservoir",
+    "definition": "The reservoir is a container that stores solutions. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/equipment#AFE_0000378"
   }
 }
