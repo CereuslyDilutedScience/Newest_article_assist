@@ -172,5 +172,14 @@
     "label": "contains",
     "definition": "",
     "iri": "http://purl.obolibrary.org/obo/RO_0001019"
+  },
+  "a single circular": null,
+  "a single": null,
+  "single circular chromosome": null,
+  "single circular": null,
+  "single": {
+    "label": "Single",
+    "definition": "Never married.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C150721"
   }
 }
