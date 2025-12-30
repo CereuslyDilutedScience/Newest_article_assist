@@ -5943,5 +5943,10 @@
     "label": "Conducted Interference",
     "definition": "Problems related to electromagnetic interference (EMI) by physical contact with conductors (e.g. wires, resistors, terminals) as opposed to radiated EMI which is caused by induction (without physical contact of the conductors).",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C92037"
+  },
+  "with larval micro\ufb02ora": {
+    "label": "larval-larval ecdysis",
+    "definition": "The ecdysis between any of the four larval instars.",
+    "iri": "http://purl.obolibrary.org/obo/IDOMAL_0002202"
   }
 }
