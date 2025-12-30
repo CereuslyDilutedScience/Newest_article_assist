@@ -2468,5 +2468,10 @@
     "label": "In Vivo",
     "definition": "Located or occurring in the body.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C15744"
+  },
+  "an emerging": {
+    "label": "emerging pathogen",
+    "definition": "An infectious agent whose infection incidence is increasing following its first introduction into a new host Species.",
+    "iri": "http://purl.obolibrary.org/obo/IDO_0000583"
   }
 }
