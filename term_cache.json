@@ -5568,5 +5568,10 @@
     "label": "chicken feed",
     "definition": "SIREN DB annotation:\n* ingredient: grain added FOODON:03460152\n* poultry as consumer FOODON:03510018",
     "iri": "http://purl.obolibrary.org/obo/FOODON_03310338"
+  },
+  "lower bacterial counts": {
+    "label": "counts",
+    "definition": "Counts are like ratio scale that they have a zero point but there are no meaningful fractional units. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/result#AFR_0000915"
   }
 }
