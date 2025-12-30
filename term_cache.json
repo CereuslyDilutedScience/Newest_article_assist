@@ -3073,5 +3073,10 @@
     "label": "Pooled Sample",
     "definition": "A sample containing a mixture of multiple individual specimens of interest that were collected in a study.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C165587"
+  },
+  "of the second": {
+    "label": "Second Portion of the Duodenum",
+    "definition": "The descending portion of the duodenum between the neck of the gallbladder and the inferior duodenal flexure.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C33522"
   }
 }
