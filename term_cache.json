@@ -16408,5 +16408,10 @@
     "label": "soldier",
     "definition": "A person who fights as part of an army. A soldier can be a conscripted or volunteer enlisted person, a non-commissioned officer, or an officer.",
     "iri": "http://purl.obolibrary.org/obo/GSSO_005823"
+  },
+  "2018. nutritional immunology:": {
+    "label": "Immunology",
+    "definition": "The study of the immune system and its reaction to pathogens, as well as its malfunctions (autoimmune diseases, allergies, rejection of organ transplants).",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C18011"
   }
 }
