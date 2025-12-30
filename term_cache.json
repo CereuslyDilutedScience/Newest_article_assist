@@ -4753,5 +4753,10 @@
     "label": "larval down and back neuron",
     "definition": "Cholinergic somatosensory interneuron that arborizes in the nociceptive neuropil and receives input from class IV dendritic arborizing neurons (Gerhard et al., 2017; Burgos et al., 2018). From a laterally-located cell body, it projects ventromedially to the nociceptive neuropil and arborizes profusely; then a single process projects back laterally and dorsally towards the cell body (Burgos et al., 2018). It is involved in activating bending and rolling behavior in response to nociceptive stimuli, such as noxious heat (Burgos et al., 2018) and it is a premotor neuron (Zarin et al., 2019).",
     "iri": "http://purl.obolibrary.org/obo/FBbt_00047725"
+  },
+  "table 1 genera": {
+    "label": "Genera (Croatia)",
+    "definition": "Company in Croatia established in 1901",
+    "iri": "https://ror.org/0518jvn15"
   }
 }
