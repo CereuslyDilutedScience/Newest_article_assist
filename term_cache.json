@@ -7088,5 +7088,10 @@
     "label": "excreta",
     "definition": "A portion of organism substance that is the product of an excretion process that will be eliminated from the body. An excretion process is elimination by an organism of the waste products that arise as a result of metabolic activity.",
     "iri": "http://purl.obolibrary.org/obo/UBERON_0000174"
+  },
+  "in the substrate": {
+    "label": "Substrate",
+    "definition": "Any chemical that can be modified or consumed during a chemical reaction or biological process.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C120264"
   }
 }
