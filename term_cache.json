@@ -5473,5 +5473,10 @@
     "label": "Wish I Could Have More Respect for Myself Question",
     "definition": "A question about whether an individual wishes they could have more respect for themself.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C123326"
+  },
+  "their reservoir and": {
+    "label": "reservoir",
+    "definition": "The reservoir is a container that stores solutions. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/equipment#AFE_0000378"
   }
 }
