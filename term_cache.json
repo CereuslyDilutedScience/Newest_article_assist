@@ -1503,5 +1503,10 @@
     "label": "Maine",
     "definition": "A state in the northeastern United States. Its capital is Augusta.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C43457"
+  },
+  "biology and": {
+    "label": "Molecular and Cellular Biology",
+    "definition": "Interdisciplinary studies combining cell biology and molecular biology.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C19372"
   }
 }
