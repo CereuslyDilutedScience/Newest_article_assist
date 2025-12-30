@@ -4948,5 +4948,10 @@
     "label": "7 hours after blood meal",
     "definition": "Seven hours after blood meal.",
     "iri": "http://purl.obolibrary.org/obo/IDOMAL_0000450"
+  },
+  "days (table 1).": {
+    "label": "table",
+    "definition": "A table is a placement device with a flat top and one or more legs, providing a level surface for placement. [Allotrope]",
+    "iri": "http://purl.allotrope.org/ontologies/equipment#AFE_0002210"
   }
 }
