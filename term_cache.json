@@ -4408,5 +4408,10 @@
     "label": "The Cancer Treatment Center",
     "definition": "Healthcare in United States established in 1986",
     "iri": "https://ror.org/05waabg59"
+  },
+  "without mrsa (p1mrsa1bsfl),": {
+    "label": "mrsA",
+    "definition": "Probable phospho-sugar mutase / MrsA protein homolog",
+    "iri": "http://purl.obolibrary.org/obo/OGG_3000887589"
   }
 }
