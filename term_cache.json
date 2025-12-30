@@ -1748,5 +1748,10 @@
     "label": "enzymatic",
     "definition": "An attribute describing the sequence of a transcript that has catalytic activity with or without an associated ribonucleoprotein.",
     "iri": "http://purl.obolibrary.org/obo/SO_0001185"
+  },
+  "gut": {
+    "label": "gut",
+    "definition": "Structure consisting of a simple epithelium surrounded by visceral muscles, nerves and tracheae. The gut is divided into foregut, midgut and hindgut regions, based on developmental origin.",
+    "iri": "http://purl.obolibrary.org/obo/FBbt_00047143"
   }
 }
