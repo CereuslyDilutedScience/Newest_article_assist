@@ -16228,5 +16228,10 @@
     "label": "penicillin binding",
     "definition": "Binding to penicillin, an antibiotic that contains the condensed beta-lactamthiazolidine ring system.",
     "iri": "http://purl.obolibrary.org/obo/GO_0008658"
+  },
+  "staphylococcus aureus: resistance": {
+    "label": "bleomycin resistance protein (Staphylococcus aureus)",
+    "definition": "A bleomycin resistance protein that is encoded in the genome of Staphylococcus aureus.",
+    "iri": "http://purl.obolibrary.org/obo/PR_Q7DJ53"
   }
 }
