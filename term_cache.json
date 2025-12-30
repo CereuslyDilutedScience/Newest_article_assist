@@ -3818,5 +3818,10 @@
     "label": "microbial community",
     "definition": "An ecological community which is composed of co-existing populations of microbial organisms that interact, directly or indirectly, such that they impact one another's ecological fitness.",
     "iri": "http://purl.obolibrary.org/obo/PCO_1000004"
+  },
+  "composition.": {
+    "label": "composition",
+    "definition": "A single physical entity inhering in an bearer by virtue of the bearer's quantities or relative ratios of subparts. [PATO]",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0000025"
   }
 }
