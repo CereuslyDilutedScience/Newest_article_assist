@@ -825,5 +825,14 @@
     "label": "Isolation",
     "definition": "A state of separation; the act of isolating something; setting something apart from others; marked by separation of or from usually contiguous elements.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25549"
+  },
+  "and identi\ufb01ed with": null,
+  "and identi\ufb01ed": null,
+  "identi\ufb01ed with pcr": null,
+  "identi\ufb01ed with": null,
+  "identi\ufb01ed": {
+    "label": "Identified",
+    "definition": "",
+    "iri": "http://snomed.info/id/7882003"
   }
 }
