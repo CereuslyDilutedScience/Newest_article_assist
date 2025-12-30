@@ -3813,5 +3813,10 @@
     "label": "Mismatch at Both HLA Alleles",
     "definition": "A mismatch exists at both alleles.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C168820"
+  },
+  "dilutions. as": {
+    "label": "As",
+    "definition": "In the same amount or manner; to the same degree; in the role, function, or capacity of.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C64938"
   }
 }
