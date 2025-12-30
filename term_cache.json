@@ -4868,5 +4868,10 @@
     "label": "Stand Among Friends",
     "definition": "Nonprofit in United States established in 1997",
     "iri": "https://ror.org/00r80b982"
+  },
+  "dairy manures (10,": {
+    "label": "dairy",
+    "definition": "A dairy is a building in which animal milk is harvested and, optionally, processed for human consumption.",
+    "iri": "http://purl.obolibrary.org/obo/ENVO_00003862"
   }
 }
