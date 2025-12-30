@@ -153,5 +153,10 @@
     "label": "well",
     "definition": "A well is a site that is a cavity in a surface open at the top. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/spatial#AFSP_0000009"
+  },
+  "within": {
+    "label": "Within",
+    "definition": "On the inside; contained in.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25282"
   }
 }
