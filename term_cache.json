@@ -3648,5 +3648,10 @@
     "label": "None of These Describe Me",
     "definition": "A response indicating that an individual feels that no option listed is a good description for them.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C177109"
+  },
+  "two variables was": {
+    "label": "SeroNet Variables",
+    "definition": "Terms that have been designated as being a variable within the SeroNet terminology.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C179026"
   }
 }
