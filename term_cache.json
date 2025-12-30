@@ -2712,5 +2712,23 @@
     "label": "Large",
     "definition": "Of considerable or relatively great size, extent, or capacity.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C49508"
+  },
+  "genomes using a": null,
+  "genomes using": null,
+  "genomes": null,
+  "a bloom \ufb01lter.": null,
+  "bloom \ufb01lter. ge-": null,
+  "bloom \ufb01lter.": null,
+  "\ufb01lter. ge- nome": null,
+  "\ufb01lter. ge-": null,
+  "\ufb01lter.": null,
+  "ge- nome res": null,
+  "ge- nome": null,
+  "nome res 27:768\u2013777.": null,
+  "nome res": null,
+  "nome": {
+    "label": "Nome",
+    "definition": "A person having origins in the original Nome people.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C44693"
   }
 }
