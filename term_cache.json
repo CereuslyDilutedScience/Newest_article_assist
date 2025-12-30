@@ -1788,5 +1788,10 @@
     "label": "list",
     "definition": "A list is an ordered collection of items. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/common#AFC_0000160"
+  },
+  "full": {
+    "label": "Full",
+    "definition": "Containing as much or as many as is possible or normal.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C25517"
   }
 }
