@@ -2613,5 +2613,10 @@
     "label": "Rat Strains",
     "definition": "Breeds of rats utilized for biological research.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C14417"
+  },
+  "aureus have been": {
+    "label": "MFIS - Have Been Forgetful",
+    "definition": "Modified Fatigue Impact Scale (MFIS) Because of my fatigue during the past 4 weeks I have been forgetful.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C113971"
   }
 }
