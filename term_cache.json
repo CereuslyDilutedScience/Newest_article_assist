@@ -1262,5 +1262,18 @@
     "label": "reads",
     "definition": "",
     "iri": "https://w3id.org/mixs/ContamScreenInputEnum#reads"
+  },
+  "totaled 2,313,779,100 bp,": null,
+  "totaled 2,313,779,100": null,
+  "totaled": null,
+  "and the coverage": null,
+  "the coverage was": null,
+  "the coverage": null,
+  "coverage was 2,346": null,
+  "coverage was": null,
+  "coverage": {
+    "label": "Coverage",
+    "definition": "",
+    "iri": "http://purl.org/dc/elements/1.1/coverage"
   }
 }
