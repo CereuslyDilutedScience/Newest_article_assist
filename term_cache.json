@@ -5293,5 +5293,10 @@
     "label": "expansion of Salmonella in ERA human gut",
     "definition": "an ERA human-gut microbiome interaction that shows an expansion of Salmonella in patients with ERA compared with healthy controls.",
     "iri": "http://purl.obolibrary.org/obo/OHMI_0000267"
+  },
+  "feces": {
+    "label": "feces",
+    "definition": "Portion of semisolid bodily waste discharged through the anus[MW,modified].",
+    "iri": "http://purl.obolibrary.org/obo/UBERON_0001988"
   }
 }
