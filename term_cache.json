@@ -7763,5 +7763,10 @@
     "label": "collection of larvae from traps",
     "definition": "Any collection of larvae method that uses traps.",
     "iri": "http://purl.obolibrary.org/obo/MIRO_30000062"
+  },
+  "substrate using featherweight": {
+    "label": "Substrate",
+    "definition": "Any chemical that can be modified or consumed during a chemical reaction or biological process.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C120264"
   }
 }
