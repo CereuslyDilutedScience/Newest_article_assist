@@ -8223,5 +8223,10 @@
     "label": "to collect",
     "definition": "Function to add a member to an aggregate or to bring a flow together. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/function#AFFN_0000007"
+  },
+  "substrates were homogenized": {
+    "label": "cream (homogenized)",
+    "definition": "SIREN DB annotation:\n* liquid, low viscosity, with no visible particles FOODON:03430123\n* partially heat-treated FOODON:03440018\n* cream food product FOODON:00001216\n* food homogenization or emulsification process FOODON:03460306\n* pasteurization by heating FOODON:03470135",
+    "iri": "http://purl.obolibrary.org/obo/FOODON_03317650"
   }
 }
