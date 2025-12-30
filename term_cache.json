@@ -4883,5 +4883,10 @@
     "label": "capable of",
     "definition": "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process.",
     "iri": "http://purl.obolibrary.org/obo/RO_0002215"
+  },
+  "proteobacteria in unsterilized": {
+    "label": "crayfish preparation (unsterilized)",
+    "definition": "SIREN DB annotation:\n* skeletal meat part FOODON:03420175",
+    "iri": "http://purl.obolibrary.org/obo/FOODON_03316326"
   }
 }
