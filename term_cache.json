@@ -1168,5 +1168,10 @@
     "label": "not",
     "definition": "The preceding event or participating entity cannot participate to the control.",
     "iri": "http://biomodels.net/SBO/SBO_0000238"
+  },
+  "proliferation": {
+    "label": "Proliferation",
+    "definition": "Multiplying or increasing in number.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C28378"
   }
 }
