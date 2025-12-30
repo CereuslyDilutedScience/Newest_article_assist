@@ -1958,5 +1958,10 @@
     "label": "keywords",
     "definition": "List of terms used to tag and categorize this Item.",
     "iri": "https://w3id.org/evorao/keywords"
+  },
+  "aureus, microbial contamination,": {
+    "label": "Microbial Contamination",
+    "definition": "The undesirable presence of microorganisms or microbes such as bacteria and fungi (yeasts and molds).",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C92081"
   }
 }
