@@ -16163,5 +16163,10 @@
     "label": "sci-CAR",
     "definition": "A combinatorial indexing-based coassay that jointly profiles chromatin accessibility and mRNA (CAR) in each of thousands of single cells, combining sci\u2013ATAC sequencing (sci-ATAC-seq) and sci-RNA-seq into a single protocol.",
     "iri": "http://www.ebi.ac.uk/efo/EFO_0030001"
+  },
+  "2021. black soldier": {
+    "label": "soldier",
+    "definition": "A person who fights as part of an army. A soldier can be a conscripted or volunteer enlisted person, a non-commissioned officer, or an officer.",
+    "iri": "http://purl.obolibrary.org/obo/GSSO_005823"
   }
 }
