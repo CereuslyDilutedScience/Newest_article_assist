@@ -2763,5 +2763,10 @@
     "label": "goal",
     "definition": "A <cognitive representation> of an end state towards which one is striving.",
     "iri": "http://humanbehaviourchange.org/ontology/BCIO_006049"
+  },
+  "study was to": {
+    "label": "Prior to Study",
+    "definition": "The time period before the study.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C175039"
   }
 }
