@@ -8168,5 +8168,10 @@
     "label": "Ambient",
     "definition": "In or of the immediately surrounding area; relating to the immediate surroundings of something.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C62306"
+  },
+  "temperature under natural": {
+    "label": "temperature",
+    "definition": "A physical quality of the thermal energy of a system.",
+    "iri": "http://purl.obolibrary.org/obo/PATO_0000146"
   }
 }
