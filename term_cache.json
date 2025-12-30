@@ -6163,5 +6163,10 @@
     "label": "has effect on",
     "definition": "'has effect on' is a special case of the 'is about' relationship to be used for mixed effect models",
     "iri": "http://purl.obolibrary.org/obo/STATO_0000344"
+  },
+  "that chicken feed": {
+    "label": "chicken feed",
+    "definition": "SIREN DB annotation:\n* ingredient: grain added FOODON:03460152\n* poultry as consumer FOODON:03510018",
+    "iri": "http://purl.obolibrary.org/obo/FOODON_03310338"
   }
 }
