@@ -15963,5 +15963,10 @@
     "label": "Biological Sciences",
     "definition": "The division of the natural sciences that is concerned with the phenomenon of life and vital processes.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C16344"
+  },
+  "program": {
+    "label": "Program",
+    "definition": "A broad framework of goals to be achieved.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C52647"
   }
 }
