@@ -2068,5 +2068,10 @@
     "label": "authors",
     "definition": "The list of authors.",
     "iri": "https://w3id.org/evorao/authors"
+  },
+  "declare no con\ufb02ict": {
+    "label": "No",
+    "definition": "The non-affirmative response to a question.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C49487"
   }
 }
