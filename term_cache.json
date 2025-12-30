@@ -16888,5 +16888,10 @@
     "label": "AWIK House Production (Czechia)",
     "definition": "Company in Czechia",
     "iri": "https://ror.org/0264aj944"
+  },
+  "\ufb02ies and stable": {
+    "label": "Stable",
+    "definition": "Subject to little fluctuation; showing little if any change.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C30103"
   }
 }
