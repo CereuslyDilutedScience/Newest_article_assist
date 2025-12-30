@@ -4618,5 +4618,10 @@
     "label": "Science for All",
     "definition": "Nonprofit in Australia established in 2018",
     "iri": "https://ror.org/0282y0p95"
+  },
+  "samples, indicating heavy": {
+    "label": "indicating",
+    "definition": "Indicating is signaling to make something known to the user about a flow. [NIST]",
+    "iri": "http://purl.allotrope.org/ontologies/process#AFP_0003488"
   }
 }
