@@ -5943,5 +5943,10 @@
     "label": "number of substrates",
     "definition": "Number of molecules which are acted upon by an enzyme.",
     "iri": "http://biomodels.net/SBO/SBO_0000149"
+  },
+  "containing bsfl based": {
+    "label": "cereal based food containing fat",
+    "definition": "SIREN DB annotation:\n* whole, shape achieved by forming FOODON:03430147\n* seed (anatomical part) FOODON:03420155\n* ingredient: fat or oil added FOODON:03460221",
+    "iri": "http://purl.obolibrary.org/obo/FOODON_03316055"
   }
 }
