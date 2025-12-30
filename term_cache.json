@@ -5938,5 +5938,10 @@
     "label": "inhibition",
     "definition": "The interaction between the proteins or the formation of a complex is disrupted by a biological molecule or by a modification of the interactors.",
     "iri": "http://purl.obolibrary.org/obo/MI_0623"
+  },
+  "assays were conducted": {
+    "label": "Conducted Interference",
+    "definition": "Problems related to electromagnetic interference (EMI) by physical contact with conductors (e.g. wires, resistors, terminals) as opposed to radiated EMI which is caused by induction (without physical contact of the conductors).",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C92037"
   }
 }
