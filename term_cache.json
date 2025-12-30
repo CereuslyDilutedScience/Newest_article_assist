@@ -8278,5 +8278,10 @@
     "label": "Gently",
     "definition": "In a manner that is soft and mild, having little impact.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C64653"
+  },
+  "to 100 rpm)": {
+    "label": "RPM calculation",
+    "definition": "A unit of expression (reads per million reads) in which high-throughput sequencing reads for a given type of feature are normalized against all reads mapping to all features of the same type.",
+    "iri": "http://purl.obolibrary.org/obo/FBcv_0003229"
   }
 }
