@@ -463,5 +463,10 @@
     "label": "Aliquot",
     "definition": "Pertaining to a portion of the whole; any one of two or more samples of something, of the same volume or weight.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C25414"
+  },
+  "then": {
+    "label": "Then",
+    "definition": "Occurring at a time in the near future.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C65106"
   }
 }
