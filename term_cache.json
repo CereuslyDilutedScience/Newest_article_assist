@@ -6263,5 +6263,10 @@
     "label": "initial response",
     "definition": "The initial response is the role of an outgoing signal as it was generated raw without signal processing from a processing component. [Allotrope]",
     "iri": "http://purl.allotrope.org/ontologies/role#AFRL_0000275"
+  },
+  "of both gram-negative": {
+    "label": "gram negative",
+    "definition": "A gram stain phenotype where a cell or cells do not retain crystal violet stain when decolorized with an organic solvent such as ethanol.",
+    "iri": "http://purl.obolibrary.org/obo/OMP_0000189"
   }
 }
