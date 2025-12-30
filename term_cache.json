@@ -7603,5 +7603,10 @@
     "label": "material to be added",
     "definition": "a material that is added to another one in a material combination process",
     "iri": "http://purl.obolibrary.org/obo/OBI_1110108"
+  },
+  "appropriate treatment substrates": {
+    "label": "Appropriate Treatment",
+    "definition": "Correct activity that produces an effect, or that is intended to alter the course of a disease in a patient or population. This is a general term that encompasses the medical, social, behavioral, and environmental acts that can have preventive, therapeutic, or palliative effects. (ACC)",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C101247"
   }
 }
