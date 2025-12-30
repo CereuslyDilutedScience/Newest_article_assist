@@ -6373,5 +6373,10 @@
     "label": "ciliary processes",
     "definition": "The ciliary processes are formed by the inward folding of the various layers of the choroid, i.e. , the choroid proper and the lamina basalis, and are received between corresponding foldings of the suspensory ligament of the lens.",
     "iri": "http://purl.obolibrary.org/obo/UBERON_0010427"
+  },
+  "to the reduction": {
+    "label": "exposure to risk reduction",
+    "definition": "An exposure event involving Risk Reduction",
+    "iri": "http://purl.obolibrary.org/obo/ECTO_6000011"
   }
 }
