@@ -16053,5 +16053,10 @@
     "label": "(traN)",
     "definition": "mating pair stabilization",
     "iri": "http://purl.obolibrary.org/obo/OGG_3_21885349"
+  },
+  "feed. anim feed": {
+    "label": "Feed",
+    "definition": "To move something gradually into or through.",
+    "iri": "http://purl.obolibrary.org/obo/NCIT_C69427"
   }
 }
