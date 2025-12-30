@@ -15848,5 +15848,10 @@
     "label": "None of the Above",
     "definition": "None of the choices above are suitable.",
     "iri": "http://purl.obolibrary.org/obo/NCIT_C133298"
+  },
+  "third trial, one-way": {
+    "label": "Third Way",
+    "definition": "Nonprofit in United States established in 2005",
+    "iri": "https://ror.org/047vwpj87"
   }
 }
