@@ -81,7 +81,7 @@ def lookup_term_ols4(term):
                 "iri": doc.get("iri")
             }
 
-         return result
+       
 
         # If definition is empty, do NOT cache
         return None
