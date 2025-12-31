@@ -24,7 +24,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(STATIC_PAGE_FOLDER, exist_ok=True)
 
 # Base URL of your Cloud Run service
-CLOUD_RUN_BASE = "https://comprehendase-252233072700.us-east4.run.app"
+CLOUD_RUN_BASE = "https://comprehendase-470914920668.us-east4.run.app"
 
 # Serve rendered page images
 @app.route("/static/pages/<path:filename>")
