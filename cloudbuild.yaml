@@ -21,7 +21,7 @@ steps:
       [
         "run",
         "deploy",
-        "Comprehendase-backend",
+        "comprehendase-backend",
         "--image",
         "us-east4-docker.pkg.dev/comprehendase-backend/cloud-run-source-deploy/comprehendase:$SHORT_SHA",
         "--region",
