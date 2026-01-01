@@ -120,7 +120,10 @@ COMMON_WORDS = {
     "the","and","for","with","from","that","this","were","have","been",
     "in","on","of","to","as","by","is","are","be","or","an","at","it",
     "we","was","using","used","use","our","their","these","those",
-    "its","they","them","he","she","his","her","you","your","i"
+    "its","they","them","he","she","his","her","you","your","i",
+    "into","onto","within","between","through","over","under","out",
+    "up","down","off","than","then","also","such","each","both","via",
+    "per","among","amid","despite","during","before","after","because"
 }
 
 SCI_PREFIXES = (
@@ -156,6 +159,16 @@ def is_candidate_term(word):
     # Suppress standalone acronyms (BSF, ITS, etc.)
     if is_acronym(word_clean):
         return False
+
+    # NEW: if it's all lowercase and not a known biology pattern, reject it
+    if word_clean.islower():
+        allowed_lower = {
+            "biofilm", "larvae", "pathogen", "lipoprotein", "adhesion",
+            "invasion", "strain", "protein", "microorganism", "enzyme",
+            "bacteria", "fungi"
+        }
+        if word_clean not in allowed_lower:
+            return False
 
     # Gene-like patterns
     if re.match(r"^[A-Za-z]{2,6}\d*[A-Za-z]*$", word_clean):
