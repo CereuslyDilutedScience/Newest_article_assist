@@ -55,7 +55,7 @@ def extract_pdf_layout(pdf_path):
 
         words = merged_words
 
-        # --- STEP 3: Phrase reconstruction (UPDATED adjacency logic) ---
+        # --- STEP 3: Phrase reconstruction (UPDATED) ---
         phrases = []
         current_phrase = []
 
@@ -69,21 +69,29 @@ def extract_pdf_layout(pdf_path):
                 })
 
         for i, w in enumerate(words):
-            token = w["text"]
+            # Normalize token: strip punctuation + invisible chars
+            raw = w["text"]
+            token = raw.strip().strip(".,;:()[]{}")
+            token = token.replace("\u200b", "").replace("\u00ad", "").replace("\u2011", "")
 
-            # Basic noun-phrase heuristics:
-            # - alphabetic or hyphenated
-            # - not punctuation
-            # - not starting with a digit
-            # - adjacent words on same line/block
-            if token.isalpha() or "-" in token:
+            # Allow:
+            # - alphabetic tokens
+            # - hyphenated tokens
+            # - mixed alphanumeric tokens (genes, strains)
+            is_valid_token = (
+                token.isalpha() or
+                "-" in token or
+                token.isalnum()  # NEW: allow uvrC, XBY01, uvrC1, etc.
+            )
+
+            if is_valid_token:
                 if not current_phrase:
                     current_phrase = [w]
                 else:
                     prev = current_phrase[-1]
                     same_line = (prev["line"] == w["line"])
 
-                    # --- UPDATED: allow small gaps in word_no (1–2) ---
+                    # Allow small gaps in word_no (1–2)
                     gap = w["word_no"] - prev["word_no"]
                     adjacent = (1 <= gap <= 2)
 
@@ -104,7 +112,7 @@ def extract_pdf_layout(pdf_path):
             "width": page.rect.width,
             "height": page.rect.height,
             "words": words,
-            "phrases": phrases  # NEW
+            "phrases": phrases
         })
 
     doc.close()
