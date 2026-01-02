@@ -146,7 +146,7 @@ def is_candidate_term(word):
     if looks_like_author_name(word_clean):
         return False
 
-    # Suppress standalone acronyms (BSF, ITS, PCR, etc.) as single words
+    # Suppress standalone acronyms (BSF, ITS, PCR, etc.)
     if is_acronym(word_clean):
         return False
 
@@ -220,6 +220,7 @@ def is_species_like(words):
 
     return True
 
+
 def is_candidate_phrase(phrase):
     """Filter multi-word phrases."""
     words = phrase.split()
@@ -239,9 +240,14 @@ def is_candidate_phrase(phrase):
     if "subspecies" in lower or "serotype" in lower or "strain" in lower:
         return True
 
-    # General multi-word biological concepts:
+    # NEW: Allow any multi-word phrase containing at least one non-trivial word
     if len(words) > 1:
-        if any(is_candidate_term(w) for w in words):
+        for w in words:
+            w_clean = re.sub(r"[^A-Za-z0-9\-]", "", w)
+            if len(w_clean) < 3:
+                continue
+            if w_clean.lower() in COMMON_WORDS:
+                continue
             return True
         return False
 
