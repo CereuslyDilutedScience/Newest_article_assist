@@ -1,83 +1,87 @@
 import pdfplumber
+import math
 
 def extract_pdf_layout(pdf_path):
-    """
-    Extract words with coordinates using PDFPlumber's layout-aware extraction.
-    Reconstructs multi-word scientific terms BEFORE ontology lookup.
-    """
-
     pages_output = []
 
     with pdfplumber.open(pdf_path) as pdf:
         for page_index, page in enumerate(pdf.pages):
-
-            # --- STEP 1: Extract raw words from PDFPlumber ---
-            raw_words = page.extract_words(
-                keep_blank_chars=False,
-                layout=False,
-                extra_attrs=["fontname", "size"]
-            )
+            try:
+                raw_words = page.extract_words(
+                    keep_blank_chars=False,
+                    layout=False,
+                    extra_attrs=["fontname", "size"]
+                ) or []
+            except Exception as e:
+                print(f"ERROR extracting words on page {page_index+1}: {e}")
+                raw_words = []
 
             words = []
-
-            # Convert PDFPlumber word dicts into your unified structure
             for w in raw_words:
-                words.append({
-                    "text": w["text"],
-                    "x": float(w["x0"]),
-                    # Center vertically for highlight alignment
-                    "y": float((w["top"] + w["bottom"]) / 2),
-                    "width": float(w["x1"] - w["x0"]),
-                    "height": float(w["bottom"] - w["top"]),
-                    "block": 0,
-                    "line": 0,
-                    "word_no": 0
-                })
+                try:
+                    text = w.get("text", "")
+                    x0 = w.get("x0")
+                    x1 = w.get("x1")
+                    top = w.get("top")
+                    bottom = w.get("bottom")
 
-            # Sort words roughly in reading order: by y, then x
-            # Rounding y groups words on the same visual line
-            words.sort(key=lambda w: (round(w["y"] / 5), w["x"]))
+                    if text is None or x0 is None or x1 is None or top is None or bottom is None:
+                        # skip malformed word entries
+                        continue
 
-            # --- STEP 2: Merge hyphenated words across line breaks ---
-            merged_words = []
-            skip_next = False
-
-            for i in range(len(words)):
-                if skip_next:
-                    skip_next = False
+                    words.append({
+                        "text": text,
+                        "x": float(x0),
+                        "y": float((top + bottom) / 2),
+                        "width": float(x1 - x0),
+                        "height": float(bottom - top),
+                        "block": 0,
+                        "line": 0,
+                        "word_no": 0
+                    })
+                except Exception as e:
+                    print(f"Skipping malformed word on page {page_index+1}: {e}")
                     continue
 
-                current = words[i]
-                text = current["text"]
+            # Sort words roughly in reading order
+            words.sort(key=lambda w: (round(w["y"] / 5), w["x"]))
 
-                if text.endswith("-") and i + 1 < len(words):
+            # Merge hyphenated words across line breaks using index loop
+            merged_words = []
+            i = 0
+            while i < len(words):
+                current = words[i]
+                text = current["text"] or ""
+                if text.endswith("-") and (i + 1) < len(words):
                     next_word = words[i + 1]
                     merged_text = text.rstrip("-") + next_word["text"]
-
                     merged_word = current.copy()
                     merged_word["text"] = merged_text
-
+                    # recompute width if desired; keep current coords for highlight alignment
                     merged_words.append(merged_word)
-                    skip_next = True
+                    i += 2
                 else:
                     merged_words.append(current)
+                    i += 1
 
             words = merged_words
 
-            # --- STEP 3: Phrase reconstruction ---
+            # Phrase reconstruction
             phrases = []
             current_phrase = []
 
             def flush_phrase():
-                if len(current_phrase) > 0:
+                nonlocal current_phrase
+                if current_phrase:
                     phrase_text = " ".join([w["text"] for w in current_phrase])
                     phrases.append({
                         "text": phrase_text,
                         "words": current_phrase.copy()
                     })
+                    current_phrase = []
 
-            for i, w in enumerate(words):
-                raw = w["text"]
+            for w in words:
+                raw = w.get("text", "")
                 token = raw.strip().strip(".,;:()[]{}")
                 token = token.replace("\u200b", "").replace("\u00ad", "").replace("\u2011", "")
 
@@ -92,14 +96,9 @@ def extract_pdf_layout(pdf_path):
                         current_phrase = [w]
                     else:
                         prev = current_phrase[-1]
-
-                        # Same line: vertical positions very close
                         same_line = abs(prev["y"] - w["y"]) < 5
-
-                        # Horizontal gap: allow slight overlap and up to some spacing
                         horizontal_gap = w["x"] - (prev["x"] + prev["width"])
-                        adjacent = -3 <= horizontal_gap < 40  # allow small overlap, more generous spacing
-
+                        adjacent = -3 <= horizontal_gap < 40
                         if same_line and adjacent:
                             current_phrase.append(w)
                         else:
@@ -107,15 +106,13 @@ def extract_pdf_layout(pdf_path):
                             current_phrase = [w]
                 else:
                     flush_phrase()
-                    current_phrase = []
 
             flush_phrase()
 
-            # --- DEBUG: phrase summary + key phrases ---
+            # Debug prints
             print(f"\n=== PAGE {page_index + 1} ===")
             print(f"Total words: {len(words)}")
             print(f"Total phrases: {len(phrases)}")
-
             print("Key phrases containing targets:")
             for p in phrases:
                 if any(k in p["text"].lower() for k in [
@@ -123,11 +120,10 @@ def extract_pdf_layout(pdf_path):
                 ]):
                     print("  PHRASE:", p["text"])
 
-            # --- STEP 4: Save page output ---
             pages_output.append({
                 "page_number": page_index + 1,
-                "width": page.width,
-                "height": page.height,
+                "width": float(page.width) if page.width is not None else 0.0,
+                "height": float(page.height) if page.height is not None else 0.0,
                 "words": words,
                 "phrases": phrases
             })
