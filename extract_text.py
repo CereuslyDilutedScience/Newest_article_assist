@@ -25,13 +25,18 @@ def extract_pdf_layout(pdf_path):
                 words.append({
                     "text": w["text"],
                     "x": float(w["x0"]),
-                    "y": float((w["top"] + w["bottom"]) / 2),  # FIXED: center y for highlight alignment
+                    # Center vertically for highlight alignment
+                    "y": float((w["top"] + w["bottom"]) / 2),
                     "width": float(w["x1"] - w["x0"]),
                     "height": float(w["bottom"] - w["top"]),
                     "block": 0,
                     "line": 0,
                     "word_no": 0
                 })
+
+            # Sort words roughly in reading order: by y, then x
+            # Rounding y groups words on the same visual line
+            words.sort(key=lambda w: (round(w["y"] / 5), w["x"]))
 
             # --- STEP 2: Merge hyphenated words across line breaks ---
             merged_words = []
@@ -59,7 +64,7 @@ def extract_pdf_layout(pdf_path):
 
             words = merged_words
 
-            # --- STEP 3: Phrase reconstruction (FIXED) ---
+            # --- STEP 3: Phrase reconstruction ---
             phrases = []
             current_phrase = []
 
@@ -88,12 +93,12 @@ def extract_pdf_layout(pdf_path):
                     else:
                         prev = current_phrase[-1]
 
-                        # FIXED: use y proximity for line match
+                        # Same line: vertical positions very close
                         same_line = abs(prev["y"] - w["y"]) < 5
 
-                        # FIXED: use x proximity for adjacency
+                        # Horizontal gap: allow slight overlap and up to some spacing
                         horizontal_gap = w["x"] - (prev["x"] + prev["width"])
-                        adjacent = 0 <= horizontal_gap < 30  # tuned threshold
+                        adjacent = -3 <= horizontal_gap < 40  # allow small overlap, more generous spacing
 
                         if same_line and adjacent:
                             current_phrase.append(w)
@@ -106,11 +111,17 @@ def extract_pdf_layout(pdf_path):
 
             flush_phrase()
 
-            # --- DEBUG: inspect phrases containing key terms ---
-            print("\n=== DEBUG PHRASES (page", page_index + 1, ") ===")
+            # --- DEBUG: phrase summary + key phrases ---
+            print(f"\n=== PAGE {page_index + 1} ===")
+            print(f"Total words: {len(words)}")
+            print(f"Total phrases: {len(phrases)}")
+
+            print("Key phrases containing targets:")
             for p in phrases:
-                if any(k in p["text"].lower() for k in ["otitis", "media", "uvrc", "xby", "mycoplasma", "gene", "strain"]):
-                    print("PHRASE:", p["text"])
+                if any(k in p["text"].lower() for k in [
+                    "otitis", "media", "mycoplasma", "bovis", "xby01", "strain", "gene"
+                ]):
+                    print("  PHRASE:", p["text"])
 
             # --- STEP 4: Save page output ---
             pages_output.append({
