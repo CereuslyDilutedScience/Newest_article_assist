@@ -2,7 +2,7 @@ import requests
 import re
 from itertools import islice
 import sys
-
+import os
 # ---------------------------------------------------------
 # CONFIG / LIMITS
 # ---------------------------------------------------------
