@@ -3,6 +3,7 @@ from werkzeug.utils import secure_filename
 from flask_cors import CORS
 import os
 import time
+import sys
 
 from extract_text import extract_pdf_layout
 from render_pages import render_pdf_pages
@@ -67,6 +68,8 @@ def extract():
                 w["term"] = ontology_hits[text]["label"]
                 w["definition"] = ontology_hits[text]["definition"]
 
+        print("ONTOLOGY HITS:", ontology_hits.keys())
+        
         # Attach phrase hits
         for phrase_obj in page["phrases"]:
             phrase = phrase_obj["text"]
