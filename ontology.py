@@ -1,6 +1,7 @@
 import requests
 import re
 from itertools import islice
+import sys
 
 # ---------------------------------------------------------
 # CONFIG / LIMITS
@@ -396,7 +397,9 @@ def extract_ontology_terms(pages_output):
         # Deterministic truncation: sort and keep first N
         candidate_terms = set(islice(sorted(candidate_terms), MAX_TERMS_PER_DOCUMENT))
         
-    print("CANDIDATE TERMS:", sorted(candidate_terms))
+    print("CANDIDATE TERMS:", sorted(candidate_terms), file=sys.stdout, flush=True)
+
+    
     # 3. Query OLS4 per term
     found_terms = {}
 
