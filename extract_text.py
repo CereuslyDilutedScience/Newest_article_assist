@@ -10,11 +10,12 @@ def extract_pdf_layout(pdf_path):
             # --- WORD EXTRACTION (fixed for PDFPlumber 0.11.x) ---
             try:
                 raw_words = page.extract_words(
-                    use_text_flow=True,       # restores old behavior
-                    keep_blank_chars=True,    # prevents ligature collapse
-                    x_tolerance=3,            # scientific PDFs need tighter tolerances
+                    use_text_flow=False,
+                    keep_blank_chars=True,
+                    x_tolerance=5,
                     y_tolerance=3,
                     extra_attrs=["fontname", "size"]
+
                 ) or []
             except Exception as e:
                 print(f"ERROR extracting words on page {page_index+1}: {e}")
