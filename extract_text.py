@@ -36,11 +36,14 @@ PLATFORM_HINTS = [
 BIO_HINTS = [
     "mycoplasma", "bovis", "strain", "rrna", "virulence",
     "lipoprotein", "mollicutes", "mycoplasmataceae", "pathogen",
-    "mastitis", "otitis", "pneumonia", "adhesion", "invasion"
+    "mastitis", "otitis", "pneumonia", "adhesion", "invasion",
+    "protein", "genome", "gene", "operon", "membrane", "surface",
+    "lipid", "enzyme", "ribosomal", "subunit", "replication",
+    "transcription", "translation"
 ]
 
 
-# --- GARBAGE FILTER ---
+# --- CORRECTED GARBAGE FILTER (BIOLOGICALLY SAFE) ---
 
 def is_garbage_phrase(text):
     t = text.lower().strip()
@@ -48,8 +51,8 @@ def is_garbage_phrase(text):
     if not t:
         return True
 
-    # Allow up to 6 words (biological terms can be long)
-    if len(t.split()) > 6:
+    # Allow up to 10 words (scientific terms can be long)
+    if len(t.split()) > 10:
         return True
 
     # Reject Creative Commons / license text
@@ -72,29 +75,20 @@ def is_garbage_phrase(text):
     if "doi" in t or "http" in t:
         return True
 
-    # Reject units
-    if any(u in t for u in BAD_UNITS):
-        return True
-
     # Reject email-like
     if "@" in t:
         return True
 
-    # Reject leading number (citations)
-    if re.match(r"^\d", t):
+    # Reject leading number ONLY if the phrase is not biological
+    if re.match(r"^\d", t) and not any(b in t for b in BIO_HINTS):
         return True
 
-    # Allow platform/tool names
-    if any(p in t for p in PLATFORM_HINTS):
-        return False
-
-    # Allow biological terms
-    if any(b in t for b in BIO_HINTS):
-        return False
-
-    # Reject punctuation-heavy phrases (citations)
-    if any(p in t for p in [",", ";", ":", "(", ")", "[", "]", "{", "}"]):
+    # Reject units (but allow biological context)
+    if any(u in t for u in BAD_UNITS) and not any(b in t for b in BIO_HINTS):
         return True
+
+    # DO NOT reject punctuation — biological terms often contain punctuation
+    # (parentheses, hyphens, commas, etc.)
 
     return False
 
@@ -181,7 +175,6 @@ def extract_pdf_layout(pdf_path):
                 if current_phrase:
                     phrase_text = " ".join([w["text"] for w in current_phrase]).strip()
 
-                    # Apply garbage filter
                     if not is_garbage_phrase(phrase_text):
                         phrases.append({
                             "text": phrase_text,
