@@ -1,8 +1,6 @@
 import requests
 import re
 from itertools import islice
-import os
-import sys
 
 # ---------------------------------------------------------
 # CONFIG / LIMITS
@@ -15,34 +13,27 @@ OLS4_SEARCH_URL = "https://www.ebi.ac.uk/ols4/api/search"
 # COMMON WORD / PATTERN FILTERS
 # ---------------------------------------------------------
 
-COMMON_WORDS = set()
+COMMON_WORDS = {
+    "the","and","for","with","from","that","this","were","was","are","but",
+    "into","onto","between","among","after","before","during","under","over",
+    "using","used","based","data","study","analysis","results","methods",
+    "introduction","discussion","conclusion","figure","table","supplementary"
+}
 
 SCI_PREFIXES = (
-    "bio", "micro", "immuno", "neuro", "cyto", "geno", "patho",
-    "chemo", "thermo", "myco", "entomo"
+    "bio","micro","immuno","neuro","cyto","geno","patho",
+    "chemo","thermo","myco","entomo","viro","bacterio"
 )
 
 SCI_SUFFIXES = (
     "ase","itis","osis","emia","phage","phyte","coccus","viridae","aceae","ales",
-    "bacteria","mycetes","mycotina","phyta","phyceae","mycota","archaea"
+    "bacteria","mycetes","mycotina","phyta","phyceae","mycota","archaea",
+    "genome","protein","enzyme","lipid","membrane","operon"
 )
 
-ALLOWED_LOWER = set()
-BANNED_TOKENS = set()
-
-BIO_GENOME_CONTEXT = {
-    "replication","stability","annotation","assembly"
+BANNED_TOKENS = {
+    "figure","table","supplementary","supplement","dataset","analysis"
 }
-
-# ---------------------------------------------------------
-# AUTHOR / CITATION DETECTION
-# ---------------------------------------------------------
-
-def looks_like_author_name(word: str) -> bool:
-    return False
-
-def phrase_is_citation(phrase: str) -> bool:
-    return False
 
 # ---------------------------------------------------------
 # BASIC HELPERS
@@ -52,17 +43,28 @@ def is_acronym(word: str) -> bool:
     return word.isupper() and len(word) >= 3
 
 def clean_token(token: str) -> str:
-    return token.strip()
+    return token.strip().strip(".,;:()[]{}")
 
-def words_from_phrase_text(phrase_text: str):
-    return [clean_token(t) for t in phrase_text.split() if clean_token(t)]
+def normalize_term(term: str) -> str:
+    t = term.lower().strip()
+
+    # Remove trailing plural forms
+    if t.endswith("proteins"):
+        return t[:-1]
+    if t.endswith("genomes"):
+        return t[:-1]
+
+    # Remove punctuation noise
+    t = re.sub(r"[^a-z0-9\- ]", "", t)
+
+    return t
 
 # ---------------------------------------------------------
 # WORD-LEVEL CANDIDATE FILTER
 # ---------------------------------------------------------
 
 def is_candidate_single_word(raw_word: str) -> bool:
-    w = raw_word.strip()
+    w = clean_token(raw_word)
     if not w:
         return False
 
@@ -70,37 +72,26 @@ def is_candidate_single_word(raw_word: str) -> bool:
 
     if lw in COMMON_WORDS:
         return False
-
     if lw in BANNED_TOKENS:
         return False
-
     if len(lw) <= 2:
         return False
 
+    # Scientific prefixes/suffixes
     if any(lw.startswith(p) for p in SCI_PREFIXES):
         return True
     if any(lw.endswith(s) for s in SCI_SUFFIXES):
         return True
 
+    # Acronyms like DNA, RNA, PCR
     if is_acronym(w):
         return True
 
     return False
 
 # ---------------------------------------------------------
-# PHRASE-LEVEL FILTERING / N-GRAMS
+# PHRASE-LEVEL N-GRAMS
 # ---------------------------------------------------------
-
-PROCEDURAL_PATTERNS = []
-
-def phrase_is_procedural_or_metadata(phrase: str) -> bool:
-    return False
-
-def is_species_like(words) -> bool:
-    return True
-
-def is_candidate_phrase_full(phrase_text: str) -> bool:
-    return False
 
 def generate_ngrams(tokens, min_n=2, max_n=3):
     ngrams = []
@@ -112,43 +103,38 @@ def generate_ngrams(tokens, min_n=2, max_n=3):
 
 def phrase_ngrams_for_ontology(phrase_text: str):
     """
-    Basic n-gram generator for ontology lookup.
+    Generate unigrams and bigrams for ontology lookup.
     """
     tokens = phrase_text.lower().strip().split()
     results = set()
 
-    # unigrams
+    # Unigrams
     for t in tokens:
-        t_clean = t.strip(".,;:()[]{}")
+        t_clean = clean_token(t)
         if len(t_clean) >= 3 and t_clean not in BANNED_TOKENS:
             results.add(t_clean)
 
-    # bigrams
+    # Bigrams
     for bg in generate_ngrams(tokens, min_n=2, max_n=2):
-        bg_clean = bg.replace("  ", " ").strip()
+        bg_clean = clean_token(bg)
         if len(bg_clean.replace(" ", "")) >= 5:
             results.add(bg_clean)
 
     return sorted(results)
 
 # ---------------------------------------------------------
-# OLS4 LOOKUP (Improved Ranking)
+# OLS4 LOOKUP
 # ---------------------------------------------------------
 
 BIO_ONTOLOGY_PREFIXES = {
-    "go", "so", "pr", "chebi", "ncbitaxon", "envo", "obi", "eco"
+    "go","so","pr","chebi","ncbitaxon","envo","obi","eco"
 }
-
-def normalize_term(term: str) -> str:
-    t = term.lower().strip()
-    if t.endswith("proteins"):
-        return t[:-1]
-    if t.endswith("genomes"):
-        return t[:-1]
-    return t
 
 def lookup_term_ols4(term: str):
     norm = normalize_term(term)
+    if not norm:
+        return None
+
     params = {
         "q": norm,
         "queryFields": "label",
@@ -165,18 +151,23 @@ def lookup_term_ols4(term: str):
         if not docs:
             return None
 
+        # Prefer biological ontologies
         for d in docs:
             prefix = d.get("ontology_prefix", "").lower()
-            if prefix and prefix in BIO_ONTOLOGY_PREFIXES:
-                hit = {
+            if prefix in BIO_ONTOLOGY_PREFIXES:
+                return {
                     "label": d.get("label", ""),
                     "definition": d.get("description", ""),
                     "iri": d.get("iri", "")
                 }
-                print("LOOKUP:", term, "=>", hit, flush=True)
-                return hit
 
-        return None
+        # Fallback: return first result
+        d = docs[0]
+        return {
+            "label": d.get("label", ""),
+            "definition": d.get("description", ""),
+            "iri": d.get("iri", "")
+        }
 
     except Exception as e:
         print("OLS4 lookup failed for", term, ":", e, flush=True)
@@ -189,7 +180,10 @@ def lookup_term_ols4(term: str):
 def extract_ontology_terms(pages_output):
     candidate_terms = set()
 
+    # Collect candidate terms from words + phrases
     for page in pages_output:
+
+        # Single words
         for w in page.get("words", []):
             raw = w.get("text", "")
             if raw and is_candidate_single_word(raw):
@@ -197,6 +191,7 @@ def extract_ontology_terms(pages_output):
                 if len(norm) >= 3:
                     candidate_terms.add(norm)
 
+        # Phrases → n-grams
         for phrase_obj in page.get("phrases", []):
             phrase_text = phrase_obj.get("text", "")
             if not phrase_text:
@@ -207,11 +202,13 @@ def extract_ontology_terms(pages_output):
                 if len(norm) >= 3:
                     candidate_terms.add(norm)
 
-    if MAX_TERMS_PER_DOCUMENT is not None and len(candidate_terms) > MAX_TERMS_PER_DOCUMENT:
+    # Limit total terms
+    if MAX_TERMS_PER_DOCUMENT and len(candidate_terms) > MAX_TERMS_PER_DOCUMENT:
         candidate_terms = set(islice(sorted(candidate_terms), MAX_TERMS_PER_DOCUMENT))
 
     print("CANDIDATE TERMS:", sorted(candidate_terms), flush=True)
 
+    # Lookup each term
     found_terms = {}
     for term in candidate_terms:
         hit = lookup_term_ols4(term)
