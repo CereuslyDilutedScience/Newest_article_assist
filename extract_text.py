@@ -33,7 +33,7 @@ BIO_HINTS = [
 ]
 
 
-# --- GARBAGE FILTER WITH REJECTION REASONS ---
+# --- GARBAGE FILTER ---
 
 def is_garbage_phrase(text):
     t = text.lower().strip()
@@ -71,20 +71,20 @@ def is_garbage_phrase(text):
     return False, None
 
 
-# --- OCR + EXTRACTION PIPELINE ---
+# --- OCR STEP ---
 
 def ocr_pdf(input_path):
     """
-    Runs OCRmyPDF on the input PDF and returns the path to the cleaned PDF.
-    If OCR fails, returns None.
+    Runs OCRmyPDF and returns a UNIQUE cleaned PDF path.
     """
     try:
         temp_dir = tempfile.gettempdir()
-        cleaned_path = os.path.join(temp_dir, "ocr_cleaned.pdf")
+        unique_name = next(tempfile._get_candidate_names())
+        cleaned_path = os.path.join(temp_dir, f"ocr_{unique_name}.pdf")
 
         print("\n=== OCR STEP ===")
         print(f"Running OCRmyPDF on: {input_path}")
-        print(f"Output will be: {cleaned_path}")
+        print(f"OCR output: {cleaned_path}")
 
         subprocess.run(
             ["ocrmypdf", "--force-ocr", "--deskew", "--clean", input_path, cleaned_path],
@@ -106,26 +106,18 @@ def extract_pdf_layout(pdf_path):
     print("=== STARTING EXTRACTION ===")
     print("==============================")
 
-    # --- RUN OCR FIRST ---
+    # Run OCR
     cleaned_pdf = ocr_pdf(pdf_path)
-
-    if cleaned_pdf:
-        print("Using OCR-cleaned PDF for extraction.")
-        target_pdf = cleaned_pdf
-    else:
-        print("Falling back to original PDF (OCR unavailable).")
-        target_pdf = pdf_path
+    target_pdf = cleaned_pdf if cleaned_pdf else pdf_path
 
     pages_output = []
 
     with pdfplumber.open(target_pdf) as pdf:
         for page_index, page in enumerate(pdf.pages):
 
-            print(f"\n==============================")
-            print(f"=== PAGE {page_index+1} START ===")
-            print("==============================")
+            print(f"\n=== PAGE {page_index+1} START ===")
 
-            # --- WORD EXTRACTION ---
+            # Extract words
             try:
                 raw_words = page.extract_words(
                     use_text_flow=False,
@@ -135,12 +127,10 @@ def extract_pdf_layout(pdf_path):
                     extra_attrs=["fontname", "size"]
                 ) or []
             except Exception as e:
-                print(f"ERROR extracting words on page {page_index+1}: {e}")
+                print(f"ERROR extracting words: {e}")
                 raw_words = []
 
-            print(f"Raw word count: {len(raw_words)}")
-
-            # --- NORMALIZE WORD STRUCTURE ---
+            # Normalize words
             words = []
             for w in raw_words:
                 try:
@@ -163,19 +153,13 @@ def extract_pdf_layout(pdf_path):
                         "line": 0,
                         "word_no": 0
                     })
-                except Exception as e:
-                    print(f"Skipping malformed word on page {page_index+1}: {e}")
+                except:
                     continue
 
-            # --- SORT WORDS ---
+            # Sort words
             words.sort(key=lambda w: (round(w["y"] / 5), w["x"]))
 
-            # --- DEBUG: FIRST 10 WORDS ---
-            print("\nWORD DEBUG (first 10):")
-            for w in words[:10]:
-                print(f"  '{w['text']}' at x={w['x']:.1f}, y={w['y']:.1f}")
-
-            # --- MERGE HYPHENATED WORDS ---
+            # Merge hyphenated words
             merged_words = []
             i = 0
             while i < len(words):
@@ -186,7 +170,6 @@ def extract_pdf_layout(pdf_path):
                     next_word = words[i + 1]
                     merged = current.copy()
                     merged["text"] = text.rstrip("-") + next_word["text"]
-                    print(f"MERGE: '{text}' + '{next_word['text']}' → '{merged['text']}'")
                     merged_words.append(merged)
                     i += 2
                 else:
@@ -195,7 +178,7 @@ def extract_pdf_layout(pdf_path):
 
             words = merged_words
 
-            # --- PHRASE RECONSTRUCTION ---
+            # Phrase reconstruction
             phrases = []
             current_phrase = []
 
@@ -205,10 +188,7 @@ def extract_pdf_layout(pdf_path):
                     phrase_text = " ".join([w["text"] for w in current_phrase]).strip()
                     rejected, reason = is_garbage_phrase(phrase_text)
 
-                    if rejected:
-                        print(f"REJECTED: \"{phrase_text}\" — reason: {reason}")
-                    else:
-                        print(f"PHRASE BUILT: \"{phrase_text}\"")
+                    if not rejected:
                         phrases.append({
                             "text": phrase_text,
                             "words": current_phrase.copy()
@@ -246,33 +226,14 @@ def extract_pdf_layout(pdf_path):
 
             flush_phrase()
 
-            print(f"\nTotal words after merge: {len(words)}")
-            print(f"Total phrases: {len(phrases)}")
-
-            # --- CANDIDATE TERM DEBUG (GROUPED BY SOURCE) ---
-            print(f"\n=== CANDIDATE TERMS (page {page_index+1}) ===")
-
-            # From words
-            word_terms = sorted({w["text"].lower() for w in words if w["text"].isalpha()})
-            print("From words:")
-            for t in word_terms:
-                print(f"  {t}")
-
-            # From phrases
-            phrase_terms = sorted({p["text"].lower() for p in phrases})
-            print("\nFrom phrases:")
-            for t in phrase_terms:
-                print(f"  {t}")
-
-            # --- OUTPUT STRUCTURE ---
             pages_output.append({
                 "page_number": page_index + 1,
-                "width": float(page.width) if page.width else 0.0,
-                "height": float(page.height) if page.height else 0.0,
+                "width": float(page.width),
+                "height": float(page.height),
                 "words": words,
                 "phrases": phrases
             })
 
-            print(f"=== PAGE {page_index+1} END ===\n")
+            print(f"=== PAGE {page_index+1} END ===")
 
-    return pages_output
+    return target_pdf, pages_output
