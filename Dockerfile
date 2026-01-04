@@ -2,15 +2,11 @@
 FROM python:3.11-slim-bookworm
 
 # Set locale to avoid potential issues in minimal environments
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 
-# Install poppler so pdfinfo is available
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     poppler-utils \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install system dependencies via apt-get
-RUN apt-get update && apt-get install -y --no-install-recommends \
     ghostscript \
     qpdf \
     tesseract-ocr \
@@ -19,13 +15,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     tesseract-ocr-chi-sim \
     pngquant \
     unpaper \
-    jbig2enc \
+    jbig2dec \
+    libjbig2dec0 \
+    libjpeg62-turbo \
+    libpng16-16 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install the OCRmyPDF Python package
-RUN pip install ocrmypdf
-
-
+# Install OCRmyPDF (installs jbig2enc via pip)
+RUN pip install --no-cache-dir ocrmypdf
 
 # Set working directory
 WORKDIR /app
