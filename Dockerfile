@@ -1,5 +1,24 @@
 # Use the official lightweight Python image
-FROM python:3.10-slim
+FROM python:3.10-slim-bookworm
+
+# Set locale to avoid potential issues in minimal environments
+ENV LANG C.UTF-8
+
+# Install system dependencies via apt-get
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ghostscript \
+    qpdf \
+    tesseract-ocr \
+    tesseract-ocr-eng \
+    tesseract-ocr-deu \
+    tesseract-ocr-chi-sim \
+    pngquant \
+    unpaper \
+    jbig2enc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install the OCRmyPDF Python package
+RUN pip install ocrmypdf
 
 # Install poppler so pdfinfo is available
 RUN apt-get update && apt-get install -y --no-install-recommends \
