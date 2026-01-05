@@ -273,18 +273,40 @@ def extract_ontology_terms(pages_output):
 
     print("CANDIDATE TERMS (filtered):", candidate_terms, flush=True)
 
+def process_terms(candidate_terms):
     found_terms = {}
     bioportal_count = 0
 
+    print("\n=== DEBUG: Ontology lookup block ===")
+    print("Initial bioportal_count:", bioportal_count)
+    print("MAX_BIOPORTAL_LOOKUPS:", MAX_BIOPORTAL_LOOKUPS)
+
     for term in candidate_terms:
+        print(f"\n--- Checking term: {term} ---")
         hit = None
 
         if bioportal_count < MAX_BIOPORTAL_LOOKUPS:
+            print("Calling BioPortal...")
             hit = lookup_term_bioportal(term)
+            print("BioPortal returned:", hit)
+
             if hit:
                 bioportal_count += 1
+                print("Incremented bioportal_count to:", bioportal_count)
+            else:
+                print("No hit for term:", term)
+        else:
+            print("Skipping BioPortal lookup — limit reached")
 
         if hit:
+            print("Adding term to found_terms:", term)
             found_terms[term] = hit
+        else:
+            print("Not adding term:", term)
+
+    print("\n=== DEBUG COMPLETE ===")
+    print("Final bioportal_count:", bioportal_count)
+    print("Final found_terms keys:", list(found_terms.keys()))
+    print("=======================\n")
 
     return found_terms
