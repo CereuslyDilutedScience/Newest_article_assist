@@ -2,8 +2,7 @@ flask
 flask-cors
 werkzeug
 pdfplumber==0.11.4
-pymupdf
-pdf2image
+pymupdf==1.24.9
 pillow
-
 requests
+
