@@ -274,40 +274,44 @@ def extract_ontology_terms(pages_output):
     print("CANDIDATE TERMS (filtered):", candidate_terms, flush=True)
     return candidate_terms
     
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 def process_terms(candidate_terms):
     found_terms = {}
     bioportal_count = 0
 
-    print("\n=== DEBUG: Ontology lookup block ===")
-    print("Initial bioportal_count:", bioportal_count)
+    print("\n=== DEBUG: Parallel ontology lookup ===")
     print("MAX_BIOPORTAL_LOOKUPS:", MAX_BIOPORTAL_LOOKUPS)
 
-    for term in candidate_terms:
-        print(f"\n--- Checking term: {term} ---")
-        hit = None
+    # Limit how many terms we actually look up
+    terms_to_lookup = candidate_terms[:MAX_BIOPORTAL_LOOKUPS]
 
-        if bioportal_count < MAX_BIOPORTAL_LOOKUPS:
-            print("Calling BioPortal...")
-            hit = lookup_term_bioportal(term)
-            print("BioPortal returned:", hit)
+    # Use a thread pool (10–20 workers is a good sweet spot)
+    with ThreadPoolExecutor(max_workers=15) as executor:
+        future_to_term = {
+            executor.submit(lookup_term_bioportal, term): term
+            for term in terms_to_lookup
+        }
+
+        for future in as_completed(future_to_term):
+            term = future_to_term[future]
+            try:
+                hit = future.result()
+            except Exception as e:
+                print(f"Error for term {term}: {e}")
+                continue
 
             if hit:
+                found_terms[term] = hit
                 bioportal_count += 1
-                print("Incremented bioportal_count to:", bioportal_count)
+                print(f"Hit: {term} → {hit['label']}")
             else:
-                print("No hit for term:", term)
-        else:
-            print("Skipping BioPortal lookup — limit reached")
-
-        if hit:
-            print("Adding term to found_terms:", term)
-            found_terms[term] = hit
-        else:
-            print("Not adding term:", term)
+                print(f"No hit: {term}")
 
     print("\n=== DEBUG COMPLETE ===")
-    print("Final bioportal_count:", bioportal_count)
-    print("Final found_terms keys:", list(found_terms.keys()))
+    print("Total hits:", bioportal_count)
+    print("Found terms:", list(found_terms.keys()))
     print("=======================\n")
 
     return found_terms
+
