@@ -2,7 +2,8 @@ import os
 import tempfile
 import fitz  # PyMuPDF
 
-def render_pdf_pages(pdf_path, output_folder="static/pages", dpi=150):
+def render_pdf_pages(pdf_path, output_folder="/tmp/pages", dpi=150):
+
     """
     Render each page of the PDF as a PNG image using PyMuPDF (fitz).
     Returns a list of file paths to the rendered images.
