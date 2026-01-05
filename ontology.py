@@ -6,10 +6,13 @@ from itertools import islice
 # CONFIG / LIMITS
 # ---------------------------------------------------------
 
-MAX_TERMS_PER_DOCUMENT = 100  # raised for high recall
-OLS4_SEARCH_URL = "https://www.ebi.ac.uk/ols4/api/search"
+MAX_TERMS_PER_DOCUMENT = 2000
+MAX_BIOPORTAL_LOOKUPS = 300  # cap to prevent long runs
+
 BIOPORTAL_SEARCH_URL = "https://data.bioontology.org/search"
-BIOPORTAL_API_KEY = "7e84a21d-3f8e-4837-b7a9-841fb4847ddf"   # <-- replace locally
+BIOPORTAL_API_KEY = "7e84a21d-3f8e-4837-b7a9-841fb4847ddf"
+
+OLS4_SEARCH_URL = "https://www.ebi.ac.uk/ols4/api/search"
 
 # ---------------------------------------------------------
 # COMMON WORD / PATTERN FILTERS
@@ -44,6 +47,8 @@ BANNED_TOKENS = {
     "figure","table","supplementary","supplement","dataset","analysis"
 }
 
+STOPWORDS = COMMON_WORDS | BANNED_TOKENS
+
 # ---------------------------------------------------------
 # BASIC HELPERS
 # ---------------------------------------------------------
@@ -61,16 +66,53 @@ def clean_token(token: str) -> str:
 
 def normalize_term(term: str) -> str:
     t = term.strip().lower()
-    if t.endswith("proteins"):
-        t = t[:-1]
-    if t.endswith("genomes"):
-        t = t[:-1]
     t = re.sub(r"[^a-z0-9\- ]", "", t)
     t = re.sub(r"\s+", " ", t).strip()
     return t
 
 def core_alpha(token: str) -> str:
     return re.sub(r"[^A-Za-z]", "", token)
+
+# ---------------------------------------------------------
+# JUNK DETECTION
+# ---------------------------------------------------------
+
+def is_numeric_heavy(term: str) -> bool:
+    digits = sum(c.isdigit() for c in term)
+    return digits > len(term) * 0.4
+
+def looks_like_accession(term: str) -> bool:
+    return bool(re.match(r"^[a-z]{1,3}\d{4,}$", term))
+
+def looks_like_hash(term: str) -> bool:
+    return len(term) > 20 and re.fullmatch(r"[a-f0-9]+", term)
+
+def looks_like_doi_or_url(term: str) -> bool:
+    return "doi" in term or "http" in term or "www" in term
+
+def is_junk_term(term: str) -> bool:
+    if len(term) > 40:
+        return True
+    if is_numeric_heavy(term):
+        return True
+    if looks_like_accession(term):
+        return True
+    if looks_like_hash(term):
+        return True
+    if looks_like_doi_or_url(term):
+        return True
+    if term in STOPWORDS:
+        return True
+    if not re.search(r"[a-zA-Z]", term):
+        return True
+    return False
+
+def is_junk_phrase(tokens):
+    if any(tok in STOPWORDS for tok in tokens):
+        return True
+    if any(any(c.isdigit() for c in tok) for tok in tokens):
+        return True
+    return False
 
 # ---------------------------------------------------------
 # SPECIES DETECTION
@@ -84,15 +126,7 @@ def looks_like_species_name(tokens_raw):
     second = core_alpha(second_raw)
     if not first or not second:
         return False
-    if not first[0].isupper():
-        return False
-    if not first.isalpha():
-        return False
-    if not second.islower():
-        return False
-    if not second.isalpha():
-        return False
-    return True
+    return first[0].isupper() and first.isalpha() and second.islower() and second.isalpha()
 
 def looks_like_abbrev_species(tokens_raw):
     if len(tokens_raw) != 2:
@@ -102,13 +136,7 @@ def looks_like_abbrev_species(tokens_raw):
     second = core_alpha(second_raw)
     if not first or not second:
         return False
-    if not (len(first) == 2 and first[0].isupper() and first[1] == "."):
-        return False
-    if not second.islower():
-        return False
-    if not second.isalpha():
-        return False
-    return True
+    return len(first) == 2 and first[0].isupper() and first[1] == "." and second.islower()
 
 # ---------------------------------------------------------
 # WORD-LEVEL CANDIDATE FILTER
@@ -120,79 +148,66 @@ def is_candidate_single_word(raw_word: str) -> bool:
         return False
 
     lw = w_clean.lower()
-
-    if lw in COMMON_WORDS or lw in BANNED_TOKENS:
+    if lw in STOPWORDS:
         return False
-    if len(lw) <= 2:
+    if is_junk_term(lw):
         return False
 
     if any(lw.startswith(p) for p in SCI_PREFIXES):
         return True
     if any(lw.endswith(s) for s in SCI_SUFFIXES):
         return True
-
     if is_acronym(w_clean):
         return True
 
     alpha_core = core_alpha(w_clean).lower()
-    if len(alpha_core) >= 5 and alpha_core not in COMMON_WORDS and alpha_core not in BANNED_TOKENS:
-        return True
-
-    return False
+    return len(alpha_core) >= 5
 
 # ---------------------------------------------------------
 # PHRASE-LEVEL N-GRAMS
 # ---------------------------------------------------------
 
 def generate_ngrams(tokens, min_n=2, max_n=3):
-    ngrams = []
     L = len(tokens)
     for n in range(min_n, max_n + 1):
         for i in range(L - n + 1):
-            ngrams.append(tokens[i:i+n])
-    return ngrams
+            yield tokens[i:i+n]
 
 def phrase_ngrams_for_ontology(phrase_text: str):
     if not phrase_text:
         return []
 
     tokens_raw = phrase_text.strip().split()
-    if not tokens_raw:
-        return []
-
     tokens_lower = [t.lower() for t in tokens_raw]
     results = set()
 
-    for t_raw, t_low in zip(tokens_raw, tokens_lower):
-        t_clean = clean_token(t_low)
-        if len(t_clean) >= 3 and t_clean not in BANNED_TOKENS:
-            results.add(t_clean)
+    # Unigrams
+    for t in tokens_lower:
+        if len(t) >= 3 and not is_junk_term(t):
+            results.add(t)
 
-    bigrams_raw = generate_ngrams(tokens_raw, min_n=2, max_n=2)
-    for bg_tokens in bigrams_raw:
-        if looks_like_species_name(bg_tokens) or looks_like_abbrev_species(bg_tokens):
-            phrase = " ".join(bg_tokens)
-            results.add(normalize_term(phrase))
+    # Species
+    for bg in generate_ngrams(tokens_raw, 2, 2):
+        if looks_like_species_name(bg) or looks_like_abbrev_species(bg):
+            results.add(normalize_term(" ".join(bg)))
 
-    ngrams_tokens = generate_ngrams(tokens_lower, min_n=2, max_n=3)
-    for ng_tokens in ngrams_tokens:
-        joined_raw = " ".join(ng_tokens)
-        joined_clean = clean_token(joined_raw)
-        compact = joined_clean.replace(" ", "")
+    # Bigrams/trigrams
+    for ng in generate_ngrams(tokens_lower, 2, 3):
+        if is_junk_phrase(ng):
+            continue
 
+        joined = " ".join(ng)
+        compact = joined.replace(" ", "")
         if len(compact) < 5:
             continue
 
-        has_strong_component = any(is_candidate_single_word(tok) for tok in ng_tokens)
-        has_scientific_suffix = any(core_alpha(tok).lower().endswith(s) for tok in ng_tokens for s in SCI_SUFFIXES)
-
-        if has_strong_component or has_scientific_suffix:
-            results.add(joined_clean)
+        if any(is_candidate_single_word(tok) for tok in ng):
+            results.add(joined)
 
     return sorted(results)
 
 # ---------------------------------------------------------
-# BIOPORTAL LOOKUP (PRIMARY)
+# BIOPORTAL LOOKUP
 # ---------------------------------------------------------
 
 def lookup_term_bioportal(term: str):
@@ -207,23 +222,14 @@ def lookup_term_bioportal(term: str):
     }
 
     try:
-        r = requests.get(BIOPORTAL_SEARCH_URL, params=params, timeout=6)
+        r = requests.get(BIOPORTAL_SEARCH_URL, params=params, timeout=3)
         r.raise_for_status()
         data = r.json()
 
-        collection = data.get("collection", [])
-        if not collection:
-            return None
-
-        for item in collection:
+        for item in data.get("collection", []):
             label = item.get("prefLabel") or item.get("label")
-            definition = None
-
             defs = item.get("definition")
-            if isinstance(defs, list) and defs:
-                definition = defs[0]
-            elif isinstance(defs, str):
-                definition = defs
+            definition = defs[0] if isinstance(defs, list) and defs else defs
 
             if label and definition:
                 return {
@@ -234,8 +240,7 @@ def lookup_term_bioportal(term: str):
 
         return None
 
-    except Exception as e:
-        print("BioPortal lookup failed for", term, ":", e, flush=True)
+    except Exception:
         return None
 
 # ---------------------------------------------------------
@@ -259,14 +264,11 @@ def lookup_term_ols4(term: str):
     }
 
     try:
-        r = requests.get(OLS4_SEARCH_URL, params=params, timeout=5)
+        r = requests.get(OLS4_SEARCH_URL, params=params, timeout=3)
         r.raise_for_status()
         data = r.json()
 
         docs = data.get("response", {}).get("docs", [])
-        if not docs:
-            return None
-
         for d in docs:
             prefix = d.get("ontology_prefix", "").lower()
             definition = d.get("description", "")
@@ -277,8 +279,8 @@ def lookup_term_ols4(term: str):
                     "iri": d.get("iri", "")
                 }
 
-        d = docs[0]
-        if d.get("description"):
+        if docs and docs[0].get("description"):
+            d = docs[0]
             return {
                 "label": d.get("label", ""),
                 "definition": d.get("description", ""),
@@ -287,8 +289,7 @@ def lookup_term_ols4(term: str):
 
         return None
 
-    except Exception as e:
-        print("OLS4 lookup failed for", term, ":", e, flush=True)
+    except Exception:
         return None
 
 # ---------------------------------------------------------
@@ -299,12 +300,11 @@ def extract_ontology_terms(pages_output):
     candidate_terms = set()
 
     for page in pages_output:
-
         for w in page.get("words", []):
             raw = w.get("text", "")
             if raw and is_candidate_single_word(raw):
                 norm = normalize_term(raw)
-                if len(norm) >= 3 and norm not in COMMON_WORDS:
+                if norm and not is_junk_term(norm):
                     candidate_terms.add(norm)
 
         for phrase_obj in page.get("phrases", []):
@@ -314,18 +314,27 @@ def extract_ontology_terms(pages_output):
 
             for t in phrase_ngrams_for_ontology(phrase_text):
                 norm = normalize_term(t)
-                if len(norm) >= 3 and norm not in COMMON_WORDS:
+                if norm and not is_junk_term(norm):
                     candidate_terms.add(norm)
 
-    if MAX_TERMS_PER_DOCUMENT and len(candidate_terms) > MAX_TERMS_PER_DOCUMENT:
-        candidate_terms = set(islice(sorted(candidate_terms), MAX_TERMS_PER_DOCUMENT))
+    # Limit total candidates
+    candidate_terms = sorted(candidate_terms)
+    if len(candidate_terms) > MAX_TERMS_PER_DOCUMENT:
+        candidate_terms = candidate_terms[:MAX_TERMS_PER_DOCUMENT]
 
-    print("CANDIDATE TERMS (high-recall):", sorted(candidate_terms), flush=True)
+    print("CANDIDATE TERMS (filtered):", candidate_terms, flush=True)
 
     found_terms = {}
-    for term in candidate_terms:
+    bioportal_count = 0
 
-        hit = lookup_term_bioportal(term)
+    for term in candidate_terms:
+        hit = None
+
+        if bioportal_count < MAX_BIOPORTAL_LOOKUPS:
+            hit = lookup_term_bioportal(term)
+            if hit:
+                bioportal_count += 1
+
         if not hit:
             hit = lookup_term_ols4(term)
 
