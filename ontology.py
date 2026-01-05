@@ -272,7 +272,8 @@ def extract_ontology_terms(pages_output):
         candidate_terms = candidate_terms[:MAX_TERMS_PER_DOCUMENT]
 
     print("CANDIDATE TERMS (filtered):", candidate_terms, flush=True)
-
+    return candidate_terms
+    
 def process_terms(candidate_terms):
     found_terms = {}
     bioportal_count = 0
