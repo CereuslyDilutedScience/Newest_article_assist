@@ -13,7 +13,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "https://cereuslydilutedscience.github.io"}})
 
 UPLOAD_FOLDER = "uploads"
-STATIC_PAGE_FOLDER = "static/pages"
+STATIC_PAGE_FOLDER = "/tmp/pages"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(STATIC_PAGE_FOLDER, exist_ok=True)
 
@@ -25,7 +25,8 @@ CLOUD_RUN_BASE = "https://comprehendase-backend-470914920668.us-east4.run.app"
 # ---------------------------------------------------------
 @app.route("/static/pages/<path:filename>")
 def serve_page_image(filename):
-    return send_from_directory(STATIC_PAGE_FOLDER, filename)
+    return send_from_directory("/tmp/pages", filename)
+
 
 
 # ---------------------------------------------------------
