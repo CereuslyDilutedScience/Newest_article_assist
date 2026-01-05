@@ -1,10 +1,10 @@
 import os
 import tempfile
-from pdf2image import convert_from_path
+import fitz  # PyMuPDF
 
 def render_pdf_pages(pdf_path, output_folder="static/pages", dpi=150):
     """
-    Render each page of the PDF as a PNG image.
+    Render each page of the PDF as a PNG image using PyMuPDF (fitz).
     Returns a list of file paths to the rendered images.
     """
 
@@ -13,19 +13,31 @@ def render_pdf_pages(pdf_path, output_folder="static/pages", dpi=150):
     request_folder = os.path.join(output_folder, unique_folder)
     os.makedirs(request_folder, exist_ok=True)
 
-    # Convert PDF pages to PIL images
-    pages = convert_from_path(pdf_path, dpi=dpi)
+    # Open PDF with PyMuPDF
+    doc = fitz.open(pdf_path)
+
+    # DPI → zoom factor conversion
+    zoom = dpi / 72
+    matrix = fitz.Matrix(zoom, zoom)
 
     image_paths = []
 
-    for i, page in enumerate(pages):
-        filename = f"page_{i+1}.png"
-        filepath = os.path.join(request_folder, filename)
+    for i, page in enumerate(doc):
+        try:
+            # Render page to pixmap
+            pix = page.get_pixmap(matrix=matrix, alpha=False)
 
-        # Save page as PNG
-        page.save(filepath, "PNG")
+            # Save as PNG
+            filename = f"page_{i+1}.png"
+            filepath = os.path.join(request_folder, filename)
+            pix.save(filepath)
 
-        # Return relative path so Cloud Run URL works
-        image_paths.append(f"static/pages/{unique_folder}/{filename}")
+            # Return relative path so Cloud Run can serve it
+            image_paths.append(f"static/pages/{unique_folder}/{filename}")
+
+        except Exception as e:
+            # Log the error but continue rendering other pages
+            print(f"Error rendering page {i+1}: {e}", flush=True)
+            continue
 
     return image_paths
