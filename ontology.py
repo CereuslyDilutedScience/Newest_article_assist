@@ -6,7 +6,7 @@ from itertools import islice
 # CONFIG / LIMITS
 # ---------------------------------------------------------
 
-MAX_TERMS_PER_DOCUMENT = 2000  # raised for high recall
+MAX_TERMS_PER_DOCUMENT = 100  # raised for high recall
 OLS4_SEARCH_URL = "https://www.ebi.ac.uk/ols4/api/search"
 BIOPORTAL_SEARCH_URL = "https://data.bioontology.org/search"
 BIOPORTAL_API_KEY = "7e84a21d-3f8e-4837-b7a9-841fb4847ddf"   # <-- replace locally
