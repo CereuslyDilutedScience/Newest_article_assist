@@ -6,7 +6,7 @@ from itertools import islice
 # CONFIG / LIMITS
 # ---------------------------------------------------------
 
-MAX_TERMS_PER_DOCUMENT = 2000
+MAX_TERMS_PER_DOCUMENT = 500
 MAX_BIOPORTAL_LOOKUPS = 300  # cap to prevent long runs
 
 BIOPORTAL_SEARCH_URL = "https://data.bioontology.org/search"
