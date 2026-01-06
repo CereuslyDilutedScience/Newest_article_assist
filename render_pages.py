@@ -3,10 +3,19 @@ import tempfile
 import fitz  # PyMuPDF
 
 def render_pdf_pages(pdf_path, output_folder="/tmp/pages", dpi=150):
-
     """
     Render each page of the PDF as a PNG image using PyMuPDF (fitz).
-    Returns a list of file paths to the rendered images.
+    Returns:
+        {
+            "folder": unique_folder,
+            "images": [
+                {
+                    "page": page_number,
+                    "path": "static/pages/<folder>/page_<n>.png"
+                },
+                ...
+            ]
+        }
     """
 
     # Create a unique subfolder for this request
@@ -21,24 +30,31 @@ def render_pdf_pages(pdf_path, output_folder="/tmp/pages", dpi=150):
     zoom = dpi / 72
     matrix = fitz.Matrix(zoom, zoom)
 
-    image_paths = []
+    images = []
 
     for i, page in enumerate(doc):
+        page_number = i + 1
+
         try:
             # Render page to pixmap
             pix = page.get_pixmap(matrix=matrix, alpha=False)
 
             # Save as PNG
-            filename = f"page_{i+1}.png"
+            filename = f"page_{page_number}.png"
             filepath = os.path.join(request_folder, filename)
             pix.save(filepath)
 
-            # Return relative path so Cloud Run can serve it
-            image_paths.append(f"static/pages/{unique_folder}/{filename}")
+            # Return relative path so the frontend can load it
+            images.append({
+                "page": page_number,
+                "path": f"static/pages/{unique_folder}/{filename}"
+            })
 
         except Exception as e:
-            # Log the error but continue rendering other pages
-            print(f"Error rendering page {i+1}: {e}", flush=True)
+            print(f"Error rendering page {page_number}: {e}", flush=True)
             continue
 
-    return image_paths
+    return {
+        "folder": unique_folder,
+        "images": images
+    }
