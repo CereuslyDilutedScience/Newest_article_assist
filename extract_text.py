@@ -151,6 +151,11 @@ def extract_pdf_layout(pdf_path):
                 raw_words = []
 
             normalized = []
+
+            # --- Debug print limiter ---
+            debug_limit = 10
+            debug_count = 0
+
             for w in raw_words:
                 try:
                     text = w.get("text", "")
@@ -161,13 +166,16 @@ def extract_pdf_layout(pdf_path):
 
                     if not text or x0 is None or x1 is None or top is None or bottom is None:
                         continue
-                    
-                    print(f"WORD: {text} x={x0} top={top} bottom={bottom} width={x1-x0} height={bottom-top}")
-                    
+
+                    # Print only the first 10 words
+                    if debug_count < debug_limit:
+                        print(f"WORD: {text} x={x0} top={top} bottom={bottom} width={x1-x0} height={bottom-top}")
+                        debug_count += 1
+
                     normalized.append({
                         "text": text,
                         "x": float(x0),
-                        "y": float(top),   # FIX: convert to top-left origin
+                        "y": float(top),   # using top-left origin
                         "width": float(x1 - x0),
                         "height": float(bottom - top),
                         "page": page_index + 1
