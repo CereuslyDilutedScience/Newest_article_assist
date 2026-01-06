@@ -46,7 +46,6 @@ def normalize_term(t: str) -> str:
     return t
 
 def apply_synonyms(term: str) -> str:
-    """Normalize using synonyms.txt"""
     if term in SYNONYMS:
         return SYNONYMS[term]
     return term
@@ -99,38 +98,20 @@ def lookup_term_bioportal(term: str):
         return None
 
 # ---------------------------------------------------------
-# MAIN ENTRYPOINT (OPTION B + OPTION 2)
+# MAIN ENTRYPOINT — FIXED STOPWORD LOGIC
 # ---------------------------------------------------------
 
 def extract_ontology_terms(extracted):
-    """
-    Returns a unified dictionary:
-    {
-        "Original PDF Text": {
-            "source": "phrase_definition" | "word_definition" | "ontology",
-            "definition": "...",
-            "iri": optional
-        }
-    }
-    """
     results = {}
 
-    # Collect candidate terms from extract_text.py
     phrases = extracted.get("phrases", [])
 
-    # Build a list of (original_text, normalized_text)
+    # Build normalized candidates WITHOUT stopword filtering
     candidates = []
     for p in phrases:
         original = p["text"]
         normalized = normalize_term(original)
-
-        # Skip stopwords
-        if normalized in STOPWORDS:
-            continue
-
-        # Apply synonyms
         normalized = apply_synonyms(normalized)
-
         candidates.append((original, normalized))
 
     # Deduplicate by normalized form
@@ -141,7 +122,6 @@ def extract_ontology_terms(extracted):
             seen_norm.add(norm)
             final_candidates.append((original, norm))
 
-    # Limit
     if len(final_candidates) > MAX_TERMS_PER_DOCUMENT:
         final_candidates = final_candidates[:MAX_TERMS_PER_DOCUMENT]
 
@@ -156,26 +136,39 @@ def extract_ontology_terms(extracted):
             }
 
     # -----------------------------------------------------
-    # LAYER 2 — WORD DEFINITIONS
+    # LAYER 2 — WORD DEFINITIONS (STOPWORDS FILTER HERE)
     # -----------------------------------------------------
     for original, norm in final_candidates:
         if original in results:
-            continue  # phrase already matched
+            continue
 
-        if norm in WORD_DEFS:
-            results[original] = {
-                "source": "word_definition",
-                "definition": WORD_DEFS[norm]
-            }
+        words = original.split()
+        for w in words:
+            wn = normalize_term(w)
+            wn = apply_synonyms(wn)
+
+            if wn in STOPWORDS:
+                continue
+
+            if wn in WORD_DEFS:
+                results[original] = {
+                    "source": "word_definition",
+                    "definition": WORD_DEFS[wn]
+                }
+                break
 
     # -----------------------------------------------------
-    # LAYER 3 — ONTOLOGY LOOKUP (ONLY FOR LEFTOVERS)
+    # LAYER 3 — ONTOLOGY LOOKUP (SKIPS STOPWORDS)
     # -----------------------------------------------------
-    to_lookup = [
-        (original, norm)
-        for (original, norm) in final_candidates
-        if original not in results
-    ]
+    to_lookup = []
+    for original, norm in final_candidates:
+        if original in results:
+            continue
+
+        if norm in STOPWORDS:
+            continue
+
+        to_lookup.append((original, norm))
 
     to_lookup = to_lookup[:MAX_BIOPORTAL_LOOKUPS]
 
