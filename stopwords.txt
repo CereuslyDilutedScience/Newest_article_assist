@@ -983,7 +983,27 @@ words
 world
 youd
 youre
-
+January
+Jan
+February
+Feb
+March
+Mar
+April
+Apr
+May
+June
+July
+August
+Aug
+September
+Sept
+October
+Oct
+November
+Nov
+December
+Dec
 
 
 
