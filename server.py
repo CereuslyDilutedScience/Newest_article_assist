@@ -52,7 +52,14 @@ def extract():
     # -----------------------------------------------------
     # 1. Extract layout (GLOBAL words + phrases)
     # -----------------------------------------------------
-    target_pdf, extracted = extract_pdf_layout(filepath)
+    # 1. Render pages first
+    render_result = render_pdf_pages(filepath)
+
+    # 2. Extract the metadata for scaling
+    render_metadata = render_result["images"]
+
+    # 3. Now call extraction with BOTH arguments
+    target_pdf, extracted = extract_pdf_layout(filepath, render_metadata)
     pages_meta = extracted["pages"]
     all_words = extracted["words"]
     all_phrases = extracted["phrases"]
