@@ -145,16 +145,20 @@ def extract_pdf_layout(pdf_path, render_metadata):
                 })
             current_phrase = []
 
+    # FIXED normalize_term: stopwords no longer block phrases
     def normalize_term(term):
         term = term.strip().lower()
-        if term in STOPWORDS:
-            return None
+
+        # DO NOT block phrases containing stopwords
+        # Stopwords are handled later in ontology.py
+
         if term in PHRASE_DEFS:
             return term
         if term in SYNONYMS:
             term = SYNONYMS[term]
         if term in WORD_DEFS:
             return term
+
         return term  # fallback for ontology lookup
 
     for w in all_words:
