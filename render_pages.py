@@ -32,12 +32,23 @@ def render_pdf_pages(pdf_path, output_folder="/tmp/pages", dpi=150):
 
     images = []
 
+    # --- Debug print limiter ---
+    debug_limit = 10
+    debug_count = 0
+
     for i, page in enumerate(doc):
         page_number = i + 1
 
         try:
             # Render page to pixmap
             pix = page.get_pixmap(matrix=matrix, alpha=False)
+
+            # --- Print only for first 10 pages ---
+            if debug_count < debug_limit:
+                print(f"[RENDER DEBUG] Page {page_number}")
+                print(f"  PyMuPDF page rect: width={page.rect.width}, height={page.rect.height}")
+                print(f"  Rendered PNG size: width={pix.width}, height={pix.height}")
+                debug_count += 1
 
             # Save as PNG
             filename = f"page_{page_number}.png"
@@ -58,3 +69,4 @@ def render_pdf_pages(pdf_path, output_folder="/tmp/pages", dpi=150):
         "folder": unique_folder,
         "images": images
     }
+
