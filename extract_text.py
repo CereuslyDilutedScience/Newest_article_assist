@@ -161,7 +161,9 @@ def extract_pdf_layout(pdf_path):
 
                     if not text or x0 is None or x1 is None or top is None or bottom is None:
                         continue
-
+                    
+                    print(f"WORD: {text} x={x0} top={top} bottom={bottom} width={x1-x0} height={bottom-top}")
+                    
                     normalized.append({
                         "text": text,
                         "x": float(x0),
