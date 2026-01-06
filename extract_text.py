@@ -71,16 +71,37 @@ def is_garbage_phrase(text):
     return False, None
 
 
-# --- OCR STEP ---
+# --- OCR STEP (ONLY RUN IF NEEDED) ---
 
 def ocr_pdf(input_path):
+    """
+    Run OCR *only* if the PDF has no embedded text.
+    Returns:
+        - cleaned OCR PDF path if OCR was needed
+        - None if OCR was skipped
+    """
     try:
+        import fitz  # PyMuPDF
+
+        # Check if ANY page has embedded text
+        doc = fitz.open(input_path)
+        has_text = False
+        for page in doc:
+            if page.get_text("text").strip():
+                has_text = True
+                break
+
+        if has_text:
+            print("\n=== OCR SKIPPED: Embedded text detected ===")
+            return None
+
+        # Otherwise run OCR
         temp_dir = tempfile.gettempdir()
         unique_name = next(tempfile._get_candidate_names())
         cleaned_path = os.path.join(temp_dir, f"ocr_{unique_name}.pdf")
 
         print("\n=== OCR STEP ===")
-        print(f"Running OCRmyPDF on: {input_path}")
+        print(f"No embedded text found. Running OCRmyPDF on: {input_path}")
         print(f"OCR output: {cleaned_path}")
 
         subprocess.run(
@@ -96,6 +117,7 @@ def ocr_pdf(input_path):
         return None
 
 
+
 # --- MAIN EXTRACTION FUNCTION ---
 
 def extract_pdf_layout(pdf_path):
@@ -103,6 +125,7 @@ def extract_pdf_layout(pdf_path):
     print("=== STARTING EXTRACTION ===")
     print("==============================")
 
+    # Only OCR if needed
     cleaned_pdf = ocr_pdf(pdf_path)
     target_pdf = cleaned_pdf if cleaned_pdf else pdf_path
 
@@ -114,6 +137,7 @@ def extract_pdf_layout(pdf_path):
 
             print(f"\n=== PAGE {page_index+1} START ===")
 
+            # --- Try embedded text extraction first ---
             try:
                 raw_words = page.extract_words(
                     use_text_flow=False,
@@ -144,7 +168,7 @@ def extract_pdf_layout(pdf_path):
                         "y": float(top),
                         "width": float(x1 - x0),
                         "height": float(bottom - top),
-                        "page": page_index + 1   # ADD PAGE IDENTIFIER
+                        "page": page_index + 1
                     })
                 except:
                     continue
@@ -179,6 +203,7 @@ def extract_pdf_layout(pdf_path):
             })
 
             print(f"=== PAGE {page_index+1} END ===")
+
 
     # --- GLOBAL PHRASE RECONSTRUCTION ---
     all_words.sort(key=lambda w: (w["page"], round(w["y"] / 5), w["x"]))
