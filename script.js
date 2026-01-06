@@ -73,44 +73,37 @@ function renderPages(pages, allWords, viewer) {
         const overlay = document.createElement("div");
         overlay.className = "text-overlay";
 
-        img.onload = () => {
-            const scaleX = img.clientWidth / page.width;
-            const scaleY = img.clientHeight / page.height;
+    img.onload = () => {
+        overlay.style.width = img.clientWidth + "px";
+        overlay.style.height = img.clientHeight + "px";
 
-            overlay.style.width = img.clientWidth + "px";
-            overlay.style.height = img.clientHeight + "px";
+        const wordsOnPage = allWords.filter(w => w.page === page.page_number);
 
-            // NEW: filter global words by page number
-            const wordsOnPage = allWords.filter(w => w.page === page.page_number);
+        wordsOnPage.forEach((word) => {
+            if (word.skip) return;
 
-            wordsOnPage.forEach((word) => {
-                if (word.skip) return;
+            const span = document.createElement("span");
+            span.className = "word";
 
-                const span = document.createElement("span");
-                span.className = "word";
+            span.textContent = word.text;
+            span.style.color = "transparent";
 
-                // Always show the REAL PDF text
-                span.textContent = word.text;
-                span.style.color = "transparent";
+            if (word.definition) {
+                span.classList.add("has-definition");
+                span.title = word.definition;
+        }
 
-                // Add definition tooltip if present
-                if (word.definition) {
-                    span.classList.add("has-definition");
-                    span.title = word.definition;
-                }
+        // Use backend-scaled coordinates directly
+            span.style.left = word.x + "px";
+            span.style.top  = word.y + "px";
 
-                // Positioning
-                span.style.left = (word.x * scaleX) + "px";
-                span.style.top  = (word.y * scaleY) + "px";
+        // Use backend-scaled height directly
+            span.style.fontSize = word.height + "px";
+            span.style.lineHeight = word.height + "px";
 
-                // Corrected text box sizing
-                const scaledFont = word.height * scaleY;
-                span.style.fontSize = scaledFont + "px";
-                span.style.lineHeight = scaledFont + "px";
-
-                overlay.appendChild(span);
-            });
-        };
+            overlay.appendChild(span);
+    });
+};
 
         pageWrapper.appendChild(img);
         pageWrapper.appendChild(overlay);
