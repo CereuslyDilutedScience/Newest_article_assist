@@ -98,7 +98,7 @@ def lookup_term_bioportal(term: str):
         return None
 
 # ---------------------------------------------------------
-# MAIN ENTRYPOINT — FIXED STOPWORD LOGIC
+# MAIN ENTRYPOINT — PRECISE WORD + PHRASE MATCHING
 # ---------------------------------------------------------
 
 def extract_ontology_terms(extracted):
@@ -140,7 +140,7 @@ def extract_ontology_terms(extracted):
     # -----------------------------------------------------
     for original, norm in final_candidates:
         if original in results:
-            continue
+            continue  # phrase already matched
 
         words = original.split()
         for w in words:
@@ -151,7 +151,14 @@ def extract_ontology_terms(extracted):
                 continue
 
             if wn in WORD_DEFS:
+                # Store phrase-level key (for phrase_obj matching)
                 results[original] = {
+                    "source": "word_definition",
+                    "definition": WORD_DEFS[wn]
+                }
+
+                # Store word-level key (for precise highlighting)
+                results[w] = {
                     "source": "word_definition",
                     "definition": WORD_DEFS[wn]
                 }
@@ -182,10 +189,20 @@ def extract_ontology_terms(extracted):
             original, norm = future_map[future]
             hit = future.result()
             if hit:
+                # Phrase-level key
                 results[original] = {
                     "source": "ontology",
                     "definition": hit["definition"],
                     "iri": hit.get("iri", "")
                 }
+
+                # Word-level key for precise highlighting
+                # (only if the phrase is a single word)
+                if " " not in original.strip():
+                    results[original.strip()] = {
+                        "source": "ontology",
+                        "definition": hit["definition"],
+                        "iri": hit.get("iri", "")
+                    }
 
     return results
