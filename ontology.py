@@ -32,7 +32,7 @@ def load_synonyms(path):
 
 STOPWORDS = load_list("stopwords.txt")
 PHRASE_DEFS = load_definitions("phrase_definitions.txt")
-WORD_DEFS = load_definitions("definitions.txt")
+WORD_DEFS = load_definitions("word_definitions.txt")
 SYNONYMS = load_synonyms("synonyms.txt")
 
 # ---------------------------------------------------------
