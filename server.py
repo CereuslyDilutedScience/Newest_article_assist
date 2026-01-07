@@ -82,22 +82,25 @@ def extract():
     print(f"Ontology + definitions lookup complete — {time.time() - start_time:.2f}s")
 
     # -----------------------------------------------------
-    # 4. Attach definitions to phrases (and their words)
+    # 4. Attach definitions to phrases and individual words
     # -----------------------------------------------------
 
-    # Optional: you can still try word-level matching here if in future
-    # unified_hits is keyed by individual word text, but with the current
-    # ontology.py, hits are keyed by phrase text.
-
-    # Attach phrase-level definitions to every word in the phrase
+    # Phrase-level definitions
     for phrase_obj in all_phrases:
         key = phrase_obj["text"].strip()
-        if key in unified_hits:
-            hit = unified_hits[key]
+        hit = unified_hits.get(key)
+        if hit and hit.get("source") == "phrase_definition":
             for w in phrase_obj["words"]:
                 w["definition"] = hit["definition"]
                 w["source"] = hit["source"]
-                # Do NOT mark any word as skip; frontend can decide how to render
+
+    # Word-level definitions
+    for w in all_words:
+        key = w["text"].strip()
+        hit = unified_hits.get(key)
+        if hit and hit.get("source") == "word_definition":
+            w["definition"] = hit["definition"]
+            w["source"] = hit["source"]
 
     # -----------------------------------------------------
     # 5. Attach image URLs to page metadata
