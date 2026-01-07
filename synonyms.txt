@@ -1,3 +1,9 @@
 kmer <- k-mer
 gene <- genes
 RNA interferance <- RNAi
+centrifuged <- centrifuge
+virulence <- virulent 
+rrna <- ribosomal rna
+protein <- proteins 
+ribosomal <- ribosome
+gdna <- genomic dna

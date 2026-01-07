@@ -1,4 +1,3 @@
-g dna<TAB>
 gene expression<TAB>the process by which a gene produces a functional product
 RNA interference<TAB>(RNA interference/RNAi) a mechanism of gene silencing using small RNAs
 virulence factor<TAB>a molecule that contributes to pathogenicity
