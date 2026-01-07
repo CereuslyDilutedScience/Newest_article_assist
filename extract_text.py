@@ -34,7 +34,7 @@ PHRASE_DEFS = load_definitions("phrase_definitions.txt")
 WORD_DEFS = load_definitions("definitions.txt")
 SYNONYMS = load_synonyms("synonyms.txt")
 
-# --- GARBAGE FILTER (MINIMAL) ---
+# --- GARBAGE FILTER (KEPT EXACTLY AS IS) ---
 def is_garbage_phrase(text):
     t = text.lower().strip()
     if not t:
@@ -73,6 +73,7 @@ def extract_pdf_layout(pdf_path, render_metadata):
     all_words = []
     pages_output = []
 
+    # --- EXTRACT WORDS ---
     with pdfplumber.open(target_pdf) as pdf:
         for page_index, page in enumerate(pdf.pages):
             meta = render_metadata[page_index]
@@ -93,7 +94,8 @@ def extract_pdf_layout(pdf_path, render_metadata):
             normalized = []
             for w in raw_words:
                 text = w.get("text", "")
-                if not text: continue
+                if not text:
+                    continue
                 normalized.append({
                     "text": text,
                     "x": float(w["x0"]) * scale_x,
@@ -103,9 +105,10 @@ def extract_pdf_layout(pdf_path, render_metadata):
                     "page": page_index + 1
                 })
 
+            # Sort by reading order
             normalized.sort(key=lambda w: (round(w["y"] / 5), w["x"]))
 
-            # Merge hyphenated words
+            # --- KEEP HYPHEN MERGING EXACTLY AS IS ---
             merged = []
             i = 0
             while i < len(normalized):
@@ -126,61 +129,69 @@ def extract_pdf_layout(pdf_path, render_metadata):
                 "height": float(page.height)
             })
 
-    # --- PHRASE RECONSTRUCTION ---
+    # --- SORT ALL WORDS GLOBALLY ---
     all_words.sort(key=lambda w: (w["page"], round(w["y"] / 5), w["x"]))
-    phrases = []
-    current_phrase = []
 
-    def flush_phrase():
-        nonlocal current_phrase
-        if current_phrase:
-            phrase_text = " ".join([w["text"] for w in current_phrase]).strip()
-            phrase_text_clean = phrase_text.lower()
-            rejected, reason = is_garbage_phrase(phrase_text_clean)
-            if not rejected:
-                phrases.append({
-                    "text": phrase_text,
-                    "normalized": normalize_term(phrase_text_clean),
-                    "words": current_phrase.copy()
-                })
-            current_phrase = []
-
-    # FIXED normalize_term: stopwords no longer block phrases
+    # --- NORMALIZATION HELPER ---
     def normalize_term(term):
         term = term.strip().lower()
-
-        # DO NOT block phrases containing stopwords
-        # Stopwords are handled later in ontology.py
-
         if term in PHRASE_DEFS:
             return term
         if term in SYNONYMS:
             term = SYNONYMS[term]
         if term in WORD_DEFS:
             return term
-
         return term  # fallback for ontology lookup
 
-    for w in all_words:
+    # --- NEW GREEDY STOPWORD-BASED PHRASE EXTRACTION ---
+    phrases = []
+    max_len = 5
+    n = len(all_words)
+    i = 0
+
+    while i < n:
+        w = all_words[i]
         raw = w["text"]
-        token = raw.strip(".,;:()[]{}").replace("\u200b", "").replace("\u00ad", "").replace("\u2011", "")
-        is_valid = token.isalpha() or "-" in token or token.isalnum()
-        if is_valid:
-            if not current_phrase:
-                current_phrase = [w]
-            else:
-                prev = current_phrase[-1]
-                same_line = (w["page"] == prev["page"]) and abs(prev["y"] - w["y"]) < 8
-                horizontal_gap = w["x"] - (prev["x"] + prev["width"])
-                adjacent = -3 <= horizontal_gap < 60
-                if same_line and adjacent:
-                    current_phrase.append(w)
-                else:
-                    flush_phrase()
-                    current_phrase = [w]
-        else:
-            flush_phrase()
-    flush_phrase()
+
+        # Clean token for stopword check
+        token = raw.lower().strip(".,;:()[]{}")
+
+        # Skip stopwords entirely
+        if token in STOPWORDS:
+            i += 1
+            continue
+
+        # Start a new phrase
+        phrase_words = [w]
+        phrase_tokens = [token]
+
+        # Expand right greedily
+        j = i + 1
+        while j < n and len(phrase_words) < max_len:
+            nxt_raw = all_words[j]["text"]
+            nxt_token = nxt_raw.lower().strip(".,;:()[]{}")
+
+            if nxt_token in STOPWORDS:
+                break  # stop expansion
+
+            phrase_words.append(all_words[j])
+            phrase_tokens.append(nxt_token)
+            j += 1
+
+        # Emit phrase (even if length 1)
+        phrase_text = " ".join([pw["text"] for pw in phrase_words]).strip()
+        phrase_text_clean = phrase_text.lower()
+
+        rejected, reason = is_garbage_phrase(phrase_text_clean)
+        if not rejected:
+            phrases.append({
+                "text": phrase_text,
+                "normalized": normalize_term(phrase_text_clean),
+                "words": phrase_words.copy()
+            })
+
+        # Move index to next word after phrase
+        i = j
 
     return target_pdf, {
         "pages": pages_output,

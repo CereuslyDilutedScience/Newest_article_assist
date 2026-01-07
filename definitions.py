@@ -20,5 +20,5 @@ def load_definitions(path: str) -> dict[str, str]:
     return out
 
 # Load both definition files
-WORD_DEFS = load_definitions("definitions.txt")
+WORD_DEFS = load_definitions("word_definitions.txt")
 PHRASE_DEFS = load_definitions("phrase_definitions.txt")

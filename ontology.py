@@ -98,15 +98,16 @@ def lookup_term_bioportal(term: str):
         return None
 
 # ---------------------------------------------------------
-# MAIN ENTRYPOINT — PRECISE WORD + PHRASE MATCHING
+# MAIN ENTRYPOINT — MATCHING AGAINST DEFINITIONS + BIOPORTAL
 # ---------------------------------------------------------
 
 def extract_ontology_terms(extracted):
     results = {}
+    unmatched_terms = []
 
     phrases = extracted.get("phrases", [])
 
-    # Build normalized candidates WITHOUT stopword filtering
+    # Build normalized candidates
     candidates = []
     for p in phrases:
         original = p["text"]
@@ -136,7 +137,7 @@ def extract_ontology_terms(extracted):
             }
 
     # -----------------------------------------------------
-    # LAYER 2 — WORD DEFINITIONS (STOPWORDS FILTER HERE)
+    # LAYER 2 — WORD DEFINITIONS
     # -----------------------------------------------------
     for original, norm in final_candidates:
         if original in results:
@@ -151,13 +152,12 @@ def extract_ontology_terms(extracted):
                 continue
 
             if wn in WORD_DEFS:
-                # Store phrase-level key (for phrase_obj matching)
                 results[original] = {
                     "source": "word_definition",
                     "definition": WORD_DEFS[wn]
                 }
 
-                # Store word-level key (for precise highlighting)
+                # Word-level key for precise highlighting
                 results[w] = {
                     "source": "word_definition",
                     "definition": WORD_DEFS[wn]
@@ -165,7 +165,7 @@ def extract_ontology_terms(extracted):
                 break
 
     # -----------------------------------------------------
-    # LAYER 3 — ONTOLOGY LOOKUP (SKIPS STOPWORDS)
+    # LAYER 3 — BIOPORTAL LOOKUP
     # -----------------------------------------------------
     to_lookup = []
     for original, norm in final_candidates:
@@ -188,21 +188,25 @@ def extract_ontology_terms(extracted):
         for future in as_completed(future_map):
             original, norm = future_map[future]
             hit = future.result()
+
             if hit:
-                # Phrase-level key
                 results[original] = {
                     "source": "ontology",
                     "definition": hit["definition"],
                     "iri": hit.get("iri", "")
                 }
 
-                # Word-level key for precise highlighting
-                # (only if the phrase is a single word)
+                # If single word, also store word-level key
                 if " " not in original.strip():
                     results[original.strip()] = {
                         "source": "ontology",
                         "definition": hit["definition"],
                         "iri": hit.get("iri", "")
                     }
+            else:
+                unmatched_terms.append(original)
+
+    # Attach unmatched list for debugging
+    results["_unmatched"] = unmatched_terms
 
     return results
