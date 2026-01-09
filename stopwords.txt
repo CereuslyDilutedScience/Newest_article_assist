@@ -358,6 +358,7 @@ barrage
 barricade
 barter
 base
+based
 bash
 bask
 baste
@@ -724,6 +725,8 @@ commend
 comment
 commission
 commit
+common
+commonly
 communicate
 commute
 compact
@@ -1871,6 +1874,9 @@ incense
 inch
 incline
 include
+includes
+included
+including
 incorporate
 increase
 incubate
@@ -3198,6 +3204,9 @@ shame
 shan't
 shape
 share
+shared
+shares
+sharing
 sharpen
 shatter
 shave
@@ -4117,3 +4126,12 @@ zap
 zero
 zip
 zoom
+
+
+
+
+
+
+
+
+

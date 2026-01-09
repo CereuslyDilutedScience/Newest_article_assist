@@ -7,3 +7,4 @@ rrna <- ribosomal rna
 protein <- proteins 
 ribosomal <- ribosome
 gdna <- genomic dna
+common <- commonly

@@ -85,43 +85,47 @@ def extract():
     # 4. Attach definitions to phrases and individual words
     # -----------------------------------------------------
 
-    # Phrase-level definitions (phrase_definition, word_fallback, ontology)
+    # PHRASE LOOP — apply only what ontology explicitly returns
     for phrase_obj in all_phrases:
-        key = phrase_obj["text"].strip()
-        hit = unified_hits.get(key)
+        phrase_text = phrase_obj["text"].strip()
+        hit = unified_hits.get(phrase_text)
 
         if not hit:
             continue
 
-        # CASE 1 — phrase_definition or ontology (single definition)
-        if "definition" in hit:
+        source = hit.get("source")
+
+        # CASE 1 — phrase-level definition (phrase_definition or ontology)
+        # Apply to ALL words in the phrase
+        if source in ("phrase_definition", "ontology") and "definition" in hit:
             for w in phrase_obj["words"]:
                 w["definition"] = hit["definition"]
-                w["source"] = hit["source"]
+                w["source"] = source
 
-        # CASE 2 — word_fallback (multiple word-level hits)
-        elif hit.get("source") == "word_fallback":
-            word_hits = hit.get("words", [])
-            # Attach definitions only to the matching words
-            for entry in word_hits:
-                target_word = entry["word"]
+        # CASE 2 — word_fallback
+        # Apply ONLY to the specific words listed in hit["words"]
+        elif source == "word_fallback":
+            for entry in hit.get("words", []):
+                target_word = entry["word"].strip().lower()
                 for w in phrase_obj["words"]:
-                    if w["text"].strip().lower() == target_word.lower():
+                    if w["text"].strip().lower() == target_word:
                         w["definition"] = entry["definition"]
                         w["source"] = entry["source"]
 
-    # Word-level definitions (word_definition OR ontology)
+    # WORD LOOP — apply direct word-level hits
     for w in all_words:
-        key = w["text"].strip()
-        hit = unified_hits.get(key)
+        word_text = w["text"].strip()
+        hit = unified_hits.get(word_text)
 
         if not hit:
             continue
 
+        source = hit.get("source")
+
         # Direct word-level definition
-        if hit.get("source") in ("word_definition", "ontology"):
+        if source in ("word_definition", "ontology") and "definition" in hit:
             w["definition"] = hit["definition"]
-            w["source"] = hit["source"]
+            w["source"] = source
 
     # -----------------------------------------------------
     # 5. Attach image URLs to page metadata

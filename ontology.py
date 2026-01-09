@@ -6,10 +6,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # LOAD LISTS
 # ---------------------------------------------------------
 
-def load_list(path):
-    with open(path, encoding="utf-8") as f:
-        return set(line.strip().lower() for line in f if line.strip())
-
 def load_definitions(path):
     defs = {}
     with open(path, encoding="utf-8") as f:
@@ -30,7 +26,6 @@ def load_synonyms(path):
                     mapping[variant.strip().lower()] = canonical
     return mapping
 
-STOPWORDS = load_list("stopwords.txt")
 PHRASE_DEFS = load_definitions("phrase_definitions.txt")
 WORD_DEFS = load_definitions("word_definitions.txt")
 SYNONYMS = load_synonyms("synonyms.txt")
@@ -157,16 +152,6 @@ def extract_ontology_terms(extracted):
     if len(final_candidates) > MAX_TERMS_PER_DOCUMENT:
         final_candidates = final_candidates[:MAX_TERMS_PER_DOCUMENT]
 
-    # -----------------------------------------------------
-    # FULL FALLBACK PIPELINE
-    # -----------------------------------------------------
-
-    for original, norm in final_candidates:
-
-        # Skip stopwords
-        if norm in STOPWORDS:
-            continue
-
         # ---------------------------------------------
         # STEP 1 — FULL PHRASE
         # ---------------------------------------------
@@ -235,9 +220,6 @@ def extract_ontology_terms(extracted):
         word_hits = []
         for w in words:
             wn = normalize_term(w)
-            if wn in STOPWORDS:
-                continue
-
             w_lookup = apply_synonym_lookup(w)
 
             # Internal word definition
