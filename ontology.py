@@ -59,7 +59,7 @@ def lookup_term_bioportal(original_phrase: str):
         return None
 
     params = {
-        "q": original_phrase,   # ORIGINAL phrase, no normalization
+        "q": original_phrase,
         "apikey": BIOPORTAL_API_KEY,
         "require_exact_match": "false"
     }
@@ -118,7 +118,7 @@ def apply_synonym_lookup(term: str):
 def generate_subphrases(words):
     n = len(words)
     subs = []
-    for length in range(n - 1, 0, -1):  # longest → shortest
+    for length in range(n - 1, 0, -1):
         for i in range(n - length + 1):
             sub = " ".join(words[i:i+length])
             subs.append(sub)
@@ -152,7 +152,6 @@ def extract_ontology_terms(extracted):
     if len(final_candidates) > MAX_TERMS_PER_DOCUMENT:
         final_candidates = final_candidates[:MAX_TERMS_PER_DOCUMENT]
 
-    # ⭐ THIS LOOP WAS MISSING ⭐
     for original, norm in final_candidates:
 
         # ---------------------------------------------
@@ -160,10 +159,10 @@ def extract_ontology_terms(extracted):
         # ---------------------------------------------
         phrase = original.strip()
 
-        # Apply synonyms ONLY during lookup
-        phrase_lookup = apply_synonym_lookup(phrase)
+        # ⭐ FIX #1 — DO NOT LOWERCASE THE PHRASE
+        phrase_lookup = phrase
 
-        # Internal phrase definitions (case‑insensitive)
+        # Internal phrase definitions
         hit = lookup_internal_phrase(phrase_lookup)
         if hit:
             results[original] = {
@@ -191,7 +190,8 @@ def extract_ontology_terms(extracted):
         found = False
         for sub in subphrases:
 
-            sub_lookup = apply_synonym_lookup(sub)
+            # ⭐ FIX #2 — DO NOT LOWERCASE SUBPHRASES
+            sub_lookup = sub
 
             # Internal subphrase
             hit = lookup_internal_phrase(sub_lookup)
@@ -222,8 +222,9 @@ def extract_ontology_terms(extracted):
         # ---------------------------------------------
         word_hits = []
         for w in words:
-            wn = normalize_term(w)
-            w_lookup = apply_synonym_lookup(w)
+
+            # Synonyms only for single words (lowercase is correct here)
+            w_lookup = apply_synonym_lookup(w.lower())
 
             # Internal word definition
             hit = lookup_internal_word(w_lookup)
@@ -247,11 +248,9 @@ def extract_ontology_terms(extracted):
                 continue
 
         if word_hits:
-            # Store word-level hits individually
             for entry in word_hits:
                 results[entry["word"]] = entry
 
-            # Also attach to the phrase
             results[original] = {
                 "source": "word_fallback",
                 "words": word_hits
@@ -265,4 +264,3 @@ def extract_ontology_terms(extracted):
 
     results["_unmatched"] = unmatched_terms
     return results
-
