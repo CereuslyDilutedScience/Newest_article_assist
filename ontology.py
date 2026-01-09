@@ -280,3 +280,4 @@ def extract_ontology_terms(extracted):
 
     results["_unmatched"] = unmatched_terms
     return results
+
