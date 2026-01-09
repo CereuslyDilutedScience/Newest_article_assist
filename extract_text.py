@@ -9,30 +9,8 @@ def load_list(path):
     with open(path, encoding="utf-8") as f:
         return set(line.strip().lower() for line in f if line.strip())
 
-def load_definitions(path):
-    definitions = {}
-    with open(path, encoding="utf-8") as f:
-        for line in f:
-            if "<TAB>" in line:
-                term, definition = line.strip().split("<TAB>", 1)
-                definitions[term.lower()] = definition.strip()
-    return definitions
-
-def load_synonyms(path):
-    mapping = {}
-    with open(path, encoding="utf-8") as f:
-        for line in f:
-            if "<-" in line:
-                canonical, variants = line.strip().split("<-", 1)
-                canonical = canonical.strip().lower()
-                for variant in variants.split(","):
-                    mapping[variant.strip().lower()] = canonical
-    return mapping
 
 STOPWORDS = load_list("stopwords.txt")
-PHRASE_DEFS = load_definitions("phrase_definitions.txt")
-WORD_DEFS = load_definitions("word_definitions.txt")
-SYNONYMS = load_synonyms("synonyms.txt")
 
 # --- GARBAGE FILTER (KEPT EXACTLY AS IS) ---
 def is_garbage_phrase(text):
