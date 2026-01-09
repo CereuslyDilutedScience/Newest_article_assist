@@ -85,22 +85,41 @@ def extract():
     # 4. Attach definitions to phrases and individual words
     # -----------------------------------------------------
 
-    # Phrase-level definitions (phrase_definition, word_definition, ontology)
+    # Phrase-level definitions (phrase_definition, word_fallback, ontology)
     for phrase_obj in all_phrases:
         key = phrase_obj["text"].strip()
         hit = unified_hits.get(key)
 
-        if hit:
+        if not hit:
+            continue
+
+        # CASE 1 — phrase_definition or ontology (single definition)
+        if "definition" in hit:
             for w in phrase_obj["words"]:
                 w["definition"] = hit["definition"]
                 w["source"] = hit["source"]
+
+        # CASE 2 — word_fallback (multiple word-level hits)
+        elif hit.get("source") == "word_fallback":
+            word_hits = hit.get("words", [])
+            # Attach definitions only to the matching words
+            for entry in word_hits:
+                target_word = entry["word"]
+                for w in phrase_obj["words"]:
+                    if w["text"].strip().lower() == target_word.lower():
+                        w["definition"] = entry["definition"]
+                        w["source"] = entry["source"]
 
     # Word-level definitions (word_definition OR ontology)
     for w in all_words:
         key = w["text"].strip()
         hit = unified_hits.get(key)
 
-        if hit and hit.get("source") in ("word_definition", "ontology"):
+        if not hit:
+            continue
+
+        # Direct word-level definition
+        if hit.get("source") in ("word_definition", "ontology"):
             w["definition"] = hit["definition"]
             w["source"] = hit["source"]
 

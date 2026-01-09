@@ -36,7 +36,7 @@ WORD_DEFS = load_definitions("word_definitions.txt")
 SYNONYMS = load_synonyms("synonyms.txt")
 
 # ---------------------------------------------------------
-# NORMALIZATION
+# NORMALIZATION (used only for internal matching)
 # ---------------------------------------------------------
 
 def normalize_term(t: str) -> str:
@@ -44,11 +44,6 @@ def normalize_term(t: str) -> str:
     t = re.sub(r"[^a-z0-9\- ]", "", t)
     t = re.sub(r"\s+", " ", t)
     return t
-
-def apply_synonyms(term: str) -> str:
-    if term in SYNONYMS:
-        return SYNONYMS[term]
-    return term
 
 # ---------------------------------------------------------
 # BIOPORTAL CONFIG
@@ -61,16 +56,15 @@ MAX_TERMS_PER_DOCUMENT = 1000
 MAX_BIOPORTAL_LOOKUPS = 1000
 
 # ---------------------------------------------------------
-# BIOPORTAL LOOKUP
+# BIOPORTAL LOOKUP (using ORIGINAL phrase)
 # ---------------------------------------------------------
 
-def lookup_term_bioportal(term: str):
-    norm = normalize_term(term)
-    if not norm:
+def lookup_term_bioportal(original_phrase: str):
+    if not original_phrase.strip():
         return None
 
     params = {
-        "q": norm,
+        "q": original_phrase,   # ORIGINAL phrase, no normalization
         "apikey": BIOPORTAL_API_KEY,
         "require_exact_match": "false"
     }
@@ -98,7 +92,45 @@ def lookup_term_bioportal(term: str):
         return None
 
 # ---------------------------------------------------------
-# MAIN ENTRYPOINT — MATCHING AGAINST DEFINITIONS + BIOPORTAL
+# CASE‑INSENSITIVE INTERNAL LOOKUP HELPERS
+# ---------------------------------------------------------
+
+def lookup_internal_phrase(phrase: str):
+    p = phrase.lower()
+    for key, definition in PHRASE_DEFS.items():
+        if p == key.lower():
+            return definition
+    return None
+
+def lookup_internal_word(word: str):
+    w = word.lower()
+    for key, definition in WORD_DEFS.items():
+        if w == key.lower():
+            return definition
+    return None
+
+def apply_synonym_lookup(term: str):
+    t = term.lower()
+    for variant, canonical in SYNONYMS.items():
+        if t == variant.lower():
+            return canonical
+    return t
+
+# ---------------------------------------------------------
+# SUBPHRASE GENERATION
+# ---------------------------------------------------------
+
+def generate_subphrases(words):
+    n = len(words)
+    subs = []
+    for length in range(n - 1, 0, -1):  # longest → shortest
+        for i in range(n - length + 1):
+            sub = " ".join(words[i:i+length])
+            subs.append(sub)
+    return subs
+
+# ---------------------------------------------------------
+# MAIN ENTRYPOINT — FULL FALLBACK PIPELINE
 # ---------------------------------------------------------
 
 def extract_ontology_terms(extracted):
@@ -107,12 +139,11 @@ def extract_ontology_terms(extracted):
 
     phrases = extracted.get("phrases", [])
 
-    # Build normalized candidates
+    # Build candidate list (NO synonym application here)
     candidates = []
     for p in phrases:
         original = p["text"]
         normalized = normalize_term(original)
-        normalized = apply_synonyms(normalized)
         candidates.append((original, normalized))
 
     # Deduplicate by normalized form
@@ -127,86 +158,125 @@ def extract_ontology_terms(extracted):
         final_candidates = final_candidates[:MAX_TERMS_PER_DOCUMENT]
 
     # -----------------------------------------------------
-    # LAYER 1 — PHRASE DEFINITIONS
+    # FULL FALLBACK PIPELINE
     # -----------------------------------------------------
+
     for original, norm in final_candidates:
-        if norm in PHRASE_DEFS:
-            results[original] = {
-                "source": "phrase_definition",
-                "definition": PHRASE_DEFS[norm]
-            }
 
-    # -----------------------------------------------------
-    # LAYER 2 — WORD DEFINITIONS
-    # -----------------------------------------------------
-    for original, norm in final_candidates:
-        if original in results:
-            continue  # phrase already matched
-
-        words = original.split()
-        for w in words:
-            wn = normalize_term(w)
-            wn = apply_synonyms(wn)
-
-            if wn in STOPWORDS:
-                continue
-
-            if wn in WORD_DEFS:
-                results[original] = {
-                    "source": "word_definition",
-                    "definition": WORD_DEFS[wn]
-                }
-
-                # Word-level key for precise highlighting
-                results[w] = {
-                    "source": "word_definition",
-                    "definition": WORD_DEFS[wn]
-                }
-                break
-
-    # -----------------------------------------------------
-    # LAYER 3 — BIOPORTAL LOOKUP
-    # -----------------------------------------------------
-    to_lookup = []
-    for original, norm in final_candidates:
-        if original in results:
-            continue
-
+        # Skip stopwords
         if norm in STOPWORDS:
             continue
 
-        to_lookup.append((original, norm))
+        # ---------------------------------------------
+        # STEP 1 — FULL PHRASE
+        # ---------------------------------------------
+        phrase = original.strip()
 
-    to_lookup = to_lookup[:MAX_BIOPORTAL_LOOKUPS]
+        # Apply synonyms ONLY during lookup
+        phrase_lookup = apply_synonym_lookup(phrase)
 
-    with ThreadPoolExecutor(max_workers=15) as executor:
-        future_map = {
-            executor.submit(lookup_term_bioportal, norm): (original, norm)
-            for (original, norm) in to_lookup
-        }
+        # Internal phrase definitions (case‑insensitive)
+        hit = lookup_internal_phrase(phrase_lookup)
+        if hit:
+            results[original] = {
+                "source": "phrase_definition",
+                "definition": hit
+            }
+            continue
 
-        for future in as_completed(future_map):
-            original, norm = future_map[future]
-            hit = future.result()
+        # BioPortal full phrase
+        hit = lookup_term_bioportal(phrase)
+        if hit:
+            results[original] = {
+                "source": "ontology",
+                "definition": hit["definition"],
+                "iri": hit.get("iri", "")
+            }
+            continue
 
+        # ---------------------------------------------
+        # STEP 2 — SUBPHRASES
+        # ---------------------------------------------
+        words = phrase.split()
+        subphrases = generate_subphrases(words)
+
+        found = False
+        for sub in subphrases:
+
+            sub_lookup = apply_synonym_lookup(sub)
+
+            # Internal subphrase
+            hit = lookup_internal_phrase(sub_lookup)
+            if hit:
+                results[original] = {
+                    "source": "phrase_definition",
+                    "definition": hit
+                }
+                found = True
+                break
+
+            # BioPortal subphrase
+            hit = lookup_term_bioportal(sub)
             if hit:
                 results[original] = {
                     "source": "ontology",
                     "definition": hit["definition"],
                     "iri": hit.get("iri", "")
                 }
+                found = True
+                break
 
-                # If single word, also store word-level key
-                if " " not in original.strip():
-                    results[original.strip()] = {
-                        "source": "ontology",
-                        "definition": hit["definition"],
-                        "iri": hit.get("iri", "")
-                    }
-            else:
-                unmatched_terms.append(original)
+        if found:
+            continue
 
-    # Attach unmatched list for debugging
+        # ---------------------------------------------
+        # STEP 3 — WORDS
+        # ---------------------------------------------
+        word_hits = []
+        for w in words:
+            wn = normalize_term(w)
+            if wn in STOPWORDS:
+                continue
+
+            w_lookup = apply_synonym_lookup(w)
+
+            # Internal word definition
+            hit = lookup_internal_word(w_lookup)
+            if hit:
+                word_hits.append({
+                    "word": w,
+                    "source": "word_definition",
+                    "definition": hit
+                })
+                continue
+
+            # BioPortal word
+            hit = lookup_term_bioportal(w)
+            if hit:
+                word_hits.append({
+                    "word": w,
+                    "source": "ontology",
+                    "definition": hit["definition"],
+                    "iri": hit.get("iri", "")
+                })
+                continue
+
+        if word_hits:
+            # Store word-level hits individually
+            for entry in word_hits:
+                results[entry["word"]] = entry
+
+            # Also attach to the phrase
+            results[original] = {
+                "source": "word_fallback",
+                "words": word_hits
+            }
+            continue
+
+        # ---------------------------------------------
+        # STEP 4 — NO MATCH
+        # ---------------------------------------------
+        unmatched_terms.append(original)
+
     results["_unmatched"] = unmatched_terms
-
     return results

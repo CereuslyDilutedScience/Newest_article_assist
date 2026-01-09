@@ -132,16 +132,6 @@ def extract_pdf_layout(pdf_path, render_metadata):
     # --- SORT ALL WORDS GLOBALLY ---
     all_words.sort(key=lambda w: (w["page"], round(w["y"] / 5), w["x"]))
 
-    # --- NORMALIZATION HELPER ---
-    def normalize_term(term):
-        term = term.strip().lower()
-        if term in PHRASE_DEFS:
-            return term
-        if term in SYNONYMS:
-            term = SYNONYMS[term]
-        if term in WORD_DEFS:
-            return term
-        return term  # fallback for ontology lookup
 
     # --- NEW GREEDY STOPWORD-BASED PHRASE EXTRACTION ---
     phrases = []
@@ -186,7 +176,6 @@ def extract_pdf_layout(pdf_path, render_metadata):
         if not rejected:
             phrases.append({
                 "text": phrase_text,
-                "normalized": normalize_term(phrase_text_clean),
                 "words": phrase_words.copy()
             })
 
