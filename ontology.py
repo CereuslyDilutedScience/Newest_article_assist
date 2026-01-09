@@ -152,6 +152,9 @@ def extract_ontology_terms(extracted):
     if len(final_candidates) > MAX_TERMS_PER_DOCUMENT:
         final_candidates = final_candidates[:MAX_TERMS_PER_DOCUMENT]
 
+    # ⭐ THIS LOOP WAS MISSING ⭐
+    for original, norm in final_candidates:
+
         # ---------------------------------------------
         # STEP 1 — FULL PHRASE
         # ---------------------------------------------
