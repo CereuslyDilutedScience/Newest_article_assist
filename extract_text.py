@@ -9,7 +9,6 @@ def load_list(path):
     with open(path, encoding="utf-8") as f:
         return set(line.strip().lower() for line in f if line.strip())
 
-
 STOPWORDS = load_list("stopwords.txt")
 
 # --- GARBAGE FILTER (KEPT EXACTLY AS IS) ---
@@ -110,10 +109,11 @@ def extract_pdf_layout(pdf_path, render_metadata):
     # --- SORT ALL WORDS GLOBALLY ---
     all_words.sort(key=lambda w: (w["page"], round(w["y"] / 5), w["x"]))
 
+    # ============================================================
+    # ⭐ NEW PURE GREEDY STOPWORD-BOUNDED EXTRACTION (NO MAX LENGTH)
+    # ============================================================
 
-    # --- NEW GREEDY STOPWORD-BASED PHRASE EXTRACTION ---
     phrases = []
-    max_len = 5
     n = len(all_words)
     i = 0
 
@@ -129,13 +129,12 @@ def extract_pdf_layout(pdf_path, render_metadata):
             i += 1
             continue
 
-        # Start a new phrase
+        # Start a new greedy phrase
         phrase_words = [w]
-        phrase_tokens = [token]
-
-        # Expand right greedily
         j = i + 1
-        while j < n and len(phrase_words) < max_len:
+
+        # Expand right until a stopword
+        while j < n:
             nxt_raw = all_words[j]["text"]
             nxt_token = nxt_raw.lower().strip(".,;:()[]{}")
 
@@ -143,7 +142,6 @@ def extract_pdf_layout(pdf_path, render_metadata):
                 break  # stop expansion
 
             phrase_words.append(all_words[j])
-            phrase_tokens.append(nxt_token)
             j += 1
 
         # Emit phrase (even if length 1)

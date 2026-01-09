@@ -1,6 +1,5 @@
 import requests
 import re
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ---------------------------------------------------------
 # LOAD LISTS
@@ -31,7 +30,7 @@ WORD_DEFS = load_definitions("word_definitions.txt")
 SYNONYMS = load_synonyms("synonyms.txt")
 
 # ---------------------------------------------------------
-# NORMALIZATION (used only for internal matching)
+# NORMALIZATION (for dedupe only)
 # ---------------------------------------------------------
 
 def normalize_term(t: str) -> str:
@@ -51,7 +50,7 @@ MAX_TERMS_PER_DOCUMENT = 1000
 MAX_BIOPORTAL_LOOKUPS = 1000
 
 # ---------------------------------------------------------
-# BIOPORTAL LOOKUP (using ORIGINAL phrase)
+# BIOPORTAL LOOKUP (using ORIGINAL phrase/word)
 # ---------------------------------------------------------
 
 def lookup_term_bioportal(original_phrase: str):
@@ -87,180 +86,226 @@ def lookup_term_bioportal(original_phrase: str):
         return None
 
 # ---------------------------------------------------------
-# CASE‑INSENSITIVE INTERNAL LOOKUP HELPERS
+# INTERNAL LOOKUP HELPERS
 # ---------------------------------------------------------
 
 def lookup_internal_phrase(phrase: str):
-    p = phrase.lower()
-    for key, definition in PHRASE_DEFS.items():
-        if p == key.lower():
-            return definition
-    return None
+    p = phrase.lower().strip()
+    return PHRASE_DEFS.get(p)
 
 def lookup_internal_word(word: str):
-    w = word.lower()
-    for key, definition in WORD_DEFS.items():
-        if w == key.lower():
-            return definition
-    return None
+    w = word.lower().strip()
+    return WORD_DEFS.get(w)
 
 def apply_synonym_lookup(term: str):
-    t = term.lower()
-    for variant, canonical in SYNONYMS.items():
-        if t == variant.lower():
-            return canonical
-    return t
+    t = term.lower().strip()
+    # map variant → canonical if exists, else term itself
+    return SYNONYMS.get(t, t)
 
 # ---------------------------------------------------------
-# SUBPHRASE GENERATION
-# ---------------------------------------------------------
-
-def generate_subphrases(words):
-    n = len(words)
-    subs = []
-    for length in range(n - 1, 0, -1):
-        for i in range(n - length + 1):
-            sub = " ".join(words[i:i+length])
-            subs.append(sub)
-    return subs
-
-# ---------------------------------------------------------
-# MAIN ENTRYPOINT — FULL FALLBACK PIPELINE
+# MAIN ENTRYPOINT — PHASE 1 PIPELINE
 # ---------------------------------------------------------
 
 def extract_ontology_terms(extracted):
-    results = {}
-    unmatched_terms = []
+    """
+    Phase 1 ontology pipeline:
+
+    1. Bucket phrases into 1-word, 2-word, 3+ word.
+    2. Process 2-word phrases:
+       - phrase_definitions.txt
+       - BioPortal
+       - if both fail → split into 1-word terms → add to 1-word bucket.
+    3. Process 3+ word phrases:
+       - phrase_definitions.txt
+       - BioPortal
+       - if both fail → no definition, no highlight.
+    4. Process 1-word bucket last:
+       - dedupe
+       - internal word definitions
+       - BioPortal
+       - attach to all occurrences.
+    """
 
     phrases = extracted.get("phrases", [])
 
-    # Build candidate list (NO synonym application here)
-    candidates = []
+    results = {}          # term_text -> info dict
+    unmatched_terms = []  # list of phrase/word texts with no definition
+
+    # ---------------------------------------------
+    # STEP 1 — BUCKET BY LENGTH
+    # ---------------------------------------------
+    one_word_spans = []   # list of phrase dicts with length == 1
+    two_word_spans = []   # list of phrase dicts with length == 2
+    multi_word_spans = [] # list of phrase dicts with length >= 3
+
     for p in phrases:
-        original = p["text"]
-        normalized = normalize_term(original)
-        candidates.append((original, normalized))
+        text = p.get("text", "").strip()
+        words_meta = p.get("words") or []
+        if not text:
+            continue
 
-    # Deduplicate by normalized form
-    seen_norm = set()
-    final_candidates = []
-    for original, norm in candidates:
-        if norm not in seen_norm:
-            seen_norm.add(norm)
-            final_candidates.append((original, norm))
+        # Prefer length from words metadata; fallback to splitting text
+        if words_meta:
+            length = len(words_meta)
+        else:
+            length = len(text.split())
 
-    if len(final_candidates) > MAX_TERMS_PER_DOCUMENT:
-        final_candidates = final_candidates[:MAX_TERMS_PER_DOCUMENT]
+        if length == 1:
+            one_word_spans.append(p)
+        elif length == 2:
+            two_word_spans.append(p)
+        else:
+            multi_word_spans.append(p)
 
-    for original, norm in final_candidates:
+    # Bucket for 1-word *terms* to resolve at the end (strings, not spans)
+    one_word_terms = []
 
-        # ---------------------------------------------
-        # STEP 1 — FULL PHRASE
-        # ---------------------------------------------
-        phrase = original.strip()
+    # Seed 1-word terms from original 1-word spans
+    for p in one_word_spans:
+        text = p.get("text", "").strip()
+        if text:
+            one_word_terms.append(text)
 
-        # ⭐ FIX #1 — DO NOT LOWERCASE THE PHRASE
-        phrase_lookup = phrase
+    bioportal_lookups = 0
 
-        # Internal phrase definitions
-        hit = lookup_internal_phrase(phrase_lookup)
+    # ---------------------------------------------
+    # STEP 2 — PROCESS 2-WORD PHRASES
+    # ---------------------------------------------
+    for p in two_word_spans:
+        phrase_text = p.get("text", "").strip()
+        if not phrase_text:
+            continue
+
+        # A. internal phrase definitions
+        hit = lookup_internal_phrase(phrase_text)
         if hit:
-            results[original] = {
+            results[phrase_text] = {
                 "source": "phrase_definition",
                 "definition": hit
             }
             continue
 
-        # BioPortal full phrase
-        hit = lookup_term_bioportal(phrase)
-        if hit:
-            results[original] = {
-                "source": "ontology",
-                "definition": hit["definition"],
-                "iri": hit.get("iri", "")
+        # B. BioPortal phrase lookup
+        if bioportal_lookups < MAX_BIOPORTAL_LOOKUPS:
+            bp = lookup_term_bioportal(phrase_text)
+            bioportal_lookups += 1
+        else:
+            bp = None
+
+        if bp:
+            results[phrase_text] = {
+                "source": "ontology_phrase",
+                "definition": bp["definition"],
+                "iri": bp.get("iri", "")
             }
             continue
 
-        # ---------------------------------------------
-        # STEP 2 — SUBPHRASES
-        # ---------------------------------------------
-        words = phrase.split()
-        subphrases = generate_subphrases(words)
+        # C. If still no match → split into 1-word terms and add to 1-word bucket
+        words_meta = p.get("words") or []
+        if words_meta:
+            split_words = [w.get("text", "").strip() for w in words_meta if w.get("text", "").strip()]
+        else:
+            split_words = [w.strip() for w in phrase_text.split() if w.strip()]
 
-        found = False
-        for sub in subphrases:
+        for w in split_words:
+            one_word_terms.append(w)
 
-            # ⭐ FIX #2 — DO NOT LOWERCASE SUBPHRASES
-            sub_lookup = sub
+        # No result stored for the 2-word phrase itself at this stage
 
-            # Internal subphrase
-            hit = lookup_internal_phrase(sub_lookup)
-            if hit:
-                results[original] = {
-                    "source": "phrase_definition",
-                    "definition": hit
-                }
-                found = True
-                break
-
-            # BioPortal subphrase
-            hit = lookup_term_bioportal(sub)
-            if hit:
-                results[original] = {
-                    "source": "ontology",
-                    "definition": hit["definition"],
-                    "iri": hit.get("iri", "")
-                }
-                found = True
-                break
-
-        if found:
+    # ---------------------------------------------
+    # STEP 3 — PROCESS 3+ WORD PHRASES
+    # ---------------------------------------------
+    for p in multi_word_spans:
+        phrase_text = p.get("text", "").strip()
+        if not phrase_text:
             continue
 
-        # ---------------------------------------------
-        # STEP 3 — WORDS
-        # ---------------------------------------------
-        word_hits = []
-        for w in words:
+        # A. internal phrase definitions
+        hit = lookup_internal_phrase(phrase_text)
+        if hit:
+            results[phrase_text] = {
+                "source": "phrase_definition",
+                "definition": hit
+            }
+            continue
 
-            # Synonyms only for single words (lowercase is correct here)
-            w_lookup = apply_synonym_lookup(w.lower())
+        # B. BioPortal phrase lookup
+        if bioportal_lookups < MAX_BIOPORTAL_LOOKUPS:
+            bp = lookup_term_bioportal(phrase_text)
+            bioportal_lookups += 1
+        else:
+            bp = None
 
-            # Internal word definition
-            hit = lookup_internal_word(w_lookup)
-            if hit:
-                word_hits.append({
-                    "word": w,
+        if bp:
+            results[phrase_text] = {
+                "source": "ontology_phrase",
+                "definition": bp["definition"],
+                "iri": bp.get("iri", "")
+            }
+            continue
+
+        # C. If still no match → stop, no definition, no highlight
+        unmatched_terms.append(phrase_text)
+
+    # ---------------------------------------------
+    # STEP 4 — PROCESS 1-WORD TERMS (LAST)
+    # ---------------------------------------------
+
+    # Deduplicate by normalized form, but keep mapping back to original forms
+    norm_to_originals = {}
+    for w in one_word_terms:
+        if not w.strip():
+            continue
+        norm = normalize_term(w)
+        if not norm:
+            continue
+        norm_to_originals.setdefault(norm, set()).add(w.strip())
+
+    # Cap number of unique 1-word terms if needed
+    all_norms = list(norm_to_originals.keys())
+    if len(all_norms) > MAX_TERMS_PER_DOCUMENT:
+        all_norms = all_norms[:MAX_TERMS_PER_DOCUMENT]
+
+    for norm in all_norms:
+        originals = sorted(norm_to_originals[norm])
+        # Representative word for lookup
+        rep = originals[0]
+
+        # Apply synonyms only at 1-word level
+        lookup_key = apply_synonym_lookup(rep)
+
+        # Internal word definition
+        hit = lookup_internal_word(lookup_key)
+        if hit:
+            for word in originals:
+                results[word] = {
                     "source": "word_definition",
                     "definition": hit
-                })
-                continue
-
-            # BioPortal word
-            hit = lookup_term_bioportal(w)
-            if hit:
-                word_hits.append({
-                    "word": w,
-                    "source": "ontology",
-                    "definition": hit["definition"],
-                    "iri": hit.get("iri", "")
-                })
-                continue
-
-        if word_hits:
-            for entry in word_hits:
-                results[entry["word"]] = entry
-
-            results[original] = {
-                "source": "word_fallback",
-                "words": word_hits
-            }
+                }
             continue
 
-        # ---------------------------------------------
-        # STEP 4 — NO MATCH
-        # ---------------------------------------------
-        unmatched_terms.append(original)
+        # BioPortal word lookup
+        if bioportal_lookups < MAX_BIOPORTAL_LOOKUPS:
+            bp = lookup_term_bioportal(rep)
+            bioportal_lookups += 1
+        else:
+            bp = None
 
+        if bp:
+            for word in originals:
+                results[word] = {
+                    "source": "ontology_word",
+                    "definition": bp["definition"],
+                    "iri": bp.get("iri", "")
+                }
+            continue
+
+        # If still no match → all originals are unmatched words
+        for word in originals:
+            unmatched_terms.append(word)
+
+    # ---------------------------------------------
+    # STEP 5 — RETURN RESULTS
+    # ---------------------------------------------
     results["_unmatched"] = unmatched_terms
     return results
