@@ -10,7 +10,7 @@ from debug_tools import DEBUG
 
 # Uncomment this to globally enable debug collection.
 # You can also call DEBUG.enable() conditionally if you prefer.
-# DEBUG.enable()
+DEBUG.enable()
 
 
 app = Flask(__name__)
