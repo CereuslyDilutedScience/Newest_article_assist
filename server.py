@@ -3,10 +3,15 @@ from werkzeug.utils import secure_filename
 from flask_cors import CORS
 import os
 import time
-
 from extract_text import extract_pdf_layout
 from render_pages import render_pdf_pages
 import ontology
+from debug_tools import DEBUG
+
+# Uncomment this to globally enable debug collection.
+# You can also call DEBUG.enable() conditionally if you prefer.
+# DEBUG.enable()
+
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "https://cereuslydilutedscience.github.io"}})
@@ -35,11 +40,17 @@ def extract():
     if request.method == "OPTIONS":
         return '', 204
 
+    # If you prefer per-request control, you can enable here instead:
+    # DEBUG.enable()
+
+    DEBUG.add_flow("request_received")
+
     start_time = time.time()
     print("Received request")
 
     # Validate upload
     if "file" not in request.files:
+        DEBUG.add_flow("no_file_in_request")
         return jsonify({"error": "No file uploaded"}), 400
 
     pdf_file = request.files["file"]
@@ -47,11 +58,13 @@ def extract():
     filepath = os.path.join(UPLOAD_FOLDER, filename)
     pdf_file.save(filepath)
 
+    DEBUG.add_flow(f"file_saved:{filename}")
     print(f"Saved file: {filename}")
 
     # -----------------------------------------------------
     # 1. Extract layout (GLOBAL words + phrases)
     # -----------------------------------------------------
+    DEBUG.add_flow("layout_extraction_started")
     render_result = render_pdf_pages(filepath)
     render_metadata = render_result["images"]
 
@@ -60,24 +73,45 @@ def extract():
     all_words = extracted["words"]
     all_phrases = extracted["phrases"]
 
+    DEBUG.add_flow("layout_extraction_completed")
     print(f"Extraction complete — {time.time() - start_time:.2f}s")
+
+    # Set counts after extraction
+    DEBUG.set_count("pages", len(pages_meta))
+    DEBUG.set_count("words", len(all_words))
+    DEBUG.set_count("phrases", len(all_phrases))
+
+    # Sample words and phrases (first few only)
+    for w in all_words[:5]:
+        DEBUG.add_sample("words", w)
+
+    for p in all_phrases[:5]:
+        DEBUG.add_sample("phrases", p)
+
+    # Use pages_meta as a proxy for page-level / box-like info
+    for page in pages_meta[:5]:
+        DEBUG.add_sample("boxes", page)
 
     # -----------------------------------------------------
     # 2. Render images from the SAME PDF used for extraction
     # -----------------------------------------------------
+    DEBUG.add_flow("page_rendering_started")
     render_result = render_pdf_pages(target_pdf, output_folder=STATIC_PAGE_FOLDER)
     image_folder = render_result["folder"]
     image_list = render_result["images"]
 
+    DEBUG.add_flow("page_rendering_completed")
     print(f"Rendering complete — {time.time() - start_time:.2f}s")
 
     # -----------------------------------------------------
     # 3. Ontology lookup (Phase‑1 pipeline)
     # -----------------------------------------------------
+    DEBUG.add_flow("ontology_lookup_started")
     unified_hits = ontology.extract_ontology_terms({
         "words": all_words,
         "phrases": all_phrases
     })
+    DEBUG.add_flow("ontology_lookup_completed")
 
     print(f"Ontology lookup complete — {time.time() - start_time:.2f}s")
 
@@ -121,9 +155,21 @@ def extract():
                 w["definition"] = definition
                 w["source"] = source
 
+    DEBUG.add_flow("definitions_attached")
+
+    # Count how many words ended up with definitions
+    definitions_count = sum(1 for w in all_words if "definition" in w)
+    DEBUG.set_count("definitions", definitions_count)
+
+    # Sample a few words that actually have definitions
+    words_with_def = [w for w in all_words if "definition" in w][:5]
+    for w in words_with_def:
+        DEBUG.add_sample("definitions", w)
+
     # -----------------------------------------------------
     # 5. Attach image URLs
     # -----------------------------------------------------
+    DEBUG.add_flow("image_url_attachment_started")
     for page in pages_meta:
         page_number = page["page_number"]
         match = next((img for img in image_list if img["page"] == page_number), None)
@@ -133,10 +179,18 @@ def extract():
         else:
             page["image_url"] = None
 
+    DEBUG.add_flow("image_url_attachment_completed")
+
     # -----------------------------------------------------
     # 6. Return unified output
     # -----------------------------------------------------
+    DEBUG.add_flow("response_ready")
     print(f"Finished all processing — {time.time() - start_time:.2f}s")
+
+    # Emit a single consolidated debug report (if enabled)
+    report = DEBUG.emit()
+    if report:
+        print(report)
 
     return jsonify({
         "pages": pages_meta,
