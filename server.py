@@ -72,20 +72,20 @@ def extract():
     print(f"Rendering complete — {time.time() - start_time:.2f}s")
 
     # -----------------------------------------------------
-    # 3. Ontology + definitions lookup (UNIFIED)
+    # 3. Ontology lookup (Phase‑1 pipeline)
     # -----------------------------------------------------
     unified_hits = ontology.extract_ontology_terms({
         "words": all_words,
         "phrases": all_phrases
     })
 
-    print(f"Ontology + definitions lookup complete — {time.time() - start_time:.2f}s")
+    print(f"Ontology lookup complete — {time.time() - start_time:.2f}s")
 
     # -----------------------------------------------------
-    # 4. Attach definitions to phrases and individual words
+    # 4. Attach definitions to phrases and words
     # -----------------------------------------------------
 
-    # PHRASE LOOP — apply only what ontology explicitly returns
+    # PHRASE LOOP — only phrase-level hits
     for phrase_obj in all_phrases:
         phrase_text = phrase_obj["text"].strip()
         hit = unified_hits.get(phrase_text)
@@ -95,24 +95,17 @@ def extract():
 
         source = hit.get("source")
 
-        # CASE 1 — phrase-level definition (phrase_definition or ontology)
-        # Apply to ALL words in the phrase
-        if source in ("phrase_definition", "ontology") and "definition" in hit:
-            for w in phrase_obj["words"]:
-                w["definition"] = hit["definition"]
-                w["source"] = source
-
-        # CASE 2 — word_fallback
-        # Apply ONLY to the specific words listed in hit["words"]
-        elif source == "word_fallback":
-            for entry in hit.get("words", []):
-                target_word = entry["word"].strip().lower()
+        # PHRASE DEFINITIONS (internal or BioPortal)
+        if source in ("phrase_definition", "ontology_phrase"):
+            definition = hit.get("definition")
+            if definition:
                 for w in phrase_obj["words"]:
-                    if w["text"].strip().lower() == target_word:
-                        w["definition"] = entry["definition"]
-                        w["source"] = entry["source"]
+                    w["definition"] = definition
+                    w["source"] = source
 
-    # WORD LOOP — apply direct word-level hits
+        # No other phrase-level cases exist in Phase‑1
+
+    # WORD LOOP — apply word-level hits
     for w in all_words:
         word_text = w["text"].strip()
         hit = unified_hits.get(word_text)
@@ -122,13 +115,14 @@ def extract():
 
         source = hit.get("source")
 
-        # Direct word-level definition
-        if source in ("word_definition", "ontology") and "definition" in hit:
-            w["definition"] = hit["definition"]
-            w["source"] = source
+        if source in ("word_definition", "ontology_word"):
+            definition = hit.get("definition")
+            if definition:
+                w["definition"] = definition
+                w["source"] = source
 
     # -----------------------------------------------------
-    # 5. Attach image URLs to page metadata
+    # 5. Attach image URLs
     # -----------------------------------------------------
     for page in pages_meta:
         page_number = page["page_number"]
